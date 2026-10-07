@@ -12,11 +12,13 @@ src/                      фронтенд (FSD)
   entities/               persona · pulse-item · term · user
   shared/                 api-клиент · i18n · ui-кит · lib · config
 
-api/[...path].ts          единственная функция Vercel: все /api/* → server/http/router.ts
+api/[...path].ts          единственная функция Vercel; импортирует бандл server-dist/handler.mjs
+server-dist/              бандл сервера, собирается в npm run build (scripts/bundle-api.mjs), в Git не хранится
 server/                   бэкенд (ECS)
   ecs/core.ts             World, defineComponent, defineSystem, query, nest
   components/             компоненты = таблицы c_* (Title, Date, Domain, Persona, Credential…)
   systems/                content · pulse · search · auth · user · health
+  http/handler.ts         точка входа бандла
   http/router.ts          HTTP → система
   storage/turso.ts        Turso, а без переменных — libSQL в памяти, засеянный из JSON при старте
 migrations/0001_ecs.mjs   схема: entity + таблица на каждый компонент + FTS5

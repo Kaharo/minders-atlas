@@ -1,9 +1,7 @@
-// Единственная Vercel Function: все /api/* маршруты идут через роутер ECS-систем.
-import { handle } from '../server/http/router';
-import { world } from '../server/storage/turso';
+// Единственная функция Vercel. Импортирует только готовый бандл server-dist/handler.mjs (собирается в npm run build).
+import { handler } from '../server-dist/handler.mjs';
 
-const run = async (req: Request) => {
-  try { return await handle(req, await world()); }
-  catch (e) { return new Response(JSON.stringify({ error: (e as Error).message }), { status: 500, headers: { 'content-type': 'application/json' } }); }
-};
-export const GET = run, POST = run, PUT = run, DELETE = run;
+export const GET = handler;
+export const POST = handler;
+export const PUT = handler;
+export const DELETE = handler;
