@@ -1,0 +1,35 @@
+name: drafts
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # по понедельникам, 11:00 Астана
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  drafts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/draft-entries.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ATLAS_MODEL: ${{ vars.ATLAS_MODEL }}
+      - run: node scripts/validate-data.mjs
+      - id: body
+        run: test -f drafts/LATEST.md && echo "ok=1" >> $GITHUB_OUTPUT || true
+      - if: steps.body.outputs.ok == '1'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: drafts/${{ github.run_id }}
+          add-paths: |
+            data/*.json
+            atlas-db.js
+            drafts/20*.md
+          commit-message: 'drafts: Новые записи атласа (черновики)'
+          title: 'Новые записи атласа (черновики)'
+          body-path: drafts/LATEST.md
+          labels: drafts
+          delete-branch: true

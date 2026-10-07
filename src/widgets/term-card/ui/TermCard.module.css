@@ -1,0 +1,16 @@
+.card { gap: 12px; padding: 20px 22px; position: sticky; top: 84px; }
+.top { display: flex; align-items: flex-start; gap: 10px; }
+.kind { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted-2); }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.15; text-wrap: pretty; }
+.alt { font-size: 12.5px; color: var(--muted-2); }
+.text { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.resp { font-size: 13.5px; line-height: 1.55; color: var(--ink-3); text-wrap: pretty; padding-left: 12px; border-left: 2px solid rgba(14, 18, 48, 0.1); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 12.5px; }
+.facts dt { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted-3); padding-top: 2px; }
+.facts dd { margin: 0; color: var(--ink-2); }
+.sources { display: flex; flex-direction: column; gap: 4px; }
+.src { font-size: 12.5px; line-height: 1.45; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
+.draft { font-family: var(--mono); font-size: 10.5px; color: #a16207; }
+.placeholder { padding: 28px 22px; color: var(--muted-3); font-size: 13px; line-height: 1.5; text-wrap: pretty; }

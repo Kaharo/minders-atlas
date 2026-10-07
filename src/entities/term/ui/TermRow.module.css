@@ -1,0 +1,9 @@
+.row { display: flex; align-items: flex-start; gap: 10px; width: 100%; text-align: left; padding: 8px 10px; border-radius: var(--r-row); color: var(--ink); transition: background 0.12s; }
+.row:hover { background: var(--hover); }
+.rowOn { background: #fff; box-shadow: var(--shadow-pill); }
+.rowOn:hover { background: #fff; }
+.dot { flex: none; width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; }
+.body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.title { font-size: 13.5px; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; text-wrap: pretty; }
+.meta { font-family: var(--mono); font-size: 10.5px; color: var(--muted-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.date { flex: none; font-family: var(--mono); font-size: 11px; color: var(--muted-3); margin-top: 3px; }

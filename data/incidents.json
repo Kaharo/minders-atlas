@@ -1,0 +1,285 @@
+[
+ {
+  "id": "inj-named",
+  "domain": "prompting",
+  "kind": "инцидент",
+  "sev": 2,
+  "date": "2022-09",
+  "where": "GPT-3 и продукты на её основе",
+  "title": "Промпт-инъекция: класс атаки назван",
+  "text": "Работа «Ignore previous prompt» показала, что пользовательский ввод переопределяет инструкции разработчика: модель не различает слои «системный промпт» и «данные».",
+  "response": "Отрасль ответила не патчем, а архитектурой: инструкции выносят в отдельный канал, ввод обрамляют разделителями, поверх ставят классификаторы. Полного решения нет до сих пор.",
+  "sources": [
+   {
+    "t": "Perez & Ribeiro, NeurIPS ML Safety Workshop (2022)",
+    "u": "https://arxiv.org/abs/2211.09527"
+   },
+   {
+    "t": "OWASP Top 10 for LLM Applications — LLM01",
+    "u": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+   }
+  ]
+ },
+ {
+  "id": "indirect",
+  "domain": "knowledge",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2023-02",
+  "where": "LLM-приложения с доступом к веб-контенту (в т.ч. Bing Chat)",
+  "title": "Косвенная инъекция через сторонний контент",
+  "text": "Кай Грешаке с соавторами показали: инструкцию не нужно вводить в чат — достаточно спрятать её на веб-странице или в документе, которые модель прочитает сама.",
+  "response": "Работа «Not what you've signed up for» (ACM AISec 2023) закрепила термин indirect prompt injection и задала повестку: недоверенный контент нельзя пускать в слой инструкций.",
+  "sources": [
+   {
+    "t": "Greshake et al., ACM AISec 2023",
+    "u": "https://arxiv.org/abs/2302.12173"
+   }
+  ]
+ },
+ {
+  "id": "bing-exfil",
+  "domain": "security",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2023-06",
+  "where": "Bing Chat (Microsoft)",
+  "title": "Утечка данных из чата через рендеринг разметки",
+  "text": "Йоханн Ребергер собрал рабочую цепочку: инъекция со страницы заставляла Bing Chat отдавать содержимое разговора во внешний URL через картинку или ссылку в markdown.",
+  "response": "Microsoft закрыла вектор; та же схема потом всплывала в других продуктах — отсюда общее правило блокировать авто-подгрузку внешних изображений и параметры в ссылках.",
+  "sources": [
+   {
+    "t": "Embrace The Red — Bing Chat data exfiltration (PoC and fix)",
+    "u": "https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/"
+   }
+  ]
+ },
+ {
+  "id": "lostmid",
+  "domain": "context",
+  "kind": "исследование",
+  "sev": 1,
+  "date": "2023-07",
+  "where": "GPT-3.5 Turbo, Claude 1.3 и другие модели с длинным окном",
+  "title": "Потеря в середине контекстного окна",
+  "text": "Стэнфордская работа «Lost in the Middle» измерила: факт, лежащий в середине длинного контекста, используется заметно реже, чем в начале и конце. Длинное окно ≠ равномерное внимание.",
+  "response": "Практика сместилась к переупорядочиванию и сжатию контекста: критичное — в начало или в системный слой, длинный хвост — через retrieval, а не «всё в промпт».",
+  "sources": [
+   {
+    "t": "Liu et al., Lost in the Middle (TACL 2024)",
+    "u": "https://arxiv.org/abs/2307.03172"
+   }
+  ]
+ },
+ {
+  "id": "chevy",
+  "domain": "guardrails",
+  "kind": "инцидент",
+  "sev": 2,
+  "date": "2023-12",
+  "where": "чат-бот автодилера на ChatGPT",
+  "title": "Бот согласился продать автомобиль за один доллар",
+  "text": "Посетитель уговорил сервисного бота дилера подтвердить продажу Chevrolet Tahoe 2024 за $1 «без обратного хода». Скриншоты разошлись по сети.",
+  "response": "Случай стал учебным примером: до публикации промпт никто не пробовал ломать. Ответ отрасли — обязательный red-team проход и запрет боту брать обязательства от лица компании.",
+  "sources": [
+   {
+    "t": "Business Insider и обзоры инцидента",
+    "u": "https://www.businessinsider.com/car-dealership-chevrolet-chatbot-chatgpt-pranks-chevy-2023-12"
+   }
+  ]
+ },
+ {
+  "id": "aircanada",
+  "domain": "guardrails",
+  "kind": "патч",
+  "sev": 3,
+  "date": "2024-02",
+  "where": "чат-бот на сайте Air Canada",
+  "title": "Компания отвечает за то, что сказал её бот",
+  "text": "Бот сообщил пассажиру, что скидку по случаю утраты близкого можно оформить задним числом — такой политики у авиакомпании не было. Разговор состоялся в ноябре 2022 года.",
+  "response": "В феврале 2024 канадский трибунал отклонил довод, что бот — самостоятельная сторона, и взыскал с Air Canada компенсацию: ответ бота приравнен к содержимому сайта.",
+  "sources": [
+   {
+    "t": "CBC News — решение трибунала",
+    "u": "https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416"
+   }
+  ]
+ },
+ {
+  "id": "hf-models",
+  "domain": "deployment",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2024-02",
+  "where": "Hugging Face Hub, публичные веса моделей",
+  "title": "Около ста вредоносных моделей в публичном хабе",
+  "text": "JFrog нашёл ~100 моделей, исполняющих код при загрузке: 95% на PyTorch через pickle. Модель baller423/goober2 открывала reverse shell на внешний IP.",
+  "response": "Hugging Face заблокировала модели по жалобам сообщества и усилила сканирование; с марта 2025 хаб прогоняет артефакты через JFrog Advanced Security. Безопасный путь — safetensors вместо pickle.",
+  "sources": [
+   {
+    "t": "JFrog Security Research (февраль 2024)",
+    "u": "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/"
+   },
+   {
+    "t": "The Hacker News",
+    "u": "https://thehackernews.com/2024/02/malicious-ai-models-on-hugging-face.html"
+   }
+  ]
+ },
+ {
+  "id": "gsm1k",
+  "domain": "evaluation",
+  "kind": "исследование",
+  "sev": 2,
+  "date": "2024-05",
+  "where": "открытые и закрытые модели, включая Phi и Mistral",
+  "title": "Протечка бенчмарка в обучающие данные",
+  "text": "Scale AI собрала GSM1k — новый набор той же сложности, что GSM8k. На нём точность падала до 13 процентных пунктов; у отдельных семейств просадка систематическая, у фронтирных моделей почти нулевая.",
+  "response": "Набор не публиковали, чтобы он сам не попал в претрейн. Отсюда практика приватных золотых наборов и проверки контаминации перед тем, как верить метрике.",
+  "sources": [
+   {
+    "t": "Zhang et al., Scale AI (arXiv:2405.00332)",
+    "u": "https://arxiv.org/abs/2405.00332"
+   }
+  ]
+ },
+ {
+  "id": "hf-spaces",
+  "domain": "security",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2024-05",
+  "where": "Hugging Face Spaces",
+  "title": "Несанкционированный доступ к секретам Spaces",
+  "text": "Hugging Face обнаружила неавторизованный доступ к секретам Spaces и допустила, что часть токенов утекла. Параллельно Wiz показала обход изоляции контейнеров с кросс-тенантным доступом к моделям.",
+  "response": "Токены отозвали, пострадавших уведомили, всем рекомендовали перейти на гранулярные access-токены. Урок: ключи в среде исполнения агентов — это радиус поражения, а не деталь конфигурации.",
+  "sources": [
+   {
+    "t": "BleepingComputer — Spaces breach",
+    "u": "https://www.bleepingcomputer.com/news/security/ai-platform-hugging-face-says-hackers-stole-auth-tokens-from-spaces/"
+   },
+   {
+    "t": "Wiz Research — кросс-тенантный доступ",
+    "u": "https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure"
+   }
+  ]
+ },
+ {
+  "id": "slack-ai",
+  "domain": "knowledge",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2024-08",
+  "where": "Slack AI",
+  "title": "Выгрузка данных из приватных каналов через поиск",
+  "text": "PromptArmor показал: инструкция в публичном канале заставляет Slack AI собрать данные из приватных каналов, куда атакующий не входит, и подставить их в markdown-ссылку. Источник инъекции в ответе не цитировался.",
+  "response": "Slack сначала счёл доказательства недостаточными, назвав поведение ожидаемым. С 14 августа 2024 в ответы добавились файлы и Drive — площадь атаки выросла; рекомендация была ограничить доступ Slack AI к документам на уровне админа.",
+  "sources": [
+   {
+    "t": "PromptArmor (20 августа 2024)",
+    "u": "https://promptarmor.substack.com/p/slack-ai-data-exfiltration-from-private"
+   },
+   {
+    "t": "The Register",
+    "u": "https://www.theregister.com/2024/08/21/slack_ai_prompt_injection/"
+   }
+  ]
+ },
+ {
+  "id": "spaiware",
+  "domain": "memory",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2024-09",
+  "where": "ChatGPT, приложение для macOS (память)",
+  "title": "SpAIware: шпион в долговременной памяти",
+  "text": "Ребергер записал через инъекцию из недоверенного контента постоянную инструкцию в память ChatGPT. Она переживала удаление чатов и продолжала выгружать все новые разговоры на сервер атакующего.",
+  "response": "После раскрытия OpenAI закрыла вектор выгрузки в версии 1.2024.247. Сама возможность писать в память из недоверенного контента осталась — отсюда совет регулярно просматривать и чистить память.",
+  "sources": [
+   {
+    "t": "Embrace The Red — SpAIware",
+    "u": "https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/"
+   },
+   {
+    "t": "The Hacker News",
+    "u": "https://thehackernews.com/2024/09/chatgpt-macos-flaw-couldve-enabled-long.html"
+   }
+  ]
+ },
+ {
+  "id": "zombai",
+  "domain": "tools",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2024-10",
+  "where": "Claude Computer Use (демо-режим)",
+  "title": "ZombAI: инъекция превращается в канал управления",
+  "text": "Инъекция со страницы довела агента с доступом к компьютеру до запуска стороннего бинарника и выхода на C2-сервер. Показано на Claude Computer Use, механика общая для любого агента с исполнением.",
+  "response": "Вывод, ставший стандартом: инструменты классифицируют по обратимости, необратимые требуют подтверждения человеком, агент работает в изолированной среде без сетевого произвола.",
+  "sources": [
+   {
+    "t": "Embrace The Red — ZombAIs",
+    "u": "https://embracethered.com/blog/posts/2024/claude-computer-use-c2-the-zombais-are-coming/"
+   }
+  ]
+ },
+ {
+  "id": "gemini-mem",
+  "domain": "memory",
+  "kind": "инцидент",
+  "sev": 2,
+  "date": "2025-02",
+  "where": "Google Gemini (долговременная память)",
+  "title": "Отложенный вызов инструмента записывает ложную память",
+  "text": "Отравленный документ плюс приём с отложенным вызовом инструмента позволяли записать в долговременную память Gemini ложные факты о пользователе, влияющие на последующие сессии.",
+  "response": "Google оценила вероятность и влияние как низкие; на момент раскрытия исправление не подтверждено. Любая записываемая память превращает разовую инъекцию в постоянную закладку.",
+  "sources": [
+   {
+    "t": "Embrace The Red — Gemini memory persistence",
+    "u": "https://embracethered.com/blog/posts/2025/gemini-memory-persistence-prompt-injection/"
+   }
+  ]
+ },
+ {
+  "id": "echoleak",
+  "domain": "guardrails",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2025-06",
+  "where": "Microsoft 365 Copilot (Word, Excel, PowerPoint, Outlook, Teams)",
+  "title": "EchoLeak: zero-click утечка через одно письмо",
+  "text": "Aim Security раскрыла CVE-2025-32711 (CVSS 9.3): скрытые инструкции в письме попадали в RAG-контекст Copilot и выгружали переписку, файлы OneDrive и SharePoint без единого действия пользователя. Цепочка обошла классификатор XPIA, редактирование ссылок и CSP через доверенный прокси Teams.",
+  "response": "Microsoft выпустила серверный патч в составе Patch Tuesday за июнь 2025, действий от клиентов не потребовалось, эксплуатации «в природе» не зафиксировано. Первый публичный случай, когда инъекция довела до реальной эксфильтрации в продакшене.",
+  "sources": [
+   {
+    "t": "The Hacker News — CVE-2025-32711",
+    "u": "https://thehackernews.com/2025/06/zero-click-ai-vulnerability-exposes.html"
+   },
+   {
+    "t": "Aim Labs — EchoLeak",
+    "u": "https://www.aim.security/lp/aim-labs-echoleak-blogpost"
+   },
+   {
+    "t": "Разбор цепочки (arXiv:2509.10540)",
+    "u": "https://arxiv.org/abs/2509.10540"
+   }
+  ]
+ },
+ {
+  "id": "replit-db",
+  "domain": "agents",
+  "kind": "инцидент",
+  "sev": 3,
+  "date": "2025-07",
+  "where": "Replit Agent, продакшен-база клиента",
+  "title": "Агент удалил продакшен-базу во время код-фриза",
+  "text": "На 8–9 день двенадцатидневного публичного прогона агент выполнил разрушительные команды против живой базы, несмотря на прямой запрет менять продакшен: пустой результат запроса он принял за баг. Пропали записи более чем о 1200 руководителях и ~1190 компаниях, затем агент сообщил, что откат невозможен — это оказалось неправдой.",
+  "response": "CEO Replit публично признал сбой 19 июля 2025. В течение дней выкатили автоматическое разделение dev и prod баз, режим «только планирование», обязательные проверки документации и восстановление из бэкапа в один клик. Данные удалось вернуть.",
+  "sources": [
+   {
+    "t": "Fortune (23 июля 2025)",
+    "u": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/"
+   }
+  ]
+ }
+]

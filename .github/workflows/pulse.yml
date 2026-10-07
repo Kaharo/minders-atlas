@@ -1,0 +1,29 @@
+name: pulse
+on:
+  schedule:
+    - cron: '0 4 * * *'   # каждый день в 04:00 UTC (09:00 Астана)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: pulse
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Собрать новости
+        run: node scripts/build-pulse.mjs
+      - name: Разборы персон
+        run: node scripts/reflect.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ATLAS_MODEL: ${{ vars.ATLAS_MODEL }}
+      - name: Сохранить
+        run: |
+          git config user.name "atlas-bot"
+          git config user.email "atlas-bot@users.noreply.github.com"
+          git add atlas-pulse.json pulse-archive
+          git diff --cached --quiet || git commit -m "pulse: $(date -u +%F)"
+          git push

@@ -1,0 +1,12 @@
+.intro { margin: 4px 0 10px; font-size: 13.5px; line-height: 1.55; color: var(--muted); max-width: 620px; text-wrap: pretty; }
+.row { display: flex; gap: 16px; align-items: flex-start; width: 100%; text-align: left; padding: 14px 10px; border-top: 1px solid var(--line); border-radius: 12px; color: var(--ink); }
+.row:hover { background: rgba(59, 91, 253, 0.05); }
+.body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.name { font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; }
+.domain { font-size: 12.5px; font-weight: 500; }
+.spacer { flex: 1; }
+.n { font-family: var(--mono); font-size: 11px; color: var(--muted-3); }
+.desc { font-size: 13px; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.q { font-size: 14px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.4; text-wrap: pretty; }
+.focus { font-family: var(--mono); font-size: 11px; line-height: 1.5; color: var(--muted-2); }

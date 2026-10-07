@@ -1,0 +1,33 @@
+name: scores
+on:
+  schedule:
+    - cron: '0 7 * * 3'   # по средам, 12:00 Астана
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  scores:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/update-scores.mjs
+        env:
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
+      - run: node scripts/validate-data.mjs
+      - id: body
+        run: test -f drafts/SCORES.md && echo "ok=1" >> $GITHUB_OUTPUT || true
+      - if: steps.body.outputs.ok == '1'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: scores/update
+          add-paths: |
+            data/scores.json
+            atlas-db.js
+          commit-message: 'scores: Обновление рейтингов'
+          title: 'Обновление рейтингов'
+          body-path: drafts/SCORES.md
+          labels: scores
+          delete-branch: true

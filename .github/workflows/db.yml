@@ -1,0 +1,29 @@
+name: db
+on:
+  push:
+    branches: [main]
+    paths: ['data/**', 'atlas-pulse.json', 'pulse-archive/**', 'migrations/**', 'scripts/seed.mjs', 'scripts/lib/**']
+  workflow_run:
+    workflows: [pulse]
+    types: [completed]
+  workflow_dispatch:
+concurrency: db
+jobs:
+  sync:
+    if: ${{ secrets.TURSO_DATABASE_URL != '' }}
+    runs-on: ubuntu-latest
+    env:
+      TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+      TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - name: Проверить данные
+        run: node scripts/validate-data.mjs
+      - name: Миграции
+        run: node scripts/migrate.mjs
+      - name: Посев мира
+        run: node scripts/seed.mjs

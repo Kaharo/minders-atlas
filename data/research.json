@@ -1,0 +1,192 @@
+[
+ {
+  "id": "lostmid",
+  "domain": "d_context",
+  "kind": "study",
+  "date": "2023-07",
+  "course": "prompt",
+  "status": "draft",
+  "ru": {
+   "where": "Stanford, UC Berkeley · GPT-3.5 Turbo, Claude 1.3 и др.",
+   "title": "Потеря в середине длинного контекста",
+   "text": "Факт, который лежит в середине длинного контекста, модель использует заметно реже, чем тот же факт в начале или в конце.",
+   "response": "Длинный документ не гарантирует, что модель его учла. Ключевое ставят в начало или конец, найденные фрагменты переранжируют."
+  },
+  "en": {
+   "where": "Stanford, UC Berkeley · GPT-3.5 Turbo, Claude 1.3 and others",
+   "title": "Lost in the middle of a long context",
+   "text": "A fact placed in the middle of a long context is used noticeably less often than the same fact at the start or end.",
+   "response": "A long document is not a guarantee the model used it. Put key facts at the edges and re-rank retrieved passages."
+  },
+  "sources": [
+   {
+    "t": "Liu et al., Lost in the Middle (arXiv 2307.03172)",
+    "u": "https://arxiv.org/abs/2307.03172"
+   }
+  ]
+ },
+ {
+  "id": "hbs-jagged",
+  "domain": "d_models",
+  "kind": "study",
+  "date": "2023-09",
+  "course": "basics",
+  "status": "supported",
+  "ru": {
+   "where": "Harvard Business School, BCG · 758 консультантов, GPT-4",
+   "title": "Неровная граница возможностей AI",
+   "text": "На задачах внутри «границы» консультанты с GPT-4 выполнили на 12,2% больше задач, работали на 25,1% быстрее, качество оценили выше более чем на 40%. На задаче за границей верных решений с AI было на 19 п.п. меньше.",
+   "response": "Граница между «AI справится» и «AI уверенно ошибётся» неочевидна даже для сильных специалистов. Поэтому проверку результата нужно встраивать в работу заранее, а не надеяться на интуицию."
+  },
+  "en": {
+   "where": "Harvard Business School, BCG · 758 consultants, GPT-4",
+   "title": "The jagged frontier of AI capability",
+   "text": "Inside the frontier, consultants with GPT-4 completed 12.2% more tasks, 25.1% faster, with over 40% higher rated quality. On a task outside it, they were 19 pp less likely to be correct.",
+   "response": "The line between “AI will handle it” and “AI will be confidently wrong” is not obvious even to experts. Build result checks into the work up front."
+  },
+  "sources": [
+   {
+    "t": "Dell’Acqua et al., SSRN 4573321",
+    "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321"
+   },
+   {
+    "t": "HBS AI Institute",
+    "u": "https://aiinstitute.hbs.edu/navigating-the-jagged-technological-frontier/"
+   }
+  ]
+ },
+ {
+  "id": "gsm1k",
+  "domain": "d_quality",
+  "kind": "study",
+  "date": "2024-05",
+  "course": "evals",
+  "status": "draft",
+  "ru": {
+   "where": "Scale AI · открытые и закрытые модели",
+   "title": "Протечка бенчмарка в обучающие данные",
+   "text": "На новом наборе задач той же сложности, что GSM8k, точность части моделей падала до 13 п.п. Похоже, они видели старый набор при обучении.",
+   "response": "Цифра из публичного бенчмарка не равна качеству на ваших задачах. Нужен собственный тестовый набор."
+  },
+  "en": {
+   "where": "Scale AI · open and closed models",
+   "title": "Benchmark leakage into training data",
+   "text": "On a fresh set of the same difficulty as GSM8k, accuracy for some models dropped by up to 13 pp, suggesting they had seen the old set.",
+   "response": "A public benchmark score is not quality on your tasks. You need your own test set."
+  },
+  "sources": [
+   {
+    "t": "Zhang et al., GSM1k (arXiv 2405.00332)",
+    "u": "https://arxiv.org/abs/2405.00332"
+   }
+  ]
+ },
+ {
+  "id": "mit-cogdebt",
+  "domain": "d_trust",
+  "kind": "study",
+  "date": "2025-06",
+  "course": "verify",
+  "status": "draft",
+  "ru": {
+   "where": "MIT Media Lab · 54 участника, ЭЭГ",
+   "title": "Когнитивный долг при письме с LLM",
+   "text": "У группы, писавшей эссе с LLM, связность мозговой активности была самой слабой; участники хуже цитировали собственный текст и меньше считали его своим. Это препринт на небольшой выборке, авторы просят считать выводы предварительными.",
+   "response": "Если AI делает работу целиком, человек хуже её понимает и помнит. Сначала своя мысль, потом AI."
+  },
+  "en": {
+   "where": "MIT Media Lab · 54 participants, EEG",
+   "title": "Cognitive debt when writing with an LLM",
+   "text": "The LLM group showed the weakest brain connectivity, quoted their own essays worse and felt less ownership. It is a small-sample preprint; the authors ask to treat conclusions as preliminary.",
+   "response": "When AI does the whole task, people understand and remember it less. Think first, then use AI."
+  },
+  "sources": [
+   {
+    "t": "Kosmyna et al. (arXiv 2506.08872)",
+    "u": "https://arxiv.org/abs/2506.08872"
+   },
+   {
+    "t": "MIT Media Lab",
+    "u": "https://www.media.mit.edu/publications/your-brain-on-chatgpt/"
+   }
+  ]
+ },
+ {
+  "id": "metr-devs",
+  "domain": "d_quality",
+  "kind": "study",
+  "date": "2025-07",
+  "course": "evals",
+  "status": "supported",
+  "ru": {
+   "where": "METR · 16 опытных разработчиков, 246 задач",
+   "title": "Ощущение ускорения и измеренное время расходятся",
+   "text": "С AI-инструментами разработчики решали задачи на 19% дольше, хотя сами оценили, что стали быстрее на 20%. METR отмечает, что результат относится к инструментам начала 2025 года.",
+   "response": "Эффект от AI нужно измерять, а не оценивать по ощущениям."
+  },
+  "en": {
+   "where": "METR · 16 experienced developers, 246 tasks",
+   "title": "Felt speed-up and measured time diverge",
+   "text": "With AI tools, developers took 19% longer, yet estimated they had been 20% faster. METR notes the result reflects early-2025 tools.",
+   "response": "Measure the effect of AI; do not judge it by feel."
+  },
+  "sources": [
+   {
+    "t": "METR, early-2025 developer study",
+    "u": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+   }
+  ]
+ },
+ {
+  "id": "mit-nanda",
+  "domain": "d_context",
+  "kind": "report",
+  "date": "2025-07",
+  "course": "scale",
+  "status": "supported",
+  "ru": {
+   "where": "MIT NANDA · 300 внедрений, интервью и опросы руководителей",
+   "title": "Разрыв GenAI: пилоты без эффекта в P&L",
+   "text": "95% корпоративных пилотов не показали измеримого эффекта в P&L. Главная причина по отчёту — инструменты не удерживают обратную связь, не адаптируются к контексту и не улучшаются. Методологию оспаривают: «нет эффекта в P&L» не равно «пилот провалился».",
+   "response": "Эффект дают не модели, а встраивание в процесс: память, контекст, обратная связь и измерение результата до и после."
+  },
+  "en": {
+   "where": "MIT NANDA · 300 deployments, executive interviews and surveys",
+   "title": "The GenAI Divide: pilots with no P&L impact",
+   "text": "95% of enterprise pilots showed no measurable P&L impact. The report’s main cause: tools that do not retain feedback, adapt to context or improve. The method is disputed: “no P&L impact” is not “the pilot failed”.",
+   "response": "Value comes from embedding into the process: memory, context, feedback, and measuring before and after."
+  },
+  "sources": [
+   {
+    "t": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+    "u": "https://www.media.mit.edu/"
+   }
+  ]
+ },
+ {
+  "id": "ai-index-26",
+  "domain": "d_models",
+  "kind": "report",
+  "date": "2026-04",
+  "course": "landscape",
+  "status": "supported",
+  "ru": {
+   "where": "Stanford HAI · AI Index 2026",
+   "title": "AI Index 2026: внедрение растёт быстрее управления",
+   "text": "Доля организаций, использующих AI, достигла 88%. Результат на SWE-bench Verified за год вырос с 60% почти до 100%. Отчёт отмечает, что возможности растут быстрее практик управления и прозрачности.",
+   "response": "Вопрос уже не в том, внедрять ли AI, а в том, как управлять им и измерять результат."
+  },
+  "en": {
+   "where": "Stanford HAI · AI Index 2026",
+   "title": "AI Index 2026: adoption outpaces governance",
+   "text": "Organizational adoption reached 88%. SWE-bench Verified rose from 60% to near 100% in a year. The report notes capability is outpacing governance and transparency practice.",
+   "response": "The question is no longer whether to adopt AI, but how to govern it and measure results."
+  },
+  "sources": [
+   {
+    "t": "Stanford HAI, 2026 AI Index Report",
+    "u": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+   }
+  ]
+ }
+]
