@@ -3,7 +3,8 @@ import type { HwData } from './ArchMap';
 import s from './HwPanel.module.css';
 
 /** «Где помещается»: лестница устройств, серверы с GPU, строки памяти. */
-export function HwPanel({ hw }: { hw: HwData }) {
+export function HwPanel({ hw, compact }: { hw: HwData; compact?: boolean }) {
+  if (compact) return <div className={s.panel}><span className={s.kicker}>Где помещается</span><span className={s.head}>{hw.head}</span></div>;
   return (
     <div className={s.panel}>
       <span className={s.kicker}>Где помещается</span>

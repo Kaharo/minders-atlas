@@ -1,0 +1,110 @@
+[
+ {
+  "from": "incident:indirect",
+  "pred": "is_a",
+  "to": "incident:inj-named",
+  "basis": "evidence"
+ },
+ {
+  "from": "incident:bing-exfil",
+  "pred": "uses",
+  "to": "incident:indirect",
+  "basis": "evidence"
+ },
+ {
+  "from": "incident:slack-ai",
+  "pred": "uses",
+  "to": "incident:indirect",
+  "basis": "evidence"
+ },
+ {
+  "from": "incident:echoleak",
+  "pred": "uses",
+  "to": "incident:indirect",
+  "basis": "evidence"
+ },
+ {
+  "from": "incident:echoleak",
+  "pred": "related_to",
+  "to": "incident:bing-exfil",
+  "basis": "editorial"
+ },
+ {
+  "from": "incident:gemini-mem",
+  "pred": "related_to",
+  "to": "incident:spaiware",
+  "basis": "editorial"
+ },
+ {
+  "from": "incident:zombai",
+  "pred": "uses",
+  "to": "incident:inj-named",
+  "basis": "editorial"
+ },
+ {
+  "from": "incident:replit-db",
+  "pred": "related_to",
+  "to": "incident:zombai",
+  "basis": "editorial"
+ },
+ {
+  "from": "incident:aircanada",
+  "pred": "related_to",
+  "to": "incident:chevy",
+  "basis": "editorial"
+ },
+ {
+  "from": "incident:hf-spaces",
+  "pred": "related_to",
+  "to": "incident:hf-models",
+  "basis": "editorial"
+ },
+ {
+  "from": "incident:gsm1k",
+  "pred": "related_to",
+  "to": "incident:lostmid",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:copilot-word",
+  "pred": "uses",
+  "to": "term:rag",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:mcp",
+  "pred": "related_to",
+  "to": "term:fncall",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:computer-use",
+  "pred": "related_to",
+  "to": "term:fncall",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:nemo",
+  "pred": "related_to",
+  "to": "term:llamaguard",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:const-class",
+  "pred": "related_to",
+  "to": "term:llamaguard",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:prompt-cache",
+  "pred": "related_to",
+  "to": "term:vllm",
+  "basis": "editorial"
+ },
+ {
+  "from": "term:judge",
+  "pred": "related_to",
+  "to": "term:rlhf",
+  "basis": "editorial"
+ }
+]

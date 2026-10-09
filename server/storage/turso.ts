@@ -4,11 +4,13 @@
 import { createClient, type Client } from '@libsql/client';
 import { World } from '../ecs/core';
 import { sql as schema } from '../../migrations/0001_ecs.mjs';
+import { sql as schema2 } from '../../migrations/0002_relations.mjs';
 import { seedWorld } from '../../scripts/lib/seed-world.mjs';
 import glossary from '../../data/glossary.json';
 import research from '../../data/research.json';
 import incidents from '../../data/incidents.json';
 import scores from '../../data/scores.json';
+import relations from '../../data/relations.json';
 import pulse from '../../atlas-pulse.json';
 
 export type StorageMode = 'turso' | 'memory';
@@ -29,7 +31,8 @@ export async function world(): Promise<World> {
       const c = client;
       ready = (async () => {
         await c.executeMultiple(schema);
-        await seedWorld(c, { glossary, research, incidents, scores, pulse: [pulse] });
+        await c.executeMultiple(schema2);
+        await seedWorld(c, { glossary, research, incidents, scores, relations, pulse: [pulse] });
       })();
     }
   }

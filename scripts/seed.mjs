@@ -8,7 +8,7 @@ const read = async (f, d) => { try { return JSON.parse(await readFile(f, 'utf8')
 const files = ['atlas-pulse.json'];
 try { (await readdir('pulse-archive')).filter(f => f.endsWith('.json')).sort().forEach(f => files.push('pulse-archive/' + f)); } catch {}
 const st = await seedWorld(db, {
-  glossary: await read('data/glossary.json', []), research: await read('data/research.json', []), incidents: await read('data/incidents.json', []), scores: await read('data/scores.json', {}),
+  glossary: await read('data/glossary.json', []), research: await read('data/research.json', []), incidents: await read('data/incidents.json', []), scores: await read('data/scores.json', {}), relations: await read('data/relations.json', []),
   pulse: await Promise.all(files.map(f => read(f, null)))
 });
 console.log(`посев: ${st.terms} терминов, ${st.research} исследований, ${st.incidents} инцидентов, ${st.benchmarks} бенчмарков (${st.results} результатов), ${st.pulse} новостей, ${st.digests} дайджестов`);

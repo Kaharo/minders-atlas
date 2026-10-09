@@ -7,9 +7,9 @@
 src/                      фронтенд (FSD)
   app/                    точка входа, роутер, провайдеры (локаль, сессия, избранное), глобальные стили
   pages/                  atlas (карта: glossary · research · incidents · benchmarks) · glossary (список) · pulse · about · not-found
-  widgets/                arch-map (canvas-движок карты + «Где помещается») · atlas-list · model-card · timeline-band · record-card · header · pulse-feed · pulse-sidebar · personas-modal · term-card
-  features/               auth · favorites · atlas-filter · persona-filter · pulse-search · glossary-filter
-  entities/               atlas-entry · model (реестр моделей и архитектурные параметры) · persona · pulse-item · term · user
+  widgets/                arch-map (canvas-движок карты + «Где помещается») · prompt-bar (запрос, шаги, активированные записи) · learn-panel · atlas-list · model-card · model-picker · timeline-band · record-card · header · pulse-feed · pulse-sidebar · personas-modal · term-card
+  features/               auth · favorites · atlas-filter · trace (учебный режим: запрос → шаги по карте) · persona-filter · pulse-search · glossary-filter
+  entities/               atlas-entry (записи, глиф, курс) · model (реестр, архитектура, онтология, поддержка блоков) · benchmark · persona · pulse-item · term · user
   shared/                 api-клиент · i18n · ui-кит · lib · config
 
 api/[...path].ts          единственная функция Vercel; импортирует бандл server-dist/handler.mjs
@@ -22,9 +22,10 @@ server/                   бэкенд (ECS)
   http/router.ts          HTTP → система
   storage/turso.ts        Turso, а без переменных — libSQL в памяти, засеянный из JSON при старте
 migrations/0001_ecs.mjs   схема: entity + таблица на каждый компонент + FTS5
+migrations/0002_relations.mjs  связи между записями (c_relation)
 scripts/lib/seed-world    посев мира из JSON (общий для Turso и режима без базы)
 scripts/                  validate-data · migrate · seed · build-pulse · reflect · draft-entries · update-scores
-data/*.json               источник правды для контента (правится через PR)
+data/*.json               источник правды для контента (правится через PR); relations.json — связи между записями
 atlas-pulse.json          последняя сборка Пульса; pulse-archive/ — по дням
 personas/*.md             профили семи персон
 .github/workflows/        pulse · drafts · scores · check · db
@@ -81,5 +82,5 @@ npm run dev                     # vite на :5173, /api проксируется
 | Правка записи | `data/*.json` → PR; `check` проверяет структуру, типы и сборку | по необходимости |
 | Новое поле или таблица | `migrations/0002_*.sql` + компонент + seed → пуш | редко |
 
-## Чего пока нет из прототипа
-Учебный режим «запрос → токены → шаги по карте», стартовый экран с уровнями, связи между записями, выбор модели по странам. Данные для этого уже есть; экраны добавляются следующими итерациями.
+## Соответствие прототипу
+Перенесено всё, что было включено в v13: карта с пятью разделами, учебный режим «запрос → шаги», выбор модели по странам, рейтинги и место модели, связи между записями, курс, Пульс, О проекте. Стартовый экран с уровнями и панель «С чего начать» в v13 были отключены и не переносились.

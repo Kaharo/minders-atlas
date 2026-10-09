@@ -1,5 +1,5 @@
 .overlay { position: absolute; inset: 0; z-index: 18; background: rgba(246, 247, 251, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 16px; }
-.box { width: min(880px, 100%); max-height: 88%; overflow: auto; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 18px 22px; border-radius: 24px; padding: 20px 22px; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 24px 64px rgba(16, 24, 64, 0.2); user-select: text; }
+.box { width: min(880px, 100%); max-height: 88%; overflow: auto; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px 22px; border-radius: 24px; padding: 20px 22px; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 24px 64px rgba(16, 24, 64, 0.2); user-select: text; }
 @media (max-width: 720px) { .box { grid-template-columns: minmax(0, 1fr); } }
 .col { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .kick { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted-3); }
@@ -24,3 +24,14 @@
 .bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
 .lbV { font-family: var(--mono); font-size: 12px; color: var(--ink-2); text-align: right; }
 .draft { color: #a16207; }
+.rels { display: flex; flex-direction: column; gap: 6px; }
+.rel { display: flex; flex-direction: column; gap: 3px; padding: 9px 12px; border-radius: 12px; background: #fff; border: 1px solid rgba(14, 18, 48, 0.08); text-align: left; }
+.rel:hover { border-color: rgba(14, 18, 48, 0.2); }
+.relS { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); text-wrap: pretty; }
+.relM { font-family: var(--mono); font-size: 10px; color: var(--muted-2); }
+.mono { font-family: var(--mono); font-size: 11px; }
+.more { align-self: flex-start; font-size: 12px; font-weight: 500; color: var(--accent); padding-top: 2px; }
+.more:hover { color: var(--accent-dark); }
+.crs { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: 14px; background: #fff; border: 1px solid rgba(59, 91, 253, 0.25); color: var(--ink-2); }
+.crs:hover { border-color: rgba(59, 91, 253, 0.6); color: var(--ink-2); }
+.crsName { font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--accent); text-wrap: pretty; }

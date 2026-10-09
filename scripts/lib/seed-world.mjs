@@ -3,7 +3,7 @@
 
 /**
  * @param {{ batch(stmts: {sql:string,args:unknown[]}[], mode:'write'): Promise<unknown>, execute(sql:string): Promise<unknown> }} db
- * @param {{ glossary?: any[], research?: any[], incidents?: any[], scores?: any, pulse?: any[] }} src  pulse: массив сборок {updated, personas, items}
+ * @param {{ glossary?: any[], research?: any[], incidents?: any[], scores?: any, relations?: any[], pulse?: any[] }} src  pulse: массив сборок {updated, personas, items}
  */
 export async function seedWorld(db, src) {
   const stmts = [];
@@ -52,6 +52,11 @@ export async function seedWorld(db, src) {
     push(`DELETE FROM c_result WHERE entity = ${E('benchmark:' + b.id)}`);
     for (const [model, v] of Object.entries(scores.results?.[b.id] ?? {})) if (typeof v === 'number') { set('benchmark:' + b.id, 'c_result', ['model', 'value'], [model, v], ['entity', 'model']); nRes++; }
   }
+  await flush();
+  // связи между записями
+  await db.execute('DELETE FROM c_relation');
+  for (const r of src.relations ?? []) if (r.from && r.to && r.pred) push(`INSERT OR IGNORE INTO c_relation (entity, target, pred, basis) SELECT a.id, b.id, ${q(r.pred)}, ${q(r.basis ?? 'editorial')} FROM entity a, entity b WHERE a.uid = ${q(r.from)} AND b.uid = ${q(r.to)}`);
+  if (scores.checked) push(`INSERT INTO meta (key, value) VALUES ('scores_checked', ${q(scores.checked)}) ON CONFLICT(key) DO UPDATE SET value = excluded.value`);
   await flush();
   // удалить записи контента, которых больше нет в data/
   const keep = content.map(q).join(',');

@@ -17,7 +17,7 @@ export const listEntries = defineSystem<ListInput, { items: Record<string, unkno
   else if (i.year === 'old') where.push({ sql: 'date.year < 2017' });
   else if (i.year) where.push({ sql: 'date.year = ?', args: [parseInt(i.year, 10)] });
   const rows = await w.query({
-    tag: i.tag, with: [Title, Domain, Kind], optional: [Topic, DateYM, Status, Severity, Course, Text],
+    tag: i.tag, with: [Title, Domain, Kind], optional: [Topic, DateYM, Status, Severity, Course, Text, Origin],
     where, orderBy: 'date.ym DESC NULLS LAST, title.ru COLLATE NOCASE', limit: i.limit ?? 1000
   });
   const ids = rows.map(r => Number(r.id));
@@ -33,15 +33,22 @@ export const listEntries = defineSystem<ListInput, { items: Record<string, unkno
 export const getEntry = defineSystem<{ tag: string; key: string }, Record<string, unknown>>('content.get', async (w, i) => {
   if (!isTag(i.tag)) fail(404, 'Неизвестный раздел');
   const e = (await w.find(`${i.tag}:${i.key}`)) ?? fail(404, 'Запись не найдена');
-  const [title, text, response, origin, domain, kind, topic, course, status, sev, date, aliases, sources, results] = await Promise.all([
+  const [title, text, response, origin, domain, kind, topic, course, status, sev, date, aliases, sources, results, rel, checked] = await Promise.all([
     w.get(e, Title), w.get(e, Text), w.get(e, Response), w.get(e, Origin), w.get(e, Domain), w.get(e, Kind), w.get(e, Topic), w.get(e, Course),
-    w.get(e, Status), w.get(e, Severity), w.get(e, DateYM), w.getAll(e, Alias), w.getAll(e, Source), w.getAll(e, Result)
+    w.get(e, Status), w.get(e, Severity), w.get(e, DateYM), w.getAll(e, Alias), w.getAll(e, Source), w.getAll(e, Result),
+    w.run(`SELECT r.pred, r.basis, CASE WHEN r.entity = ? THEN 'out' ELSE 'in' END AS dir, o.uid, g.tag, t.ru, t.en
+           FROM c_relation r JOIN entity o ON o.id = CASE WHEN r.entity = ? THEN r.target ELSE r.entity END
+           JOIN c_tag g ON g.entity = o.id AND g.tag IN ('term','research','incident','benchmark') LEFT JOIN c_title t ON t.entity = o.id
+           WHERE r.entity = ? OR r.target = ?`, [e, e, e, e]),
+    w.run("SELECT value FROM meta WHERE key = 'scores_checked'")
   ]);
   return {
     id: e, uid: `${i.tag}:${i.key}`, key: i.key, tag: i.tag, title, text, response, origin, topic: topic?.topic ?? null, course: course?.course ?? null,
     domain: domain?.domain ?? null, kind: kind?.kind ?? null, status: status?.status ?? null, sev: sev?.sev ?? null, date,
     aliases: aliases.map(a => a.alias), sources: sources.sort((a, b) => a.n - b.n).map(s => ({ title: s.title, url: s.url })),
-    results: results.length ? Object.fromEntries(results.map(r => [r.model, r.value])) : null
+    results: results.length ? Object.fromEntries(results.map(r => [r.model, r.value])) : null,
+    relations: rel.rows.map(r => ({ dir: r.dir, pred: r.pred, basis: r.basis, other: { uid: r.uid, tag: r.tag, key: String(r.uid).split(':').slice(1).join(':'), title: { ru: r.ru, en: r.en } } })),
+    checked: i.tag === 'benchmark' && checked.rows[0] ? String(checked.rows[0].value) : null
   };
 });
 

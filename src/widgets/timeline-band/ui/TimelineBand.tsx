@@ -1,10 +1,14 @@
 import { useMemo, type CSSProperties } from 'react';
 import { useLocale } from '@/shared/i18n';
+import { plural } from '@/shared/lib/format';
 import { BLOCKS, BLOCK_BY_ID, FIRST_YEAR } from '@/entities/term';
-import type { AtlasEntry } from '@/entities/atlas-entry';
+import type { AtlasEntry, Section } from '@/entities/atlas-entry';
 import s from './TimelineBand.module.css';
 
+const NOUN: Record<Section, [[string, string, string], [string, string, string]]> = { glossary: [['термин', 'термина', 'терминов'], ['term', 'terms', 'terms']], research: [['исследование', 'исследования', 'исследований'], ['study', 'studies', 'studies']], incidents: [['инцидент', 'инцидента', 'инцидентов'], ['incident', 'incidents', 'incidents']], benchmarks: [['бенчмарк', 'бенчмарка', 'бенчмарков'], ['benchmark', 'benchmarks', 'benchmarks']] };
+
 interface Props {
+  section: Section;
   entries: AtlasEntry[];          // все записи раздела (до фильтра по году)
   shown: AtlasEntry[];            // после всех фильтров
   year: string; onYear: (y: string | null) => void;
@@ -17,7 +21,7 @@ interface Props {
 const OLD_W = 0.11;   // доля ширины под сегмент «до 2017»
 
 /** Шкала времени: сжатый сегмент до 2017 и линейные годы до текущего; точка — запись, столбик — записи одного месяца. */
-export function TimelineBand({ entries, shown, year, onYear, zone, onZone, selected, onPick, counts, style }: Props) {
+export function TimelineBand({ section, entries, shown, year, onYear, zone, onZone, selected, onPick, counts, style }: Props) {
   const { t, locale } = useLocale();
   const li = locale === 'en' ? 1 : 0;
   const now = new Date().getFullYear();
@@ -41,7 +45,7 @@ export function TimelineBand({ entries, shown, year, onYear, zone, onZone, selec
     <div className={s.band} style={style}>
       <div className={s.head}>
         <span className={s.title}>{t('Шкала времени', 'Timeline')}</span>
-        <span className={s.count}>{shown.length === entries.length ? entries.length : `${shown.length} / ${entries.length}`}</span>
+        <span className={s.count}>{(() => { const dated = entries.filter(e => e.date), sh = shown.filter(e => e.date).length, ys = dated.map(e => e.date!.year), undated = entries.length - dated.length; return (sh === dated.length ? dated.length : sh + ' / ' + dated.length) + ' ' + plural(dated.length, NOUN[section][li], locale) + (ys.length ? ' · ' + Math.max(...ys) + '–' + Math.min(...ys) : '') + (undated ? t(' · ещё ' + undated + ' без даты, на шкале не показаны', ' · ' + undated + ' undated, not on the timeline') : ''); })()}</span>
         {(year || zone) && <button type="button" className={s.reset} onClick={() => { onYear(null); onZone(null); }}>{t('Сбросить', 'Reset')} ×</button>}
       </div>
       <div className={s.rail}>

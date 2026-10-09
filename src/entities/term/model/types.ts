@@ -15,6 +15,7 @@ export interface TermSummary {
   date: { ym: string; year: number; month: number | null } | null;
   status: { status: string } | null;
   text: Bilingual | null;
+  origin: Bilingual | null;
   aliases: string[];
 }
 
