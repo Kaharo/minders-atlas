@@ -6,10 +6,10 @@
 ```
 src/                      фронтенд (FSD)
   app/                    точка входа, роутер, провайдеры (локаль, сессия, избранное), глобальные стили
-  pages/                  pulse · glossary · not-found
-  widgets/                header · pulse-feed · pulse-sidebar · personas-modal · term-card
-  features/               auth · favorites · persona-filter · pulse-search · glossary-filter
-  entities/               persona · pulse-item · term · user
+  pages/                  atlas (карта: glossary · research · incidents · benchmarks) · glossary (список) · pulse · about · not-found
+  widgets/                arch-map (canvas-движок карты + «Где помещается») · atlas-list · model-card · timeline-band · record-card · header · pulse-feed · pulse-sidebar · personas-modal · term-card
+  features/               auth · favorites · atlas-filter · persona-filter · pulse-search · glossary-filter
+  entities/               atlas-entry · model (реестр моделей и архитектурные параметры) · persona · pulse-item · term · user
   shared/                 api-клиент · i18n · ui-кит · lib · config
 
 api/[...path].ts          единственная функция Vercel; импортирует бандл server-dist/handler.mjs
@@ -81,5 +81,5 @@ npm run dev                     # vite на :5173, /api проксируется
 | Правка записи | `data/*.json` → PR; `check` проверяет структуру, типы и сборку | по необходимости |
 | Новое поле или таблица | `migrations/0002_*.sql` + компонент + seed → пуш | редко |
 
-## Что переносится следующими итерациями
-Вкладки «Исследования», «Инциденты», «Рейтинги», страница «О проекте», канвас-карта архитектуры. Данные для них уже в базе и доступны через API.
+## Чего пока нет из прототипа
+Учебный режим «запрос → токены → шаги по карте», стартовый экран с уровнями, связи между записями, выбор модели по странам. Данные для этого уже есть; экраны добавляются следующими итерациями.

@@ -1,2 +1,3 @@
-.shell { min-height: 100%; display: flex; flex-direction: column; }
-.main { flex: 1; max-width: 1180px; width: 100%; margin: 0 auto; padding: 24px 20px 72px; }
+.shell { height: 100%; display: flex; flex-direction: column; }
+.main { flex: 1; max-width: 1180px; width: 100%; margin: 0 auto; padding: 24px 20px 72px; overflow-y: auto; }
+.full { flex: 1; min-height: 0; display: flex; flex-direction: column; position: relative; }

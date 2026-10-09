@@ -9,10 +9,10 @@ import { PersonaList } from '@/features/persona-filter';
 import s from './PulseSidebar.module.css';
 
 const CAT: Record<string, { color: string; label: [string, string]; route: (k: string) => string | null }> = {
-  term: { color: '#3b5bfd', label: ['Термины', 'Terms'], route: k => ROUTES.term(k) },
-  research: { color: '#a855f7', label: ['Исследования', 'Research'], route: () => null },
-  incident: { color: '#ef4444', label: ['Инциденты', 'Incidents'], route: () => null },
-  benchmark: { color: '#f59e0b', label: ['Рейтинги', 'Rankings'], route: () => null }
+  term: { color: '#3b5bfd', label: ['Термины', 'Terms'], route: k => ROUTES.atlas('glossary', k) },
+  research: { color: '#a855f7', label: ['Исследования', 'Research'], route: k => ROUTES.atlas('research', k) },
+  incident: { color: '#ef4444', label: ['Инциденты', 'Incidents'], route: k => ROUTES.atlas('incidents', k) },
+  benchmark: { color: '#f59e0b', label: ['Рейтинги', 'Rankings'], route: k => ROUTES.atlas('benchmarks', k) }
 };
 
 export function PulseSidebar({ counts, onOpenPersonas }: { counts: Record<string, number> | null; onOpenPersonas: () => void }) {

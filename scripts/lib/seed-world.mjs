@@ -43,7 +43,9 @@ export async function seedWorld(db, src) {
   };
   glossary.forEach(x => entry('term', x));
   research.forEach(x => entry('research', x));
-  incidents.forEach(x => entry('incident', { ...x, ru: { where: x.where, title: x.title, text: x.text, response: x.response }, en: x.en }));
+  // Старые домены инцидентов → пять блоков карты
+  const OLD_TO = { prompting: 'd_context', context: 'd_context', knowledge: 'd_context', memory: 'd_context', tools: 'd_runtime', agents: 'd_runtime', evaluation: 'd_quality', observability: 'd_quality', deployment: 'd_quality', optimization: 'd_quality', guardrails: 'd_trust', security: 'd_trust' };
+  incidents.forEach(x => entry('incident', { ...x, domain: OLD_TO[x.domain] ?? x.domain, topic: x.domain in OLD_TO ? x.domain : undefined, ru: { where: x.where, title: x.title, text: x.text, response: x.response }, en: x.en }));
   let nRes = 0;
   for (const b of scores.benchmarks ?? []) {
     entry('benchmark', { ...b, ru: b.ru ?? { title: b.title ?? b.name ?? b.id, text: b.text ?? b.desc ?? null }, en: b.en ?? null });

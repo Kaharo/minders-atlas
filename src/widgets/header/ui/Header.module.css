@@ -1,4 +1,4 @@
-.header { position: sticky; top: 0; z-index: 10; margin: 14px 18px 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; padding: 7px 10px 7px 18px; border-radius: 999px; background: var(--glass-strong); backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: var(--shadow-float); }
+.header { position: sticky; top: 0; z-index: 10; flex: none; margin: 14px 18px 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; padding: 7px 10px 7px 18px; border-radius: 999px; background: var(--glass-strong); backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: var(--shadow-float); }
 .brand { display: flex; align-items: center; gap: 8px; color: var(--ink); }
 .brand:hover { color: var(--ink); }
 .logo { width: 9px; height: 9px; border-radius: 50%; background: linear-gradient(135deg, #3b5bfd, #a855f7); box-shadow: 0 0 10px rgba(99, 102, 241, 0.55); }

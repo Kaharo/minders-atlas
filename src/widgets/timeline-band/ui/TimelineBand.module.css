@@ -1,0 +1,18 @@
+.band { position: absolute; bottom: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 3; pointer-events: none; }
+.head { display: flex; align-items: baseline; gap: 8px; padding: 0 6px; }
+.title { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted-3); }
+.count { font-family: var(--mono); font-size: 10px; color: var(--muted-2); }
+.reset { font-size: 11px; color: var(--accent); pointer-events: auto; margin-left: auto; }
+.rail { position: relative; height: 62px; margin: 0 6px; }
+.axis { position: absolute; left: 0; right: 0; bottom: 17px; height: 1px; background: rgba(14, 18, 48, 0.16); }
+.year { position: absolute; top: 0; bottom: 0; pointer-events: auto; }
+.tick { position: absolute; left: 0; bottom: 14px; width: 1px; height: 7px; background: rgba(14, 18, 48, 0.22); }
+.yl { position: absolute; left: -2px; bottom: 0; padding: 0 5px; border-radius: 999px; white-space: nowrap; font-family: var(--mono); font-size: 9.5px; line-height: 13px; color: var(--muted-2); }
+.ylOn { background: var(--ink); color: #fff; box-shadow: 0 2px 8px rgba(16, 24, 64, 0.2); }
+.dot { position: absolute; transform: translateX(-50%); border-radius: 50%; pointer-events: auto; transition: transform 0.12s; }
+.dot:hover { transform: translateX(-50%) scale(1.45); }
+.zones { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 4px; padding: 2px 0 0; }
+.zone { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 999px; font-size: 10.5px; color: var(--muted); pointer-events: auto; white-space: nowrap; }
+.zone:hover { color: var(--ink); }
+.zoneOn { background: #fff; color: var(--ink); box-shadow: var(--shadow-pill); }
+.zone i { width: 7px; height: 7px; border-radius: 50%; }

@@ -1,0 +1,15 @@
+.stage { position: relative; flex: 1; min-height: 0; overflow: hidden; }
+.left { position: absolute; left: 18px; top: 12px; bottom: 150px; width: 304px; display: flex; flex-direction: column; z-index: 4; pointer-events: none; }
+.right { position: absolute; right: 18px; top: 12px; bottom: 150px; width: 292px; display: flex; flex-direction: column; z-index: 4; pointer-events: none; }
+.band { left: 362px; right: 350px; }
+.status { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); z-index: 5; padding: 6px 12px; border-radius: 999px; font-size: 12px; color: var(--muted); background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.85); box-shadow: var(--shadow-pill); }
+.sheet { display: none; }
+.tabs { display: none; }
+@media (max-width: 1100px) { .right { display: none; } .band { right: 18px; } }
+@media (max-width: 760px) {
+  .left, .band { display: none; }
+  .tabs { position: absolute; left: 12px; bottom: 12px; z-index: 6; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.85); box-shadow: var(--shadow-pill); }
+  .tab { padding: 5px 13px; border-radius: 999px; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+  .tabOn { background: var(--ink); color: #fff; }
+  .sheet { position: absolute; left: 12px; right: 12px; bottom: 56px; max-height: 50%; display: flex; flex-direction: column; z-index: 6; }
+}

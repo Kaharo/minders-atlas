@@ -7,7 +7,7 @@ await build({
   bundle: true,
   platform: 'node',
   format: 'esm',
-  target: 'node20',
+  target: 'node22',
   outfile: 'server-dist/handler.mjs',
   external: ['@libsql/client'],          // нативная библиотека остаётся в node_modules
   logLevel: 'info'
