@@ -1,15 +1,104 @@
 {
- "updated": "2026-10-10T10:27:47.761Z",
+ "updated": "2026-10-11T10:39:30.913Z",
  "days": 14,
  "personas": {},
  "items": [
+  {
+   "id": "hn50039630",
+   "title": "AI agents in a stand-up call",
+   "url": "https://atoll92.github.io/agent-standup/",
+   "ts": 1791690167000,
+   "src": "Hacker News",
+   "score": 44,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50039092",
+   "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+   "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+   "ts": 1791684158000,
+   "src": "Hacker News",
+   "score": 98,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50038865",
+   "title": "Anthropic asks users to stop being mean to Claude",
+   "url": "https://www.theregister.com/ai-and-ml/2026/10/09/anthropic-asks-users-to-stop-being-mean-to-claude/5302218",
+   "ts": 1791681442000,
+   "src": "Hacker News",
+   "score": 48,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50038383",
+   "title": "Anthropic Bans Cruelty to Claude, Still Won't Say What It Protects",
+   "url": "https://rews.cc/a/anthropic-bans-cruelty-to-claude-still-won-t-say-what-it-pro-bd99f6",
+   "ts": 1791677311000,
+   "src": "Hacker News",
+   "score": 61,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50035550",
+   "title": "Anthropic discloses 2 months old fake tip to police among new rogue AI incidents",
+   "url": "https://www.reuters.com/world/us/anthropic-ai-model-submits-false-homicide-tip-police-website-2026-10-09/",
+   "ts": 1791655854000,
+   "src": "Hacker News",
+   "score": 41,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50033678",
+   "title": "Tom Brown used GOP ties to broker a $1.25B/month SpaceX compute deal",
+   "url": "https://wsj.com/tech/ai/tom-brown-athropic-669005ad",
+   "ts": 1791644678000,
+   "src": "Hacker News",
+   "score": 134,
+   "ps": [
+    "meridian",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50033517",
+   "title": "My personal AI agent posted my bank details on company Slack",
+   "url": "https://www.businessinsider.com/personal-ai-agent-grok-bot-posted-bank-details-company-slack-2026-10",
+   "ts": 1791643576000,
+   "src": "Hacker News",
+   "score": 61,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50031614",
+   "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+   "url": "https://github.com/rociiu/talorys",
+   "ts": 1791629529000,
+   "src": "Hacker News",
+   "score": 296,
+   "ps": [
+    "orbix"
+   ]
+  },
   {
    "id": "hn50027694",
    "title": "Rewriting Prime Agent in Rust",
    "url": "https://www.primeintellect.ai/blog/prime-agent-rust",
    "ts": 1791587185000,
    "src": "Hacker News",
-   "score": 52,
+   "score": 64,
    "ps": [
     "orbix"
    ]
@@ -20,7 +109,7 @@
    "url": "https://www.nbcphiladelphia.com/news/local/anthropic-ai-model-submits-false-tip-on-unsolved-philly-murder-police-say/4477051/",
    "ts": 1791583235000,
    "src": "Hacker News",
-   "score": 164,
+   "score": 209,
    "ps": [
     "orbix"
    ]
@@ -53,7 +142,7 @@
    "url": "https://bsky.app/profile/opinionhaver.bsky.social/post/3mxfo2mdjqs2z",
    "ts": 1791559139000,
    "src": "Hacker News",
-   "score": 93,
+   "score": 95,
    "ps": [
     "orbix"
    ]
@@ -64,7 +153,7 @@
    "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
    "ts": 1791543828000,
    "src": "Hacker News",
-   "score": 399,
+   "score": 413,
    "ps": [
     "orbix"
    ]
@@ -75,9 +164,20 @@
    "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
    "ts": 1791540026000,
    "src": "Hacker News",
-   "score": 337,
+   "score": 361,
    "ps": [
     "lexicon"
+   ]
+  },
+  {
+   "id": "hn50016956",
+   "title": "Mxc: Microsoft Execution Containers version 1.0.0",
+   "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+   "ts": 1791528769000,
+   "src": "Hacker News",
+   "score": 192,
+   "ps": [
+    "orbix"
    ]
   },
   {
@@ -86,7 +186,7 @@
    "url": "https://karagila.org/2026/openai-pp/",
    "ts": 1791502183000,
    "src": "Hacker News",
-   "score": 203,
+   "score": 208,
    "ps": [
     "lexicon"
    ]
@@ -97,7 +197,7 @@
    "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
    "ts": 1791479282000,
    "src": "Hacker News",
-   "score": 87,
+   "score": 90,
    "ps": [
     "orbix"
    ]
@@ -108,7 +208,7 @@
    "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
    "ts": 1791477958000,
    "src": "Hacker News",
-   "score": 424,
+   "score": 429,
    "ps": [
     "meridian"
    ]
@@ -119,7 +219,7 @@
    "url": "https://opper.ai/jevman-benchmark/",
    "ts": 1791477253000,
    "src": "Hacker News",
-   "score": 73,
+   "score": 78,
    "ps": [
     "orbix"
    ]
@@ -164,7 +264,7 @@
    "url": "https://twitter.com/danintheory/status/2108065033070789090",
    "ts": 1791443140000,
    "src": "Hacker News",
-   "score": 376,
+   "score": 377,
    "ps": [
     "lexicon"
    ]
@@ -175,7 +275,7 @@
    "url": "https://github.com/pingdotgg/ts-rust",
    "ts": 1791420360000,
    "src": "Hacker News",
-   "score": 112,
+   "score": 115,
    "ps": [
     "orbix"
    ]
@@ -186,7 +286,7 @@
    "url": "https://huggingface.co/papers/2610.11216",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 5,
    "ps": [
     "lexicon"
    ]
@@ -197,7 +297,7 @@
    "url": "https://huggingface.co/papers/2609.33987",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 8,
+   "score": 14,
    "ps": [
     "lexicon",
     "orbix"
@@ -209,7 +309,7 @@
    "url": "https://huggingface.co/papers/2610.11169",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 5,
    "ps": [
     "lexicon",
     "orbix"
@@ -221,7 +321,7 @@
    "url": "https://huggingface.co/papers/2610.11975",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 5,
    "ps": [
     "lexicon"
    ]
@@ -232,7 +332,7 @@
    "url": "https://huggingface.co/papers/2610.12423",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 18,
    "ps": [
     "lexicon"
    ]
@@ -243,7 +343,7 @@
    "url": "https://huggingface.co/papers/2610.11566",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 7,
    "ps": [
     "lexicon"
    ]
@@ -254,7 +354,7 @@
    "url": "https://huggingface.co/papers/2610.12448",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -266,7 +366,7 @@
    "url": "https://huggingface.co/papers/2610.12183",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 8,
    "ps": [
     "lexicon",
     "orbix"
@@ -278,7 +378,7 @@
    "url": "https://huggingface.co/papers/2610.11794",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 27,
+   "score": 35,
    "ps": [
     "lexicon",
     "orbix"
@@ -290,7 +390,7 @@
    "url": "https://huggingface.co/papers/2610.12399",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 8,
    "ps": [
     "lexicon"
    ]
@@ -301,7 +401,7 @@
    "url": "https://huggingface.co/papers/2610.11287",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 37,
    "ps": [
     "lexicon"
    ]
@@ -312,7 +412,7 @@
    "url": "https://huggingface.co/papers/2610.12459",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 8,
    "ps": [
     "lexicon",
     "orbix"
@@ -324,7 +424,7 @@
    "url": "https://huggingface.co/papers/2610.12421",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 33,
+   "score": 38,
    "ps": [
     "lexicon"
    ]
@@ -335,7 +435,7 @@
    "url": "https://huggingface.co/papers/2605.22949",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 5,
    "ps": [
     "lexicon",
     "orbix"
@@ -347,7 +447,7 @@
    "url": "https://huggingface.co/papers/2610.11959",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 62,
+   "score": 72,
    "ps": [
     "lexicon"
    ]
@@ -358,7 +458,7 @@
    "url": "https://huggingface.co/papers/2501.09223",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 36,
+   "score": 42,
    "ps": [
     "lexicon",
     "archive",
@@ -371,7 +471,7 @@
    "url": "https://huggingface.co/papers/2610.12461",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 34,
+   "score": 42,
    "ps": [
     "lexicon"
    ]
@@ -382,7 +482,7 @@
    "url": "https://huggingface.co/papers/2610.12452",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -394,7 +494,7 @@
    "url": "https://huggingface.co/papers/2610.12458",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 12,
+   "score": 15,
    "ps": [
     "lexicon",
     "meridian",
@@ -407,7 +507,7 @@
    "url": "https://huggingface.co/papers/2610.12360",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 8,
    "ps": [
     "lexicon",
     "orbix"
@@ -419,7 +519,7 @@
    "url": "https://huggingface.co/papers/2610.12369",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 12,
+   "score": 19,
    "ps": [
     "lexicon",
     "orbix"
@@ -431,7 +531,7 @@
    "url": "https://huggingface.co/papers/2610.12299",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 46,
+   "score": 52,
    "ps": [
     "lexicon",
     "orbix"
@@ -443,7 +543,7 @@
    "url": "https://huggingface.co/papers/2610.12419",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 19,
+   "score": 24,
    "ps": [
     "lexicon",
     "orbix"
@@ -455,7 +555,7 @@
    "url": "https://huggingface.co/papers/2610.12355",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 8,
    "ps": [
     "lexicon",
     "archive",
@@ -468,7 +568,7 @@
    "url": "https://huggingface.co/papers/2610.12289",
    "ts": 1791403200000,
    "src": "HF Papers",
-   "score": 29,
+   "score": 34,
    "ps": [
     "lexicon",
     "meridian"
@@ -480,7 +580,7 @@
    "url": "https://debasishg.github.io/blog/push-ifs-up-fors-down/",
    "ts": 1791398598000,
    "src": "Hacker News",
-   "score": 190,
+   "score": 192,
    "ps": [
     "orbix"
    ]
@@ -503,7 +603,7 @@
    "url": "https://www.anthropic.com/claude-haiku-5-5",
    "ts": 1791396092000,
    "src": "Hacker News",
-   "score": 1044,
+   "score": 1045,
    "ps": [
     "orbix"
    ]
@@ -514,7 +614,7 @@
    "url": "https://agent.reviews/",
    "ts": 1791392351000,
    "src": "Hacker News",
-   "score": 71,
+   "score": 72,
    "ps": [
     "orbix"
    ]
@@ -525,7 +625,7 @@
    "url": "https://fiveminutesforward.com/post/2026-10-04-telegraph-test/",
    "ts": 1791374676000,
    "src": "Hacker News",
-   "score": 94,
+   "score": 96,
    "ps": [
     "orbix"
    ]
@@ -553,6 +653,17 @@
    ]
   },
   {
+   "id": "hn49985740",
+   "title": "OpenAI just dropped 700 preprints of mathematical proofs and counterexamples",
+   "url": "https://github.com/openai/math/tree/main/preprints",
+   "ts": 1791329822000,
+   "src": "Hacker News",
+   "score": 42,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
    "id": "hn49984976",
    "title": "Mathematical manuscripts and supporting proof artifacts produced by OpenAI",
    "url": "https://github.com/openai/math",
@@ -564,12 +675,23 @@
    ]
   },
   {
+   "id": "hn49984923",
+   "title": "Sharing AI progress in mathematics",
+   "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+   "ts": 1791325041000,
+   "src": "Hacker News",
+   "score": 1348,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
    "id": "hf2610.09280",
    "title": "Evaluating the Transfer of Co-Evolved Communication from 2D to 3D Simulation",
    "url": "https://huggingface.co/papers/2610.09280",
    "ts": 1791316800000,
    "src": "HF Papers",
-   "score": 0,
+   "score": 4,
    "ps": [
     "lexicon"
    ]
@@ -580,7 +702,7 @@
    "url": "https://huggingface.co/papers/2610.10355",
    "ts": 1791316800000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 8,
    "ps": [
     "lexicon",
     "archive",
@@ -593,7 +715,7 @@
    "url": "https://huggingface.co/papers/2610.09639",
    "ts": 1791316800000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "apex"
@@ -605,18 +727,18 @@
    "url": "https://news.ycombinator.com/item?id=49982498",
    "ts": 1791312841000,
    "src": "Hacker News",
-   "score": 568,
+   "score": 569,
    "ps": [
     "orbix"
    ]
   },
   {
-   "id": "hn49980399",
-   "title": "Show HN: Durable Actors – OSS Durable Objects with configurable compute",
-   "url": "https://github.com/TerseAI/durable-actors",
-   "ts": 1791302299000,
+   "id": "hn49981197",
+   "title": "Utah to let AI examine patients and prescribe medication without human oversight",
+   "url": "https://www.techspot.com/news/114111-utah-become-first-state-ai-examine-patients-prescribe.html",
+   "ts": 1791306112000,
    "src": "Hacker News",
-   "score": 51,
+   "score": 140,
    "ps": [
     "orbix"
    ]
@@ -671,7 +793,7 @@
    "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
    "ts": 1791234021000,
    "src": "Hacker News",
-   "score": 493,
+   "score": 494,
    "ps": [
     "lexicon",
     "orbix"
@@ -683,7 +805,7 @@
    "url": "https://huggingface.co/papers/2606.03335",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 8,
+   "score": 12,
    "ps": [
     "lexicon",
     "orbix"
@@ -695,7 +817,7 @@
    "url": "https://huggingface.co/papers/2610.08585",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "archive",
@@ -708,7 +830,7 @@
    "url": "https://huggingface.co/papers/2610.09146",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "orbix"
@@ -720,7 +842,7 @@
    "url": "https://huggingface.co/papers/2610.04875",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 7,
    "ps": [
     "lexicon",
     "archive",
@@ -733,7 +855,7 @@
    "url": "https://huggingface.co/papers/2610.08927",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 8,
    "ps": [
     "lexicon",
     "orbix"
@@ -745,7 +867,7 @@
    "url": "https://huggingface.co/papers/2610.09059",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "orbix"
@@ -757,7 +879,7 @@
    "url": "https://huggingface.co/papers/2610.09087",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 33,
+   "score": 38,
    "ps": [
     "lexicon",
     "archive",
@@ -770,7 +892,7 @@
    "url": "https://huggingface.co/papers/2610.08917",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "archive",
@@ -783,7 +905,7 @@
    "url": "https://huggingface.co/papers/2610.08941",
    "ts": 1791230400000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 5,
    "ps": [
     "lexicon",
     "archive",
@@ -796,7 +918,7 @@
    "url": "https://reflection.ai/blog/introducing-beam",
    "ts": 1791227795000,
    "src": "Hacker News",
-   "score": 553,
+   "score": 554,
    "ps": [
     "orbix"
    ]
@@ -851,7 +973,7 @@
    "url": "https://huggingface.co/papers/2610.06496",
    "ts": 1791144000000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "orbix"
@@ -863,9 +985,20 @@
    "url": "https://huggingface.co/papers/2610.06801",
    "ts": 1791144000000,
    "src": "HF Papers",
-   "score": 31,
+   "score": 37,
    "ps": [
     "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49954015",
+   "title": "Show HN: AstroHelm – Use your phone camera to aim a telescope or telephoto lens",
+   "url": "https://astrohelm.app/",
+   "ts": 1791122469000,
+   "src": "Hacker News",
+   "score": 99,
+   "ps": [
     "orbix"
    ]
   },
@@ -919,7 +1052,7 @@
    "url": "https://huggingface.co/papers/2610.04977",
    "ts": 1791057600000,
    "src": "HF Papers",
-   "score": 11,
+   "score": 14,
    "ps": [
     "lexicon",
     "orbix"
@@ -931,7 +1064,7 @@
    "url": "https://www.telegraph.co.uk/business/2026/10/02/anthropic-lobbied-pope-to-argue-ai-conscious-being/",
    "ts": 1791055990000,
    "src": "Hacker News",
-   "score": 60,
+   "score": 61,
    "ps": [
     "orbix"
    ]
@@ -1000,7 +1133,7 @@
    "url": "https://www.reddit.com/r/GeminiAI/comments/1wwalmc/wtf_google_getting_rid_of_free_gemini_flash_and/",
    "ts": 1791018799000,
    "src": "Hacker News",
-   "score": 59,
+   "score": 60,
    "ps": [
     "orbix"
    ]
@@ -1022,7 +1155,7 @@
    "url": "https://github.com/anteloc/ldraw-nova",
    "ts": 1790971215000,
    "src": "Hacker News",
-   "score": 169,
+   "score": 170,
    "ps": [
     "orbix"
    ]
@@ -1055,7 +1188,7 @@
    "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
    "ts": 1790948861000,
    "src": "Hacker News",
-   "score": 166,
+   "score": 168,
    "ps": [
     "apex",
     "orbix"
@@ -1112,7 +1245,7 @@
    "url": "https://huggingface.co/papers/2610.03136",
    "ts": 1790884800000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 5,
    "ps": [
     "lexicon",
     "meridian",
@@ -1125,7 +1258,7 @@
    "url": "https://huggingface.co/papers/2610.02967",
    "ts": 1790884800000,
    "src": "HF Papers",
-   "score": 25,
+   "score": 29,
    "ps": [
     "lexicon",
     "orbix"
@@ -1137,7 +1270,7 @@
    "url": "https://huggingface.co/papers/2610.02959",
    "ts": 1790884800000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 5,
    "ps": [
     "lexicon",
     "meridian",
@@ -1178,6 +1311,17 @@
    ]
   },
   {
+   "id": "hn49922569",
+   "title": "Ask HN: Who is hiring? (October 2026)",
+   "url": "https://news.ycombinator.com/item?id=49922569",
+   "ts": 1790866927000,
+   "src": "Hacker News",
+   "score": 272,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
    "id": "hn49922568",
    "title": "Ask HN: Who wants to be hired? (October 2026)",
    "url": "https://news.ycombinator.com/item?id=49922568",
@@ -1186,17 +1330,6 @@
    "score": 136,
    "ps": [
     "orbix"
-   ]
-  },
-  {
-   "id": "hn49922569",
-   "title": "Ask HN: Who is hiring? (October 2026)",
-   "url": "https://news.ycombinator.com/item?id=49922569",
-   "ts": 1790866927000,
-   "src": "Hacker News",
-   "score": 271,
-   "ps": [
-    "meridian"
    ]
   },
   {
@@ -1243,141 +1376,6 @@
    "score": 63,
    "ps": [
     "orbix"
-   ]
-  },
-  {
-   "id": "hn49913571",
-   "title": "Gemini 4 Argon",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-   "ts": 1790798677000,
-   "src": "Hacker News",
-   "score": 1704,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49911995",
-   "title": "Launch HN: Magnitude (YC S25) – Self-optimizing inference engine for agents",
-   "url": "https://github.com/magnitudedev/magnitude",
-   "ts": 1790789860000,
-   "src": "Hacker News",
-   "score": 194,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49911500",
-   "title": "Show HN: Open-source model routing for coding agents at Astra-level performance",
-   "url": "https://news.ycombinator.com/item?id=49911500",
-   "ts": 1790787504000,
-   "src": "Hacker News",
-   "score": 123,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49909648",
-   "title": "Show HN: Lathoa, a math app for kids where the AI is wrong on purpose",
-   "url": "https://lathoa.ai/en",
-   "ts": 1790779137000,
-   "src": "Hacker News",
-   "score": 54,
-   "ps": [
-    "archive",
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2609.39068",
-   "title": "SparseEngine: Sparse-First Inference Engine",
-   "url": "https://huggingface.co/papers/2609.39068",
-   "ts": 1790712000000,
-   "src": "HF Papers",
-   "score": 13,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49897336",
-   "title": "OpenAI Targets $30B in New Funding at $1.4T Value",
-   "url": "https://www.bloomberg.com/news/articles/2026-09-29/openai-targets-30-billion-in-new-funding-at-1-4-trillion-value",
-   "ts": 1790703861000,
-   "src": "Hacker News",
-   "score": 44,
-   "ps": [
-    "meridian"
-   ]
-  },
-  {
-   "id": "hn49897075",
-   "title": "GLM-5.3 and the spread of advanced cyber capabilities",
-   "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
-   "ts": 1790703086000,
-   "src": "Hacker News",
-   "score": 256,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49893709",
-   "title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions",
-   "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
-   "ts": 1790691324000,
-   "src": "Hacker News",
-   "score": 164,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49891721",
-   "title": "Mistral CEO says U.S. AI safety debate masks competitors' 'negligence'",
-   "url": "https://www.cnbc.com/2026/09/29/mistral-ai-safety-openai-anthropic.html",
-   "ts": 1790683267000,
-   "src": "Hacker News",
-   "score": 51,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49890226",
-   "title": "A Privacy Analysis of Web and Mobile Conversational AI Agents [pdf]",
-   "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
-   "ts": 1790672621000,
-   "src": "Hacker News",
-   "score": 426,
-   "ps": [
-    "archive",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49889780",
-   "title": "Meta's new AI agent built lists of people in vulnerable groups on request",
-   "url": "https://hntrbrk.com/breaking-news/muse-doxxing",
-   "ts": 1790669200000,
-   "src": "Hacker News",
-   "score": 85,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn49889306",
-   "title": "OpenAI: Tomorrow we are re-opening the Pro $200 subscription",
-   "url": "https://twitter.com/thsottiaux/status/2104823812042940713",
-   "ts": 1790665673000,
-   "src": "Hacker News",
-   "score": 77,
-   "ps": [
-    "meridian"
    ]
   }
  ]
