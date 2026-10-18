@@ -1,17 +1,50 @@
 {
- "updated": "2026-10-17T08:19:37.837Z",
+ "updated": "2026-10-18T08:39:36.692Z",
  "days": 14,
  "personas": {},
  "items": [
+  {
+   "id": "hn50137950",
+   "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+   "url": "https://sphinx-six-theta.vercel.app/",
+   "ts": 1792298029000,
+   "src": "Hacker News",
+   "score": 103,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50132502",
+   "title": "OpenAI discloses four more rogue incidents",
+   "url": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/",
+   "ts": 1792254672000,
+   "src": "Hacker News",
+   "score": 125,
+   "ps": [
+    "orbix"
+   ]
+  },
   {
    "id": "hn50127979",
    "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
    "url": "https://llmspeed.dev/",
    "ts": 1792211813000,
    "src": "Hacker News",
-   "score": 49,
+   "score": 286,
    "ps": [
     "orbix"
+   ]
+  },
+  {
+   "id": "hn50126334",
+   "title": "Show HN: Fakeipedia – Wikipedia for worlds that don't exist",
+   "url": "https://fakeipedia.org",
+   "ts": 1792194724000,
+   "src": "Hacker News",
+   "score": 41,
+   "ps": [
+    "archive"
    ]
   },
   {
@@ -20,7 +53,7 @@
    "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
    "ts": 1792177487000,
    "src": "Hacker News",
-   "score": 330,
+   "score": 459,
    "ps": [
     "orbix"
    ]
@@ -31,7 +64,7 @@
    "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
    "ts": 1792176959000,
    "src": "Hacker News",
-   "score": 850,
+   "score": 1034,
    "ps": [
     "orbix"
    ]
@@ -42,7 +75,7 @@
    "url": "https://github.com/cobanov/PS5LM",
    "ts": 1792175555000,
    "src": "Hacker News",
-   "score": 279,
+   "score": 367,
    "ps": [
     "orbix"
    ]
@@ -53,7 +86,7 @@
    "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
    "ts": 1792174302000,
    "src": "Hacker News",
-   "score": 247,
+   "score": 290,
    "ps": [
     "orbix"
    ]
@@ -64,7 +97,7 @@
    "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
    "ts": 1792173618000,
    "src": "Hacker News",
-   "score": 135,
+   "score": 172,
    "ps": [
     "orbix"
    ]
@@ -75,7 +108,7 @@
    "url": "https://news.ycombinator.com/item?id=50121562",
    "ts": 1792171902000,
    "src": "Hacker News",
-   "score": 87,
+   "score": 88,
    "ps": [
     "orbix"
    ]
@@ -86,7 +119,7 @@
    "url": "https://rstation.ai/",
    "ts": 1792161343000,
    "src": "Hacker News",
-   "score": 52,
+   "score": 58,
    "ps": [
     "lexicon",
     "orbix"
@@ -98,7 +131,7 @@
    "url": "https://starskirmish.com/bench/v0-2/",
    "ts": 1792160324000,
    "src": "Hacker News",
-   "score": 217,
+   "score": 243,
    "ps": [
     "orbix"
    ]
@@ -109,7 +142,7 @@
    "url": "https://onlinelibrary.wiley.com/doi/epdf/10.1002/aaai.70113",
    "ts": 1792160194000,
    "src": "Hacker News",
-   "score": 51,
+   "score": 56,
    "ps": [
     "orbix"
    ]
@@ -120,7 +153,7 @@
    "url": "https://sunshowers.io/posts/anthropic-mononoke-2/",
    "ts": 1792083919000,
    "src": "Hacker News",
-   "score": 253,
+   "score": 254,
    "ps": [
     "orbix"
    ]
@@ -142,7 +175,7 @@
    "url": "https://huggingface.co/papers/2610.21439",
    "ts": 1792036024000,
    "src": "HF Papers",
-   "score": 22,
+   "score": 56,
    "ps": [
     "lexicon"
    ]
@@ -175,7 +208,7 @@
    "url": "https://sunshowers.io/posts/anthropic-mononoke/",
    "ts": 1792009854000,
    "src": "Hacker News",
-   "score": 425,
+   "score": 426,
    "ps": [
     "orbix"
    ]
@@ -198,7 +231,7 @@
    "url": "https://huggingface.co/papers/2610.21261",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 100,
+   "score": 106,
    "ps": [
     "lexicon"
    ]
@@ -209,7 +242,7 @@
    "url": "https://huggingface.co/papers/2610.22280",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -244,7 +277,7 @@
    "url": "https://huggingface.co/papers/2610.22371",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "lexicon"
    ]
@@ -267,7 +300,7 @@
    "url": "https://huggingface.co/papers/2610.22352",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 8,
    "ps": [
     "lexicon"
    ]
@@ -278,7 +311,7 @@
    "url": "https://huggingface.co/papers/2610.21095",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 39,
+   "score": 40,
    "ps": [
     "lexicon",
     "orbix"
@@ -290,7 +323,7 @@
    "url": "https://huggingface.co/papers/2610.22350",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 281,
+   "score": 285,
    "ps": [
     "lexicon"
    ]
@@ -301,7 +334,7 @@
    "url": "https://huggingface.co/papers/2610.21656",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 27,
+   "score": 28,
    "ps": [
     "lexicon",
     "gaya"
@@ -313,7 +346,7 @@
    "url": "https://huggingface.co/papers/2610.22355",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 30,
+   "score": 32,
    "ps": [
     "lexicon",
     "orbix"
@@ -337,7 +370,7 @@
    "url": "https://huggingface.co/papers/2610.22200",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 315,
+   "score": 316,
    "ps": [
     "lexicon",
     "orbix"
@@ -360,7 +393,7 @@
    "url": "https://huggingface.co/papers/2610.22276",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 259,
+   "score": 352,
    "ps": [
     "lexicon"
    ]
@@ -384,7 +417,7 @@
    "url": "https://huggingface.co/papers/2610.21601",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 660,
+   "score": 667,
    "ps": [
     "lexicon",
     "apex"
@@ -432,7 +465,7 @@
    "url": "https://huggingface.co/papers/2610.22174",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 51,
+   "score": 54,
    "ps": [
     "lexicon",
     "orbix"
@@ -456,7 +489,7 @@
    "url": "https://huggingface.co/papers/2610.21463",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 21,
    "ps": [
     "lexicon",
     "orbix"
@@ -468,7 +501,7 @@
    "url": "https://petal.live/",
    "ts": 1792002194000,
    "src": "Hacker News",
-   "score": 221,
+   "score": 225,
    "ps": [
     "orbix"
    ]
@@ -479,7 +512,7 @@
    "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
    "ts": 1791999923000,
    "src": "Hacker News",
-   "score": 946,
+   "score": 948,
    "ps": [
     "orbix"
    ]
@@ -490,7 +523,7 @@
    "url": "https://lwn.net/Articles/1100449/",
    "ts": 1791996907000,
    "src": "Hacker News",
-   "score": 122,
+   "score": 124,
    "ps": [
     "orbix"
    ]
@@ -501,7 +534,7 @@
    "url": "https://arcfu.com/post/the-emperor-pelican-has-no-clothes/",
    "ts": 1791995614000,
    "src": "Hacker News",
-   "score": 163,
+   "score": 164,
    "ps": [
     "orbix"
    ]
@@ -562,6 +595,17 @@
    ]
   },
   {
+   "id": "hn50084622",
+   "title": "Starlink limit hits Ukraine's drones",
+   "url": "https://defence24.com/geopolitics/starlink-limit-hits-ukraines-drones-the-battlefield-depends-on-spacex",
+   "ts": 1791969037000,
+   "src": "Hacker News",
+   "score": 178,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
    "id": "hn50082962",
    "title": "Anthropic conjures threat that doesn't exist yet to stoke fears of AI apocalypse",
    "url": "https://www.theregister.com/ai-and-ml/2026/10/13/anthropic-conjures-another-threat-that-doesnt-exist-yet-to-stoke-fears-of-ai-apocalypse/5302866",
@@ -589,7 +633,7 @@
    "url": "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/",
    "ts": 1791923035000,
    "src": "Hacker News",
-   "score": 653,
+   "score": 655,
    "ps": [
     "orbix"
    ]
@@ -622,7 +666,7 @@
    "url": "https://huggingface.co/papers/2610.21025",
    "ts": 1791921600000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon",
     "archive",
@@ -647,7 +691,7 @@
    "url": "https://huggingface.co/papers/2610.20939",
    "ts": 1791921600000,
    "src": "HF Papers",
-   "score": 96,
+   "score": 154,
    "ps": [
     "lexicon",
     "meridian",
@@ -695,7 +739,7 @@
    "url": "https://huggingface.co/papers/2610.17665",
    "ts": 1791921600000,
    "src": "HF Papers",
-   "score": 200,
+   "score": 201,
    "ps": [
     "lexicon"
    ]
@@ -717,7 +761,7 @@
    "url": "https://developers.googleblog.com/gemini-4-argon-for-robotics/",
    "ts": 1791910547000,
    "src": "Hacker News",
-   "score": 232,
+   "score": 233,
    "ps": [
     "orbix"
    ]
@@ -728,7 +772,7 @@
    "url": "https://deepmind.google/models/gemini/",
    "ts": 1791907396000,
    "src": "Hacker News",
-   "score": 1461,
+   "score": 1465,
    "ps": [
     "orbix"
    ]
@@ -739,7 +783,7 @@
    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
    "ts": 1791906596000,
    "src": "Hacker News",
-   "score": 889,
+   "score": 892,
    "ps": [
     "orbix"
    ]
@@ -750,7 +794,7 @@
    "url": "https://github.com/LargeModGames/spotatui",
    "ts": 1791891120000,
    "src": "Hacker News",
-   "score": 91,
+   "score": 92,
    "ps": [
     "orbix"
    ]
@@ -772,7 +816,7 @@
    "url": "https://news.ycombinator.com/item?id=50067325",
    "ts": 1791870841000,
    "src": "Hacker News",
-   "score": 125,
+   "score": 127,
    "ps": [
     "orbix"
    ]
@@ -783,10 +827,21 @@
    "url": "https://www.argmin.net/p/faster-fourier-transforms",
    "ts": 1791859603000,
    "src": "Hacker News",
-   "score": 246,
+   "score": 247,
    "ps": [
     "lexicon",
     "orbix"
+   ]
+  },
+  {
+   "id": "hn50065553",
+   "title": "Strengthening our defenses against distillation attacks",
+   "url": "https://www.anthropic.com/research/distillation-defenses",
+   "ts": 1791856007000,
+   "src": "Hacker News",
+   "score": 49,
+   "ps": [
+    "apex"
    ]
   },
   {
@@ -795,7 +850,7 @@
    "url": "https://indigene.app/",
    "ts": 1791847520000,
    "src": "Hacker News",
-   "score": 118,
+   "score": 119,
    "ps": [
     "orbix"
    ]
@@ -817,7 +872,7 @@
    "url": "https://huggingface.co/papers/2610.17697",
    "ts": 1791835200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "archive",
     "lexicon"
@@ -829,7 +884,7 @@
    "url": "https://huggingface.co/papers/2610.19247",
    "ts": 1791835200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "lexicon",
     "archive",
@@ -842,7 +897,7 @@
    "url": "https://huggingface.co/papers/2610.17959",
    "ts": 1791835200000,
    "src": "HF Papers",
-   "score": 8,
+   "score": 10,
    "ps": [
     "lexicon"
    ]
@@ -853,7 +908,7 @@
    "url": "https://huggingface.co/papers/2610.17901",
    "ts": 1791835200000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 8,
    "ps": [
     "lexicon"
    ]
@@ -887,7 +942,7 @@
    "url": "https://huggingface.co/papers/2610.18813",
    "ts": 1791835200000,
    "src": "HF Papers",
-   "score": 193,
+   "score": 199,
    "ps": [
     "lexicon",
     "orbix"
@@ -899,7 +954,7 @@
    "url": "https://www.anthropic.com/research/self-replicating-ai",
    "ts": 1791833129000,
    "src": "Hacker News",
-   "score": 115,
+   "score": 117,
    "ps": [
     "gaya",
     "orbix"
@@ -968,7 +1023,7 @@
    "url": "https://twitter.com/karpathy/status/2109361546505966046",
    "ts": 1791750052000,
    "src": "Hacker News",
-   "score": 725,
+   "score": 727,
    "ps": [
     "orbix"
    ]
@@ -1004,7 +1059,7 @@
    "url": "https://huggingface.co/papers/2610.16397",
    "ts": 1791748800000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon",
     "gaya",
@@ -1072,7 +1127,7 @@
    "url": "https://huggingface.co/papers/2610.15924",
    "ts": 1791662400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon",
     "gaya",
@@ -1184,7 +1239,7 @@
    "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
    "ts": 1791543828000,
    "src": "Hacker News",
-   "score": 420,
+   "score": 421,
    "ps": [
     "orbix"
    ]
@@ -1228,7 +1283,7 @@
    "url": "https://huggingface.co/papers/2610.14232",
    "ts": 1791489600000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon"
    ]
@@ -1309,63 +1364,6 @@
    "score": 381,
    "ps": [
     "lexicon"
-   ]
-  },
-  {
-   "id": "hn50002215",
-   "title": "Clojure in the age of language models",
-   "url": "https://yogthos.net/posts/2026-10-07-clojure-llms.html",
-   "ts": 1791438991000,
-   "src": "Hacker News",
-   "score": 41,
-   "ps": [
-    "archive",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50000676",
-   "title": "Port of the TypeScript compiler, checker and lsp to Rust, by LLM",
-   "url": "https://github.com/pingdotgg/ts-rust",
-   "ts": 1791420360000,
-   "src": "Hacker News",
-   "score": 119,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2610.12625",
-   "title": "ForcingBooster: Adaptive Patch-wise Denoising for Fast Autoregressive Video Diffusion",
-   "url": "https://huggingface.co/papers/2610.12625",
-   "ts": 1791403200000,
-   "src": "HF Papers",
-   "score": 2,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2610.18890",
-   "title": "AI-Driven, Timing-Aware Power Optimization",
-   "url": "https://huggingface.co/papers/2610.18890",
-   "ts": 1791403200000,
-   "src": "HF Papers",
-   "score": 1,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hn49996713",
-   "title": "I'm not paying $20 for ChatGPT or Claude because a free local LLM does",
-   "url": "https://www.xda-developers.com/im-not-paying-20-for-chatgpt-claude-or-gemini-because-a-free-local-llm-does-everything-i-need/",
-   "ts": 1791397143000,
-   "src": "Hacker News",
-   "score": 52,
-   "ps": [
-    "meridian",
-    "orbix"
    ]
   }
  ]
