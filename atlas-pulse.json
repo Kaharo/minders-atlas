@@ -1,17 +1,28 @@
 {
- "updated": "2026-10-24T08:43:11.455Z",
+ "updated": "2026-10-25T08:59:43.552Z",
  "days": 14,
  "personas": {},
  "items": [
   {
-   "id": "hn50218633",
-   "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
-   "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
-   "ts": 1792820997000,
+   "id": "hn50226419",
+   "title": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
+   "url": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
+   "ts": 1792883514000,
    "src": "Hacker News",
-   "score": 76,
+   "score": 346,
    "ps": [
-    "orbix"
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn50222283",
+   "title": "Oai-math-revised: a community hub for revising OpenAI's math write-ups",
+   "url": "https://terrytao.wordpress.com/2026/10/24/oai-math-revised-a-community-hub-for-revising-openais-math-write-ups/",
+   "ts": 1792856117000,
+   "src": "Hacker News",
+   "score": 44,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -20,7 +31,7 @@
    "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
    "ts": 1792785056000,
    "src": "Hacker News",
-   "score": 104,
+   "score": 119,
    "ps": [
     "gaya",
     "orbix"
@@ -32,7 +43,7 @@
    "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
    "ts": 1792774748000,
    "src": "Hacker News",
-   "score": 892,
+   "score": 1066,
    "ps": [
     "orbix"
    ]
@@ -43,7 +54,7 @@
    "url": "https://blog.alexewerlof.com/p/rise-and-fall-of-jev-eval-hype-vs-llm",
    "ts": 1792747260000,
    "src": "Hacker News",
-   "score": 90,
+   "score": 92,
    "ps": [
     "orbix"
    ]
@@ -54,7 +65,7 @@
    "url": "https://www.anthropic.com/research/formal-verification",
    "ts": 1792709683000,
    "src": "Hacker News",
-   "score": 449,
+   "score": 457,
    "ps": [
     "orbix"
    ]
@@ -65,7 +76,7 @@
    "url": "https://news.ycombinator.com/item?id=50200997",
    "ts": 1792703035000,
    "src": "Hacker News",
-   "score": 614,
+   "score": 652,
    "ps": [
     "orbix"
    ]
@@ -76,7 +87,7 @@
    "url": "https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients",
    "ts": 1792692174000,
    "src": "Hacker News",
-   "score": 89,
+   "score": 91,
    "ps": [
     "orbix"
    ]
@@ -87,7 +98,7 @@
    "url": "https://github.com/NVIDIA/OpenShell",
    "ts": 1792691046000,
    "src": "Hacker News",
-   "score": 494,
+   "score": 499,
    "ps": [
     "orbix"
    ]
@@ -98,7 +109,7 @@
    "url": "https://huggingface.co/papers/2610.31574",
    "ts": 1792674878000,
    "src": "HF Papers",
-   "score": 12,
+   "score": 18,
    "ps": [
     "lexicon"
    ]
@@ -109,7 +120,7 @@
    "url": "https://fleetingswallow.com/minotaur-ai-deep-dive-achieving-reasoning-without-a-language-model/",
    "ts": 1792658818000,
    "src": "Hacker News",
-   "score": 47,
+   "score": 48,
    "ps": [
     "orbix"
    ]
@@ -131,7 +142,7 @@
    "url": "https://huggingface.co/papers/2610.30926",
    "ts": 1792644228000,
    "src": "HF Papers",
-   "score": 165,
+   "score": 172,
    "ps": [
     "lexicon",
     "orbix"
@@ -143,7 +154,7 @@
    "url": "https://huggingface.co/papers/2610.30882",
    "ts": 1792641787000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 13,
    "ps": [
     "lexicon",
     "orbix"
@@ -155,7 +166,7 @@
    "url": "https://huggingface.co/papers/2610.31198",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 23,
    "ps": [
     "lexicon",
     "archive",
@@ -168,7 +179,7 @@
    "url": "https://huggingface.co/papers/2610.31651",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 13,
    "ps": [
     "lexicon",
     "orbix"
@@ -180,7 +191,7 @@
    "url": "https://huggingface.co/papers/2610.30753",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 26,
+   "score": 31,
    "ps": [
     "lexicon",
     "orbix"
@@ -192,7 +203,7 @@
    "url": "https://huggingface.co/papers/2610.31372",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 13,
    "ps": [
     "lexicon",
     "orbix"
@@ -204,7 +215,7 @@
    "url": "https://huggingface.co/papers/2610.30949",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 64,
+   "score": 93,
    "ps": [
     "lexicon",
     "orbix"
@@ -216,7 +227,7 @@
    "url": "https://huggingface.co/papers/2610.31329",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 229,
+   "score": 241,
    "ps": [
     "lexicon"
    ]
@@ -227,7 +238,7 @@
    "url": "https://huggingface.co/papers/2610.31576",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 11,
    "ps": [
     "apex",
     "archive",
@@ -241,7 +252,7 @@
    "url": "https://huggingface.co/papers/2610.31623",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 12,
    "ps": [
     "lexicon"
    ]
@@ -252,7 +263,7 @@
    "url": "https://huggingface.co/papers/2610.31466",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 11,
+   "score": 18,
    "ps": [
     "lexicon"
    ]
@@ -263,7 +274,7 @@
    "url": "https://huggingface.co/papers/2610.30866",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 12,
+   "score": 18,
    "ps": [
     "lexicon"
    ]
@@ -274,7 +285,7 @@
    "url": "https://huggingface.co/papers/2610.31305",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 14,
+   "score": 20,
    "ps": [
     "lexicon",
     "archive",
@@ -287,7 +298,7 @@
    "url": "https://huggingface.co/papers/2610.31494",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 11,
+   "score": 17,
    "ps": [
     "lexicon",
     "orbix"
@@ -299,7 +310,7 @@
    "url": "https://huggingface.co/papers/2610.30755",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 21,
    "ps": [
     "lexicon",
     "orbix"
@@ -311,7 +322,7 @@
    "url": "https://huggingface.co/papers/2610.31474",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -323,7 +334,7 @@
    "url": "https://huggingface.co/papers/2610.31158",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 17,
+   "score": 23,
    "ps": [
     "lexicon",
     "orbix"
@@ -335,20 +346,9 @@
    "url": "https://huggingface.co/papers/2610.31062",
    "ts": 1792612800000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 12,
    "ps": [
     "archive",
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2610.31668",
-   "title": "Reading, Writing, Sharing, and Interacting with the World through Video",
-   "url": "https://huggingface.co/papers/2610.31668",
-   "ts": 1792612800000,
-   "src": "HF Papers",
-   "score": 8,
-   "ps": [
     "lexicon"
    ]
   },
@@ -380,7 +380,7 @@
    "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/",
    "ts": 1792598612000,
    "src": "Hacker News",
-   "score": 53,
+   "score": 54,
    "ps": [
     "orbix"
    ]
@@ -403,7 +403,7 @@
    "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/",
    "ts": 1792589820000,
    "src": "Hacker News",
-   "score": 159,
+   "score": 160,
    "ps": [
     "lexicon",
     "orbix"
@@ -448,7 +448,18 @@
    "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
    "ts": 1792556871000,
    "src": "Hacker News",
-   "score": 224,
+   "score": 226,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50175779",
+   "title": "Using Claude to reduce the attack surface of code",
+   "url": "https://www.anthropic.com/research/attack-surface-reduction",
+   "ts": 1792553803000,
+   "src": "Hacker News",
+   "score": 136,
    "ps": [
     "orbix"
    ]
@@ -470,7 +481,7 @@
    "url": "https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20/",
    "ts": 1792526986000,
    "src": "Hacker News",
-   "score": 191,
+   "score": 192,
    "ps": [
     "meridian"
    ]
@@ -481,7 +492,7 @@
    "url": "https://huggingface.co/papers/2610.30043",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 8,
    "ps": [
     "lexicon",
     "gaya",
@@ -495,7 +506,7 @@
    "url": "https://huggingface.co/papers/2610.30418",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 16,
+   "score": 22,
    "ps": [
     "lexicon",
     "orbix"
@@ -507,7 +518,7 @@
    "url": "https://huggingface.co/papers/2610.30468",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 7,
    "ps": [
     "lexicon"
    ]
@@ -518,7 +529,7 @@
    "url": "https://huggingface.co/papers/2610.30320",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 26,
+   "score": 37,
    "ps": [
     "lexicon",
     "orbix"
@@ -530,7 +541,7 @@
    "url": "https://huggingface.co/papers/2610.29677",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 49,
+   "score": 57,
    "ps": [
     "lexicon"
    ]
@@ -541,7 +552,7 @@
    "url": "https://huggingface.co/papers/2610.30340",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 10,
    "ps": [
     "lexicon",
     "orbix"
@@ -553,7 +564,7 @@
    "url": "https://huggingface.co/papers/2610.27851",
    "ts": 1792526400000,
    "src": "HF Papers",
-   "score": 29,
+   "score": 37,
    "ps": [
     "lexicon",
     "archive",
@@ -566,7 +577,7 @@
    "url": "https://danielball.com/notes/ai_image_generation.html",
    "ts": 1792524159000,
    "src": "Hacker News",
-   "score": 73,
+   "score": 267,
    "ps": [
     "orbix"
    ]
@@ -577,7 +588,7 @@
    "url": "https://openai.com/index/low-resource-programming-languages/",
    "ts": 1792518191000,
    "src": "Hacker News",
-   "score": 108,
+   "score": 109,
    "ps": [
     "archive"
    ]
@@ -621,7 +632,7 @@
    "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
    "ts": 1792501582000,
    "src": "Hacker News",
-   "score": 368,
+   "score": 369,
    "ps": [
     "orbix"
    ]
@@ -632,7 +643,7 @@
    "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
    "ts": 1792452138000,
    "src": "Hacker News",
-   "score": 742,
+   "score": 743,
    "ps": [
     "apex",
     "orbix"
@@ -644,7 +655,7 @@
    "url": "https://huggingface.co/papers/2610.28950",
    "ts": 1792440000000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 8,
    "ps": [
     "lexicon"
    ]
@@ -655,7 +666,7 @@
    "url": "https://huggingface.co/papers/2610.27712",
    "ts": 1792440000000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 22,
    "ps": [
     "lexicon"
    ]
@@ -666,7 +677,7 @@
    "url": "https://huggingface.co/papers/2610.28889",
    "ts": 1792440000000,
    "src": "HF Papers",
-   "score": 44,
+   "score": 51,
    "ps": [
     "lexicon",
     "apex"
@@ -678,7 +689,7 @@
    "url": "https://huggingface.co/papers/2610.27598",
    "ts": 1792440000000,
    "src": "HF Papers",
-   "score": 25,
+   "score": 30,
    "ps": [
     "lexicon"
    ]
@@ -689,9 +700,21 @@
    "url": "https://huggingface.co/papers/2610.28416",
    "ts": 1792440000000,
    "src": "HF Papers",
-   "score": 24,
+   "score": 33,
    "ps": [
     "lexicon"
+   ]
+  },
+  {
+   "id": "hn50154244",
+   "title": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
+   "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/",
+   "ts": 1792426606000,
+   "src": "Hacker News",
+   "score": 580,
+   "ps": [
+    "apex",
+    "orbix"
    ]
   },
   {
@@ -788,7 +811,7 @@
    "url": "https://news.ycombinator.com/item?id=50151036",
    "ts": 1792409074000,
    "src": "Hacker News",
-   "score": 618,
+   "score": 619,
    "ps": [
     "meridian"
    ]
@@ -810,7 +833,7 @@
    "url": "https://huggingface.co/papers/2610.25835",
    "ts": 1792374478000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 9,
    "ps": [
     "lexicon",
     "archive",
@@ -823,7 +846,7 @@
    "url": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/",
    "ts": 1792357752000,
    "src": "Hacker News",
-   "score": 302,
+   "score": 303,
    "ps": [
     "orbix"
    ]
@@ -845,7 +868,7 @@
    "url": "https://huggingface.co/papers/2610.27148",
    "ts": 1792353600000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 10,
    "ps": [
     "lexicon",
     "orbix"
@@ -857,7 +880,7 @@
    "url": "https://huggingface.co/papers/2610.19705",
    "ts": 1792353600000,
    "src": "HF Papers",
-   "score": 18,
+   "score": 23,
    "ps": [
     "lexicon",
     "apex",
@@ -870,7 +893,7 @@
    "url": "https://huggingface.co/papers/2610.26233",
    "ts": 1792353600000,
    "src": "HF Papers",
-   "score": 18,
+   "score": 22,
    "ps": [
     "lexicon",
     "orbix"
@@ -882,7 +905,7 @@
    "url": "https://huggingface.co/papers/2610.26252",
    "ts": 1792353600000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 7,
    "ps": [
     "lexicon"
    ]
@@ -893,10 +916,22 @@
    "url": "https://huggingface.co/papers/2610.30181",
    "ts": 1792353600000,
    "src": "HF Papers",
-   "score": 152,
+   "score": 160,
    "ps": [
     "lexicon",
     "gaya"
+   ]
+  },
+  {
+   "id": "hf2610.27233",
+   "title": "MMedAgent-Plus: Scaling Multimodal Medical Agents across Modalities, Tasks and Workflows",
+   "url": "https://huggingface.co/papers/2610.27233",
+   "ts": 1792353600000,
+   "src": "HF Papers",
+   "score": 4,
+   "ps": [
+    "lexicon",
+    "orbix"
    ]
   },
   {
@@ -949,7 +984,7 @@
    "url": "https://blog.picheta.me/post/killswitch-lang/",
    "ts": 1792276007000,
    "src": "Hacker News",
-   "score": 282,
+   "score": 284,
    "ps": [
     "archive",
     "orbix"
@@ -961,7 +996,7 @@
    "url": "https://huggingface.co/papers/2610.25376",
    "ts": 1792267200000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 8,
    "ps": [
     "lexicon",
     "archive",
@@ -974,7 +1009,7 @@
    "url": "https://huggingface.co/papers/2610.25100",
    "ts": 1792267200000,
    "src": "HF Papers",
-   "score": 40,
+   "score": 48,
    "ps": [
     "lexicon",
     "archive",
@@ -1053,7 +1088,7 @@
    "url": "https://huggingface.co/papers/2610.24385",
    "ts": 1792180800000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -1065,7 +1100,7 @@
    "url": "https://huggingface.co/papers/2610.24383",
    "ts": 1792180800000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 8,
    "ps": [
     "lexicon",
     "orbix"
@@ -1077,7 +1112,7 @@
    "url": "https://huggingface.co/papers/2610.24738",
    "ts": 1792180800000,
    "src": "HF Papers",
-   "score": 74,
+   "score": 182,
    "ps": [
     "lexicon"
    ]
@@ -1111,6 +1146,17 @@
    "ts": 1792174302000,
    "src": "Hacker News",
    "score": 302,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50121939",
+   "title": "Designing more efficient quantum circuits with Claude",
+   "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+   "ts": 1792173618000,
+   "src": "Hacker News",
+   "score": 174,
    "ps": [
     "orbix"
    ]
@@ -1166,7 +1212,7 @@
    "url": "https://huggingface.co/papers/2610.04184",
    "ts": 1792094400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 19,
    "ps": [
     "lexicon",
     "orbix"
@@ -1178,7 +1224,7 @@
    "url": "https://huggingface.co/papers/2610.22951",
    "ts": 1792094400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 8,
    "ps": [
     "lexicon",
     "archive",
@@ -1191,7 +1237,7 @@
    "url": "https://sunshowers.io/posts/anthropic-mononoke-2/",
    "ts": 1792083919000,
    "src": "Hacker News",
-   "score": 255,
+   "score": 256,
    "ps": [
     "orbix"
    ]
@@ -1246,7 +1292,7 @@
    "url": "https://sunshowers.io/posts/anthropic-mononoke/",
    "ts": 1792009854000,
    "src": "Hacker News",
-   "score": 429,
+   "score": 430,
    "ps": [
     "orbix"
    ]
@@ -1257,7 +1303,7 @@
    "url": "https://huggingface.co/papers/2610.22722",
    "ts": 1792008000000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 9,
    "ps": [
     "lexicon",
     "meridian",
@@ -1310,67 +1356,23 @@
    ]
   },
   {
+   "id": "hn50088713",
+   "title": "Show HN: Graphicle, a Rust port of Graphify with memory for coding agents",
+   "url": "https://github.com/graphicle-ai/graphicle",
+   "ts": 1791990041000,
+   "src": "Hacker News",
+   "score": 48,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
    "id": "hn50088430",
    "title": "ASML's strong orders ease fears AI spending boom is running out of steam",
    "url": "https://www.reuters.com/business/asml-forecasts-q4-sales-above-expectations-ai-chip-demand-2026-10-14/",
    "ts": 1791988735000,
    "src": "Hacker News",
    "score": 174,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50085323",
-   "title": "TV4 postpones show after AI agent erases edited material",
-   "url": "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage",
-   "ts": 1791973706000,
-   "src": "Hacker News",
-   "score": 156,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50085259",
-   "title": "Agent erased full season of \"The Challenge Swe\": \"Hundreds of days of work gone\"",
-   "url": "https://www.aviaduct.com/?l=og+en&u=https%3A%2F%2Fwww.aftonbladet.se%2Fnojesbladet%2Fa%2F31oE8A%2Fthe-challenge-sverige-raderad-av-ai-bara-veckor-innan-premiaren",
-   "ts": 1791973273000,
-   "src": "Hacker News",
-   "score": 56,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50084969",
-   "title": "Ask HN: What is the current trajectory of a senior engineer?",
-   "url": "https://news.ycombinator.com/item?id=50084969",
-   "ts": 1791971663000,
-   "src": "Hacker News",
-   "score": 45,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50082962",
-   "title": "Anthropic conjures threat that doesn't exist yet to stoke fears of AI apocalypse",
-   "url": "https://www.theregister.com/ai-and-ml/2026/10/13/anthropic-conjures-another-threat-that-doesnt-exist-yet-to-stoke-fears-of-ai-apocalypse/5302866",
-   "ts": 1791957216000,
-   "src": "Hacker News",
-   "score": 74,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50080275",
-   "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
-   "url": "https://pulseos.finance",
-   "ts": 1791933203000,
-   "src": "Hacker News",
-   "score": 122,
    "ps": [
     "orbix"
    ]
