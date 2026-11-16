@@ -1,15 +1,81 @@
 {
- "updated": "2026-11-15T11:47:38.292Z",
+ "updated": "2026-11-16T12:29:55.416Z",
  "days": 14,
  "personas": {},
  "items": [
+  {
+   "id": "hn50513451",
+   "title": "Tell HN: HN is being scraped for emails to scam",
+   "url": "https://news.ycombinator.com/item?id=50513451",
+   "ts": 1794797610000,
+   "src": "Hacker News",
+   "score": 107,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50512950",
+   "title": "\"Who is Hiring?\" postings stuck near 12-year lows as AI reaches half of all jobs",
+   "url": "https://www.hntrends.com/2026/november.html",
+   "ts": 1794792690000,
+   "src": "Hacker News",
+   "score": 88,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn50506940",
+   "title": "Show HN: db-branch – database branches in seconds for AI agents and CI, via ZFS",
+   "url": "https://github.com/db-branch/db-branch",
+   "ts": 1794750651000,
+   "src": "Hacker News",
+   "score": 42,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50506376",
+   "title": "Understanding Positional Embeddings in Modern LLMs",
+   "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+   "ts": 1794744846000,
+   "src": "Hacker News",
+   "score": 233,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50505905",
+   "title": "Jensen Huang allegedly manufactured the GPU shortage",
+   "url": "https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/",
+   "ts": 1794740030000,
+   "src": "Hacker News",
+   "score": 63,
+   "ps": [
+    "orbix"
+   ]
+  },
   {
    "id": "hn50498051",
    "title": "Smuggling of 1.5M AI GPUs could be the cause of Huang's departure",
    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/mass-smuggling-of-nvidia-ai-gpus-could-be-the-underlying-cause-of-jensen-huangs-departure-analysts-claim-more-than-1-5-gigawatts-of-banned-chips-tracked-to-china-despite-export-controls",
    "ts": 1794671937000,
    "src": "Hacker News",
-   "score": 58,
+   "score": 61,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50497132",
+   "title": "Show HN: A terminal-native idle factory game, written in Rust with ratatui",
+   "url": "https://gitlab.com/snipedbywifi/terminactory",
+   "ts": 1794665154000,
+   "src": "Hacker News",
+   "score": 169,
    "ps": [
     "orbix"
    ]
@@ -20,7 +86,7 @@
    "url": "https://news.ycombinator.com/item?id=50494696",
    "ts": 1794639402000,
    "src": "Hacker News",
-   "score": 83,
+   "score": 90,
    "ps": [
     "orbix"
    ]
@@ -31,7 +97,7 @@
    "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
    "ts": 1794624779000,
    "src": "Hacker News",
-   "score": 1075,
+   "score": 1104,
    "ps": [
     "meridian",
     "orbix"
@@ -43,7 +109,7 @@
    "url": "https://claude.com/resources/articles/projects-redesigned",
    "ts": 1794616091000,
    "src": "Hacker News",
-   "score": 98,
+   "score": 100,
    "ps": [
     "orbix"
    ]
@@ -54,7 +120,7 @@
    "url": "https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/",
    "ts": 1794592523000,
    "src": "Hacker News",
-   "score": 177,
+   "score": 179,
    "ps": [
     "orbix"
    ]
@@ -71,12 +137,164 @@
    ]
   },
   {
+   "id": "hf2611.17814",
+   "title": "G-CAST: Governed Continual Self-Training for E-Commerce Agents under Evolving Demands",
+   "url": "https://huggingface.co/papers/2611.17814",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 12,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.17831",
+   "title": "V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations",
+   "url": "https://huggingface.co/papers/2611.17831",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 18,
+   "ps": [
+    "lexicon",
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.18429",
+   "title": "Do Underwater Image Quality Metrics Agree with Human Perception? A Benchmark with Human Choices, Simple Edits and Generative Drift",
+   "url": "https://huggingface.co/papers/2611.18429",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 10,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.18482",
+   "title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
+   "url": "https://huggingface.co/papers/2611.18482",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 32,
+   "ps": [
+    "lexicon",
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.18130",
+   "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
+   "url": "https://huggingface.co/papers/2611.18130",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 8,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.18529",
+   "title": "eDIAR: Training-Free Open-Speaker Streaming Diarization for Long Meetings and Large Archives via e-means",
+   "url": "https://huggingface.co/papers/2611.18529",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 8,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.18549",
+   "title": "JVT: Just Video Transformer makes pixel-space video diffusion simple",
+   "url": "https://huggingface.co/papers/2611.18549",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 14,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.17820",
+   "title": "Aligning AI Teams",
+   "url": "https://huggingface.co/papers/2611.17820",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 10,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.18397",
+   "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+   "url": "https://huggingface.co/papers/2611.18397",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 66,
+   "ps": [
+    "lexicon",
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.18442",
+   "title": "CANTraj: Recovering Vehicle Trajectories from CAN Signals in Naturalistic Driving",
+   "url": "https://huggingface.co/papers/2611.18442",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 9,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.18338",
+   "title": "MEM-SQL: Memory-Empowered Text-to-SQL",
+   "url": "https://huggingface.co/papers/2611.18338",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 14,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.17811",
+   "title": "AI Reviews Are Biased Towards the Appendix",
+   "url": "https://huggingface.co/papers/2611.17811",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 8,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.18359",
+   "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+   "url": "https://huggingface.co/papers/2611.18359",
+   "ts": 1794510000000,
+   "src": "HF Papers",
+   "score": 83,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
    "id": "hn50472260",
    "title": "Gemini 4 Hydrogen and Orchestrator",
    "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
    "ts": 1794509521000,
    "src": "Hacker News",
-   "score": 503,
+   "score": 506,
    "ps": [
     "orbix"
    ]
@@ -87,7 +305,7 @@
    "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
    "ts": 1794507348000,
    "src": "Hacker News",
-   "score": 137,
+   "score": 138,
    "ps": [
     "orbix"
    ]
@@ -98,7 +316,7 @@
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
    "ts": 1794506508000,
    "src": "Hacker News",
-   "score": 569,
+   "score": 572,
    "ps": [
     "orbix"
    ]
@@ -109,7 +327,7 @@
    "url": "https://news.ycombinator.com/item?id=50471281",
    "ts": 1794505883000,
    "src": "Hacker News",
-   "score": 60,
+   "score": 61,
    "ps": [
     "orbix"
    ]
@@ -131,7 +349,7 @@
    "url": "https://github.com/hyperionaidev/smolmaxxing/",
    "ts": 1794496990000,
    "src": "Hacker News",
-   "score": 479,
+   "score": 481,
    "ps": [
     "orbix"
    ]
@@ -142,7 +360,7 @@
    "url": "https://ipo.anthropic.com/us/",
    "ts": 1794484001000,
    "src": "Hacker News",
-   "score": 1002,
+   "score": 1004,
    "ps": [
     "meridian"
    ]
@@ -153,21 +371,33 @@
    "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
    "ts": 1794432275000,
    "src": "Hacker News",
-   "score": 680,
+   "score": 681,
    "ps": [
     "archive",
     "orbix"
    ]
   },
   {
-   "id": "hn50457164",
-   "title": "Retirement Savings Are Fueling the AI Bubble",
-   "url": "https://lpeproject.org/blog/your-retirement-savings-are-fueling-the-ai-bubble/",
-   "ts": 1794424003000,
-   "src": "Hacker News",
-   "score": 165,
+   "id": "hf2611.16378",
+   "title": "Evidence-Governed Adoption of Self-Generated Updates in Autonomous AI Agents",
+   "url": "https://huggingface.co/papers/2611.16378",
+   "ts": 1794423600000,
+   "src": "HF Papers",
+   "score": 8,
    "ps": [
+    "lexicon",
     "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.16439",
+   "title": "HALO: Human-Aligned Data Collection for WhoLe-body MObile Manipulation",
+   "url": "https://huggingface.co/papers/2611.16439",
+   "ts": 1794423600000,
+   "src": "HF Papers",
+   "score": 10,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -176,7 +406,7 @@
    "url": "https://huggingface.co/papers/2611.16728",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 4,
    "ps": [
     "lexicon"
    ]
@@ -187,7 +417,7 @@
    "url": "https://huggingface.co/papers/2611.17336",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 6,
    "ps": [
     "lexicon"
    ]
@@ -198,7 +428,7 @@
    "url": "https://huggingface.co/papers/2611.17190",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "lexicon"
    ]
@@ -209,7 +439,7 @@
    "url": "https://huggingface.co/papers/2611.16961",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 9,
    "ps": [
     "lexicon",
     "orbix"
@@ -221,7 +451,7 @@
    "url": "https://huggingface.co/papers/2611.17334",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 19,
    "ps": [
     "lexicon"
    ]
@@ -232,7 +462,7 @@
    "url": "https://huggingface.co/papers/2611.16409",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 10,
    "ps": [
     "lexicon"
    ]
@@ -255,7 +485,7 @@
    "url": "https://huggingface.co/papers/2611.17331",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 23,
+   "score": 26,
    "ps": [
     "lexicon",
     "orbix"
@@ -267,7 +497,7 @@
    "url": "https://huggingface.co/papers/2611.17060",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 27,
+   "score": 33,
    "ps": [
     "lexicon",
     "gaya"
@@ -279,7 +509,7 @@
    "url": "https://huggingface.co/papers/2611.17167",
    "ts": 1794423600000,
    "src": "HF Papers",
-   "score": 34,
+   "score": 36,
    "ps": [
     "lexicon",
     "apex",
@@ -311,48 +541,12 @@
    ]
   },
   {
-   "id": "hf2611.16517",
-   "title": "UniSpark: Exploring Hybrid Attention for Multimodal Understanding and Generation",
-   "url": "https://huggingface.co/papers/2611.16517",
-   "ts": 1794423600000,
-   "src": "HF Papers",
-   "score": 13,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2611.16748",
-   "title": "PhysLoop: Harnessing LLMs' Physics Awareness for Self-Improving Video Generation Models",
-   "url": "https://huggingface.co/papers/2611.16748",
-   "ts": 1794423600000,
-   "src": "HF Papers",
-   "score": 46,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.16321",
-   "title": "From Large Language Models to Efficient System One Models via Adaptive Computation",
-   "url": "https://huggingface.co/papers/2611.16321",
-   "ts": 1794423600000,
-   "src": "HF Papers",
-   "score": 4,
-   "ps": [
-    "lexicon",
-    "archive",
-    "orbix"
-   ]
-  },
-  {
    "id": "hn50456791",
    "title": "Gemini Decisions API",
    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
    "ts": 1794421962000,
    "src": "Hacker News",
-   "score": 568,
+   "score": 569,
    "ps": [
     "orbix"
    ]
@@ -363,7 +557,7 @@
    "url": "https://github.com/aws/aws-emulator",
    "ts": 1794421298000,
    "src": "Hacker News",
-   "score": 989,
+   "score": 992,
    "ps": [
     "orbix"
    ]
@@ -374,7 +568,7 @@
    "url": "https://news.ycombinator.com/item?id=50455811",
    "ts": 1794417116000,
    "src": "Hacker News",
-   "score": 63,
+   "score": 64,
    "ps": [
     "orbix"
    ]
@@ -385,7 +579,7 @@
    "url": "https://github.com/klad-app/klad",
    "ts": 1794412850000,
    "src": "Hacker News",
-   "score": 83,
+   "score": 84,
    "ps": [
     "orbix"
    ]
@@ -396,7 +590,7 @@
    "url": "https://github.com/FrigadeHQ/yogurt",
    "ts": 1794411186000,
    "src": "Hacker News",
-   "score": 303,
+   "score": 305,
    "ps": [
     "orbix"
    ]
@@ -418,7 +612,7 @@
    "url": "https://tis-100.wincon.dev/",
    "ts": 1794357425000,
    "src": "Hacker News",
-   "score": 95,
+   "score": 96,
    "ps": [
     "orbix"
    ]
@@ -440,8 +634,20 @@
    "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
    "ts": 1794345903000,
    "src": "Hacker News",
-   "score": 572,
+   "score": 576,
    "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.15789",
+   "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+   "url": "https://huggingface.co/papers/2611.15789",
+   "ts": 1794337200000,
+   "src": "HF Papers",
+   "score": 76,
+   "ps": [
+    "lexicon",
     "orbix"
    ]
   },
@@ -451,7 +657,7 @@
    "url": "https://huggingface.co/papers/2611.15094",
    "ts": 1794337200000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 4,
    "ps": [
     "lexicon"
    ]
@@ -474,7 +680,7 @@
    "url": "https://huggingface.co/papers/2611.15844",
    "ts": 1794337200000,
    "src": "HF Papers",
-   "score": 36,
+   "score": 38,
    "ps": [
     "lexicon"
    ]
@@ -485,19 +691,7 @@
    "url": "https://huggingface.co/papers/2611.15777",
    "ts": 1794337200000,
    "src": "HF Papers",
-   "score": 136,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.15131",
-   "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
-   "url": "https://huggingface.co/papers/2611.15131",
-   "ts": 1794337200000,
-   "src": "HF Papers",
-   "score": 40,
+   "score": 85,
    "ps": [
     "lexicon",
     "orbix"
@@ -520,7 +714,7 @@
    "url": "https://github.com/GoogleChrome/modern-web-guidance",
    "ts": 1794333675000,
    "src": "Hacker News",
-   "score": 446,
+   "score": 447,
    "ps": [
     "orbix"
    ]
@@ -571,13 +765,27 @@
    ]
   },
   {
-   "id": "hn50439448",
-   "title": "Let over Lambda–50 Years of Lisp (2008)",
-   "url": "https://letoverlambda.com/",
-   "ts": 1794314127000,
-   "src": "Hacker News",
-   "score": 88,
+   "id": "hf2611.13509",
+   "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
+   "url": "https://huggingface.co/papers/2611.13509",
+   "ts": 1794250800000,
+   "src": "HF Papers",
+   "score": 8,
    "ps": [
+    "lexicon",
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.14504",
+   "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
+   "url": "https://huggingface.co/papers/2611.14504",
+   "ts": 1794250800000,
+   "src": "HF Papers",
+   "score": 9,
+   "ps": [
+    "lexicon",
     "orbix"
    ]
   },
@@ -587,7 +795,7 @@
    "url": "https://huggingface.co/papers/2611.14256",
    "ts": 1794250800000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 5,
    "ps": [
     "lexicon",
     "orbix"
@@ -599,104 +807,7 @@
    "url": "https://huggingface.co/papers/2611.14046",
    "ts": 1794250800000,
    "src": "HF Papers",
-   "score": 2,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2611.14815",
-   "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
-   "url": "https://huggingface.co/papers/2611.14815",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 50,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.11306",
-   "title": "ScrapeBench: Evaluating Legal Compliance of AI Agents in Website Scraping",
-   "url": "https://huggingface.co/papers/2611.11306",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 2,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.13766",
-   "title": "FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control",
-   "url": "https://huggingface.co/papers/2611.13766",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 6,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.14418",
-   "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
-   "url": "https://huggingface.co/papers/2611.14418",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 5,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.14413",
-   "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
-   "url": "https://huggingface.co/papers/2611.14413",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 3,
-   "ps": [
-    "lexicon",
-    "archive",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.13843",
-   "title": "PolyRoute: A Twelve-Language and Code-Mixed Benchmark for Typed-Decision Routing, with Baselines and a Leaderboard",
-   "url": "https://huggingface.co/papers/2611.13843",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 2,
-   "ps": [
-    "lexicon",
-    "archive"
-   ]
-  },
-  {
-   "id": "hf2611.13410",
-   "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
-   "url": "https://huggingface.co/papers/2611.13410",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 37,
-   "ps": [
-    "lexicon",
-    "archive",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.13758",
-   "title": "Mixed Signals: Weight-Space Programming for EEG and ECG",
-   "url": "https://huggingface.co/papers/2611.13758",
-   "ts": 1794250800000,
-   "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon"
    ]
@@ -729,7 +840,7 @@
    "url": "https://github.com/thisisme6598/gemini_files/",
    "ts": 1794248678000,
    "src": "Hacker News",
-   "score": 737,
+   "score": 738,
    "ps": [
     "orbix"
    ]
@@ -746,25 +857,25 @@
    ]
   },
   {
-   "id": "hn50426175",
-   "title": "Semi-transparent, colored cadmium telluride photovoltaic panels in agrivoltaics",
-   "url": "https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/",
-   "ts": 1794234699000,
+   "id": "hn50427934",
+   "title": "Show HN: DBDelve – Open-Source DB Client Made with Rust and GPUI",
+   "url": "https://news.ycombinator.com/item?id=50427934",
+   "ts": 1794242198000,
    "src": "Hacker News",
-   "score": 355,
+   "score": 125,
    "ps": [
     "orbix"
    ]
   },
   {
-   "id": "hf2611.12869",
-   "title": "Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic Representation Hypothesis",
-   "url": "https://huggingface.co/papers/2611.12869",
-   "ts": 1794232437000,
-   "src": "HF Papers",
-   "score": 6,
+   "id": "hn50426175",
+   "title": "Semi-transparent, colored cadmium telluride photovoltaic panels in agrivoltaics",
+   "url": "https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/",
+   "ts": 1794234699000,
+   "src": "Hacker News",
+   "score": 356,
    "ps": [
-    "lexicon"
+    "orbix"
    ]
   },
   {
@@ -790,12 +901,24 @@
    ]
   },
   {
+   "id": "hf2611.12068",
+   "title": "MIRIX-2.0: Multi-Agent Memory System",
+   "url": "https://huggingface.co/papers/2611.12068",
+   "ts": 1794164400000,
+   "src": "HF Papers",
+   "score": 17,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
    "id": "hf2611.12750",
    "title": "The Narrative Gap: Can LLMs Help Us Navigate Diverse Narratives Across Languages?",
    "url": "https://huggingface.co/papers/2611.12750",
    "ts": 1794164400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon",
     "archive",
@@ -809,18 +932,6 @@
    "ts": 1794164400000,
    "src": "HF Papers",
    "score": 4,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.12304",
-   "title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
-   "url": "https://huggingface.co/papers/2611.12304",
-   "ts": 1794164400000,
-   "src": "HF Papers",
-   "score": 12,
    "ps": [
     "lexicon",
     "orbix"
@@ -861,46 +972,12 @@
    ]
   },
   {
-   "id": "hn50411961",
-   "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-   "url": "https://github.com/synchopate/llama-modchip",
-   "ts": 1794133324000,
-   "src": "Hacker News",
-   "score": 487,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.13004",
-   "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
-   "url": "https://huggingface.co/papers/2611.13004",
-   "ts": 1794078000000,
-   "src": "HF Papers",
-   "score": 45,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2611.11531",
-   "title": "Probing Transformer Representations Layer by Layer, Module by Module",
-   "url": "https://huggingface.co/papers/2611.11531",
-   "ts": 1794078000000,
-   "src": "HF Papers",
-   "score": 4,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
    "id": "hn50403153",
    "title": "Ask HN: How do you manage your AI agents' context across clients and projects?",
    "url": "https://news.ycombinator.com/item?id=50403153",
    "ts": 1794045708000,
    "src": "Hacker News",
-   "score": 101,
+   "score": 102,
    "ps": [
     "orbix"
    ]
@@ -939,6 +1016,17 @@
    ]
   },
   {
+   "id": "hn50397994",
+   "title": "AI is dramatically accelerating AI research",
+   "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+   "ts": 1793996843000,
+   "src": "Hacker News",
+   "score": 384,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
    "id": "hn50397429",
    "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
    "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
@@ -955,19 +1043,7 @@
    "url": "https://huggingface.co/papers/2611.10439",
    "ts": 1793991600000,
    "src": "HF Papers",
-   "score": 8,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2608.22237",
-   "title": "Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents",
-   "url": "https://huggingface.co/papers/2608.22237",
-   "ts": 1793991600000,
-   "src": "HF Papers",
-   "score": 22,
+   "score": 11,
    "ps": [
     "lexicon",
     "orbix"
@@ -1090,7 +1166,7 @@
    "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
    "ts": 1793909779000,
    "src": "Hacker News",
-   "score": 51,
+   "score": 52,
    "ps": [
     "orbix"
    ]
@@ -1101,7 +1177,7 @@
    "url": "https://huggingface.co/papers/2611.09567",
    "ts": 1793905200000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "lexicon"
    ]
@@ -1129,6 +1205,17 @@
    ]
   },
   {
+   "id": "hn50379221",
+   "title": "Show HN: Waymark – A workflow engine that compiles jobs instead of replaying",
+   "url": "https://github.com/piercefreeman/waymark",
+   "ts": 1793887591000,
+   "src": "Hacker News",
+   "score": 88,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
    "id": "hn50377613",
    "title": "Show HN: Spindle – a full-featured, type-safe web framework for OCaml 5",
    "url": "https://github.com/hyphatech/spindle",
@@ -1148,17 +1235,6 @@
    "score": 342,
    "ps": [
     "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50375354",
-   "title": "Lemmings CSS Animation",
-   "url": "https://markblah.github.io/lemmings/",
-   "ts": 1793854450000,
-   "src": "Hacker News",
-   "score": 414,
-   "ps": [
     "orbix"
    ]
   },
@@ -1223,7 +1299,7 @@
    "url": "https://huggingface.co/papers/2611.08318",
    "ts": 1793818800000,
    "src": "HF Papers",
-   "score": 20,
+   "score": 21,
    "ps": [
     "lexicon"
    ]
@@ -1234,33 +1310,10 @@
    "url": "https://huggingface.co/papers/2611.08219",
    "ts": 1793818800000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 8,
    "ps": [
     "lexicon",
     "meridian",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.08379",
-   "title": "Module-Aware Optimization for Graph Neural Networks",
-   "url": "https://huggingface.co/papers/2611.08379",
-   "ts": 1793818800000,
-   "src": "HF Papers",
-   "score": 3,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2611.08286",
-   "title": "Interactive Visual Gym: Evaluating Visual Interaction Models with Simulated Users in Interactive Worlds",
-   "url": "https://huggingface.co/papers/2611.08286",
-   "ts": 1793818800000,
-   "src": "HF Papers",
-   "score": 13,
-   "ps": [
-    "lexicon",
     "orbix"
    ]
   },
@@ -1306,64 +1359,6 @@
    "score": 241,
    "ps": [
     "archive",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50368208",
-   "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
-   "url": "https://www.linum.ai/field-notes/pjit-21k",
-   "ts": 1793810711000,
-   "src": "Hacker News",
-   "score": 287,
-   "ps": [
-    "meridian",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50366971",
-   "title": "YC's Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
-   "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
-   "ts": 1793806111000,
-   "src": "Hacker News",
-   "score": 112,
-   "ps": [
-    "meridian",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50366863",
-   "title": "OpenAI to acquire Pierre Computer Company",
-   "url": "https://openai.com/index/openai-to-acquire-pierre/",
-   "ts": 1793805681000,
-   "src": "Hacker News",
-   "score": 265,
-   "ps": [
-    "meridian",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50366117",
-   "title": "Ask HN: What's your current AI agentic setup?",
-   "url": "https://news.ycombinator.com/item?id=50366117",
-   "ts": 1793803042000,
-   "src": "Hacker News",
-   "score": 572,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50363717",
-   "title": "Told to reboot a server, it destroyed systemd, destroyed containers, ran random",
-   "url": "https://github.com/openai/codex/issues/59060",
-   "ts": 1793789031000,
-   "src": "Hacker News",
-   "score": 50,
-   "ps": [
     "orbix"
    ]
   }
