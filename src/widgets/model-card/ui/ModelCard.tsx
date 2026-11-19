@@ -58,7 +58,7 @@ export function ModelCard({ modelId, onOpenPicker, onBench, hw, benches, classNa
             <>
               <div className={s.archLine}>{undisclosed(m.arch) || m.arch === 'Undisclosed' ? t('Архитектура не раскрыта.', 'Architecture not disclosed.') : m.arch}</div>
               <dl className={s.extra}>{extra.map(([k, v]) => <Fragment key={k}><dt>{k}</dt><dd>{v}</dd></Fragment>)}</dl>
-              {hw && <dl className={s.extra}>{hw.facts.slice(2).map(([k, v]: [string, string]) => <Fragment key={k}><dt>{k}</dt><dd>{v}</dd></Fragment>)}</dl>}
+              {hw && <dl className={s.extra}>{hw.facts.slice(2).map(([k, v]: string[]) => <Fragment key={k}><dt>{k}</dt><dd>{v}</dd></Fragment>)}</dl>}
               <div className={s.note}>{hw && !hw.hid && hw.srcNote !== undefined ? (hw.srcNote ? hw.srcNote + ' ' : '') + t('Обвязка вокруг — та же для любой модели.', 'The scaffolding around is the same for any model.') : t('Архитектура не раскрыта — форма ядра условная. Обвязка модели вокруг от модели не зависит.', 'Architecture undisclosed: the core shape is schematic. The scaffolding around does not depend on the model.')}</div>
             </>
           )}
