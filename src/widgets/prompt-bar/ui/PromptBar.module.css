@@ -26,3 +26,5 @@
 .cx { font-size: 11.5px; line-height: 1.45; color: var(--muted); text-wrap: pretty; }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; }
 .chip { padding: 2px 8px; border-radius: 999px; font-size: 11px; line-height: 1.4; border: 1px solid; }
+.cap { max-width: 100%; padding: 0 14px; font-size: 11.5px; line-height: 1.4; text-align: center; color: var(--ink-3); pointer-events: none; }
+.cap b { display: block; font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }

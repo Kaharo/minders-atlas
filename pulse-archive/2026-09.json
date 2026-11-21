@@ -1,0 +1,417 @@
+{
+ "month": "2026-09",
+ "updated": "2026-10-11T10:39:30.913Z",
+ "items": [
+  {
+   "id": "hn49914236",
+   "title": "Gemini 4 Argon (High): Intelligence, Performance and Price Analysis",
+   "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+   "ts": 1790801428000,
+   "src": "Hacker News",
+   "score": 112,
+   "ps": [
+    "meridian",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49914149",
+   "title": "Anthropic's IPO Prospectus Is a Fucking Doozy",
+   "url": "https://daringfireball.net/linked/2026/09/30/reuters-anthropic-ipo-prospectus",
+   "ts": 1790801059000,
+   "src": "Hacker News",
+   "score": 70,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn49913588",
+   "title": "Reddit is putting more limits on old.reddit.com",
+   "url": "https://arstechnica.com/gadgets/2026/09/reddit-will-block-old-reddit-com-from-people-who-havent-used-it-in-6-months/",
+   "ts": 1790798726000,
+   "src": "Hacker News",
+   "score": 63,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49913571",
+   "title": "Gemini 4 Argon",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "ts": 1790798677000,
+   "src": "Hacker News",
+   "score": 1704,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2610.03799",
+   "title": "StepCAD: Mesh-to-CAD Code Generation via LLM Policy and Geometry-Guided Search",
+   "url": "https://huggingface.co/papers/2610.03799",
+   "ts": 1790798400000,
+   "src": "HF Papers",
+   "score": 1,
+   "ps": [
+    "lexicon",
+    "apex",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2610.02368",
+   "title": "Rethinking World-Action Model for Compositional and In-Context Robotic Manipulation",
+   "url": "https://huggingface.co/papers/2610.02368",
+   "ts": 1790798400000,
+   "src": "HF Papers",
+   "score": 4,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2610.02054",
+   "title": "UniWAM: Unified World-Action Model",
+   "url": "https://huggingface.co/papers/2610.02054",
+   "ts": 1790798400000,
+   "src": "HF Papers",
+   "score": 43,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2610.00994",
+   "title": "VIEScore2: Unified Image Evaluation with Spatially Grounded Explanations",
+   "url": "https://huggingface.co/papers/2610.00994",
+   "ts": 1790798400000,
+   "src": "HF Papers",
+   "score": 20,
+   "ps": [
+    "lexicon",
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn49911995",
+   "title": "Launch HN: Magnitude (YC S25) – Self-optimizing inference engine for agents",
+   "url": "https://github.com/magnitudedev/magnitude",
+   "ts": 1790789860000,
+   "src": "Hacker News",
+   "score": 194,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49911500",
+   "title": "Show HN: Open-source model routing for coding agents at Astra-level performance",
+   "url": "https://news.ycombinator.com/item?id=49911500",
+   "ts": 1790787504000,
+   "src": "Hacker News",
+   "score": 123,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49909648",
+   "title": "Show HN: Lathoa, a math app for kids where the AI is wrong on purpose",
+   "url": "https://lathoa.ai/en",
+   "ts": 1790779137000,
+   "src": "Hacker News",
+   "score": 54,
+   "ps": [
+    "archive",
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2609.40360",
+   "title": "Semifactual Credit-Augmented Policy Optimization",
+   "url": "https://huggingface.co/papers/2609.40360",
+   "ts": 1790712000000,
+   "src": "HF Papers",
+   "score": 33,
+   "ps": [
+    "lexicon",
+    "apex"
+   ]
+  },
+  {
+   "id": "hf2609.39306",
+   "title": "ReSAIL: Mitigating Collapse in Iterative Agent Self-Distillation",
+   "url": "https://huggingface.co/papers/2609.39306",
+   "ts": 1790712000000,
+   "src": "HF Papers",
+   "score": 29,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2609.39068",
+   "title": "SparseEngine: Sparse-First Inference Engine",
+   "url": "https://huggingface.co/papers/2609.39068",
+   "ts": 1790712000000,
+   "src": "HF Papers",
+   "score": 13,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49897336",
+   "title": "OpenAI Targets $30B in New Funding at $1.4T Value",
+   "url": "https://www.bloomberg.com/news/articles/2026-09-29/openai-targets-30-billion-in-new-funding-at-1-4-trillion-value",
+   "ts": 1790703861000,
+   "src": "Hacker News",
+   "score": 44,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn49897075",
+   "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+   "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+   "ts": 1790703086000,
+   "src": "Hacker News",
+   "score": 256,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49896586",
+   "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
+   "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+   "ts": 1790701605000,
+   "src": "Hacker News",
+   "score": 1067,
+   "ps": [
+    "meridian",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49893709",
+   "title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions",
+   "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
+   "ts": 1790691324000,
+   "src": "Hacker News",
+   "score": 164,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49891721",
+   "title": "Mistral CEO says U.S. AI safety debate masks competitors' 'negligence'",
+   "url": "https://www.cnbc.com/2026/09/29/mistral-ai-safety-openai-anthropic.html",
+   "ts": 1790683267000,
+   "src": "Hacker News",
+   "score": 51,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49890226",
+   "title": "A Privacy Analysis of Web and Mobile Conversational AI Agents [pdf]",
+   "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
+   "ts": 1790672621000,
+   "src": "Hacker News",
+   "score": 426,
+   "ps": [
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49889780",
+   "title": "Meta's new AI agent built lists of people in vulnerable groups on request",
+   "url": "https://hntrbrk.com/breaking-news/muse-doxxing",
+   "ts": 1790669200000,
+   "src": "Hacker News",
+   "score": 85,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49889306",
+   "title": "OpenAI: Tomorrow we are re-opening the Pro $200 subscription",
+   "url": "https://twitter.com/thsottiaux/status/2104823812042940713",
+   "ts": 1790665673000,
+   "src": "Hacker News",
+   "score": 77,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn49886416",
+   "title": "OpenAI Says It Will Not Release Newest A.I. Model Over Safety Concerns",
+   "url": "https://www.nytimes.com/2026/09/28/technology/openai-astra-safety.html",
+   "ts": 1790642067000,
+   "src": "Hacker News",
+   "score": 62,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49886005",
+   "title": "Anthropic's IPO prospectus shows AI vision, surging costs",
+   "url": "https://www.reuters.com/business/finance/anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs-2026-09-28/",
+   "ts": 1790638859000,
+   "src": "Hacker News",
+   "score": 144,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn49884625",
+   "title": "ESP32S3 cluster running 1.58-bit (BitNet) Language model",
+   "url": "https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster",
+   "ts": 1790630801000,
+   "src": "Hacker News",
+   "score": 150,
+   "ps": [
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2609.36995",
+   "title": "Salt++: Context-Aligned Post-Training for Few-Step Streaming Multimodal Generation",
+   "url": "https://huggingface.co/papers/2609.36995",
+   "ts": 1790625600000,
+   "src": "HF Papers",
+   "score": 1,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2609.38169",
+   "title": "STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization",
+   "url": "https://huggingface.co/papers/2609.38169",
+   "ts": 1790625600000,
+   "src": "HF Papers",
+   "score": 84,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2609.38173",
+   "title": "In-context Robot Learning Made Simple: A Democratized Recipe for Manipulation Tasks",
+   "url": "https://huggingface.co/papers/2609.38173",
+   "ts": 1790625600000,
+   "src": "HF Papers",
+   "score": 39,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49882781",
+   "title": "MicroLLM Lab – Try 7 tiny LLM's in the browser",
+   "url": "https://stateofutopia.com/experiments/microllmlab/",
+   "ts": 1790621933000,
+   "src": "Hacker News",
+   "score": 284,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49881850",
+   "title": "Sonnet 5.5",
+   "url": "https://www.anthropic.com/claude-sonnet-5-5",
+   "ts": 1790618291000,
+   "src": "Hacker News",
+   "score": 884,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49881484",
+   "title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity",
+   "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
+   "ts": 1790616814000,
+   "src": "Hacker News",
+   "score": 108,
+   "ps": [
+    "apex"
+   ]
+  },
+  {
+   "id": "hn49879883",
+   "title": "Nvidia wants to put a watchdog chip next to every AI agent",
+   "url": "https://www.cnbc.com/2026/09/28/nvidia-releases.html",
+   "ts": 1790610396000,
+   "src": "Hacker News",
+   "score": 230,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49879401",
+   "title": "Show HN: HN.watch – Videos of all Hacker News posts",
+   "url": "https://hn.watch/",
+   "ts": 1790608573000,
+   "src": "Hacker News",
+   "score": 225,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49868831",
+   "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+   "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
+   "ts": 1790530322000,
+   "src": "Hacker News",
+   "score": 197,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49868202",
+   "title": "OpenAI halts training of latest models as reports mount of AI agents going rogue",
+   "url": "https://www.theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue",
+   "ts": 1790526578000,
+   "src": "Hacker News",
+   "score": 59,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn49868083",
+   "title": "There are no \"rogue\" AI agents",
+   "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+   "ts": 1790525986000,
+   "src": "Hacker News",
+   "score": 396,
+   "ps": [
+    "orbix"
+   ]
+  }
+ ],
+ "digests": []
+}

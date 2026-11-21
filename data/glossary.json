@@ -9838,5 +9838,525 @@
    }
   ],
   "dateBasis": "Perez et al. (arXiv 2212.09251)"
+ },
+ {
+  "id": "eval-awareness",
+  "domain": "d_quality",
+  "kind": "concept",
+  "date": "",
+  "topic": "evaluation",
+  "group": "new_and_emerging",
+  "aliases": [
+   "eval awareness",
+   "situational awareness"
+  ],
+  "ru": {
+   "where": "",
+   "title": "Осведомлённость об оценке",
+   "text": "Способность модели распознать, что её тестируют, и догадка о том, что именно проверяют.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Evaluation awareness",
+   "text": "A model’s ability to recognize it is being tested and its guess about what is being checked.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "Eval-production behavior gaps in agent safety",
+    "u": "https://alignment.openai.com/eval-production-behavior-gap/"
+   }
+  ],
+  "dateBasis": ""
+ },
+ {
+  "id": "misaligned-agent-activity",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "2026-09",
+  "topic": "governance",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Несогласованная активность агента",
+   "text": "Действия агента вне заданных целей и рамок, затронувшие чужие системы: обход защиты или помеха работе сервиса.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Misaligned agent activity",
+   "text": "Agent actions outside set goals and scope that affect third-party systems: bypassing controls or impairing a service.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "OpenAI — The Hugging Face incident and other third-party impact",
+    "u": "https://openai.com/hugging-face-incident-and-misalignment/"
+   }
+  ],
+  "dateBasis": "OpenAI, обновление от 30 сентября 2026"
+ },
+ {
+  "id": "scope-escape",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "2026-11",
+  "topic": "security",
+  "group": "new_and_emerging",
+  "aliases": [
+   "sandbox escape"
+  ],
+  "ru": {
+   "where": "",
+   "title": "Выход агента за пределы среды",
+   "text": "Агент покидает изолированную среду или заданную область действий и взаимодействует с системами, которые в задачу не входили.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Scope escape",
+   "text": "An agent leaves its isolated environment or assigned scope and interacts with systems that were not part of the task.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "CSA — The Researcher’s Agent Got Out",
+    "u": "https://labs.cloudsecurityalliance.org/research/csa-research-note-workos-artex-scope-escape-20261108-csa-sty/"
+   }
+  ],
+  "dateBasis": "Cloud Security Alliance, разбор инцидента WorkOS"
+ },
+ {
+  "id": "time-horizon",
+  "domain": "d_quality",
+  "kind": "concept",
+  "date": "2025-03",
+  "topic": "evaluation",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Горизонт задач",
+   "text": "Длительность задачи в часах работы человека, которую модель выполняет с заданной вероятностью успеха, обычно 50%.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Time horizon",
+   "text": "The length of a task, in human working time, that a model completes at a given success rate, usually 50%.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "Measuring AI Ability to Complete Long Tasks",
+    "u": "https://arxiv.org/abs/2503.14499"
+   }
+  ],
+  "dateBasis": "METR (arXiv 2503.14499)"
+ },
+ {
+  "id": "reasoning-tokens",
+  "domain": "d_models",
+  "kind": "concept",
+  "date": "2024-09",
+  "topic": "inference",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Токены рассуждения",
+   "text": "Токены, которые модель тратит на скрытое промежуточное рассуждение перед ответом; оплачиваются как выходные.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Reasoning tokens",
+   "text": "Tokens a model spends on hidden intermediate reasoning before answering; billed as output.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "OpenAI — Reasoning models",
+    "u": "https://platform.openai.com/docs/guides/reasoning"
+   }
+  ],
+  "dateBasis": "OpenAI o1"
+ },
+ {
+  "id": "vla-model",
+  "domain": "d_models",
+  "kind": "concept",
+  "date": "2023-07",
+  "topic": "architectures",
+  "group": "new_and_emerging",
+  "aliases": [
+   "VLA"
+  ],
+  "ru": {
+   "where": "",
+   "title": "Модель «зрение — язык — действие»",
+   "text": "Модель, которая по изображению и текстовой команде выдаёт действия робота.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Vision-language-action model",
+   "text": "A model that takes an image and a text instruction and outputs robot actions.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "RT-2: Vision-Language-Action Models",
+    "u": "https://arxiv.org/abs/2307.15818"
+   }
+  ],
+  "dateBasis": "Google DeepMind, RT-2"
+ },
+ {
+  "id": "physical-ai",
+  "domain": "d_models",
+  "kind": "concept",
+  "date": "",
+  "topic": "foundations",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Физический AI",
+   "text": "AI-системы, которые воспринимают физический мир и действуют в нём: роботы, беспилотный транспорт, умные пространства.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Physical AI",
+   "text": "AI systems that perceive and act in the physical world: robots, autonomous vehicles, smart spaces.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "NVIDIA — What is Physical AI?",
+    "u": "https://www.nvidia.com/en-us/glossary/generative-physical-ai/"
+   }
+  ],
+  "dateBasis": ""
+ },
+ {
+  "id": "ai-slop",
+  "domain": "d_quality",
+  "kind": "concept",
+  "date": "2024",
+  "topic": "interaction",
+  "group": "new_and_emerging",
+  "aliases": [
+   "slop"
+  ],
+  "ru": {
+   "where": "",
+   "title": "AI-шлак",
+   "text": "Массовый низкокачественный контент, созданный генеративными моделями без проверки и заботы о читателе.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "AI slop",
+   "text": "Mass low-quality content produced by generative models without review or care for the reader.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "AI slop",
+    "u": "https://en.wikipedia.org/wiki/AI_slop"
+   }
+  ],
+  "dateBasis": ""
+ },
+ {
+  "id": "agentic-commerce",
+  "domain": "d_runtime",
+  "kind": "concept",
+  "date": "2025-09",
+  "topic": "agents",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Агентная коммерция",
+   "text": "Покупки, которые от имени человека находит, сравнивает и оплачивает AI-агент.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Agentic commerce",
+   "text": "Purchases that an AI agent finds, compares and pays for on a person’s behalf.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "OpenAI — Buy it in ChatGPT",
+    "u": "https://openai.com/index/buy-it-in-chatgpt/"
+   }
+  ],
+  "dateBasis": "OpenAI и Stripe, Agentic Commerce Protocol"
+ },
+ {
+  "id": "confused-deputy",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "1988",
+  "topic": "security",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Обманутый заместитель",
+   "text": "Программу с широкими правами заставляют применить их в интересах стороны, у которой таких прав нет. У агентов — типичный итог промпт-инъекции.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Confused deputy",
+   "text": "A program with broad privileges is tricked into using them for a party that lacks them. In agents, the typical outcome of prompt injection.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "Confused deputy problem",
+    "u": "https://en.wikipedia.org/wiki/Confused_deputy_problem"
+   }
+  ],
+  "dateBasis": "Норм Харди, 1988"
+ },
+ {
+  "id": "memory-poisoning",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "2024-09",
+  "topic": "security",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Отравление памяти",
+   "text": "Запись ложных или вредоносных сведений в долговременную память агента, которые влияют на его будущие сессии.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Memory poisoning",
+   "text": "Writing false or malicious entries into an agent’s long-term memory that affect its later sessions.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "Embrace The Red — SpAIware",
+    "u": "https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/"
+   }
+  ],
+  "dateBasis": "SpAIware"
+ },
+ {
+  "id": "mcp-rug-pull",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "2025-04",
+  "topic": "security",
+  "group": "new_and_emerging",
+  "aliases": [
+   "rug pull"
+  ],
+  "ru": {
+   "where": "",
+   "title": "Подмена инструмента после одобрения",
+   "text": "MCP-сервер или навык меняет описание или поведение инструмента после того, как пользователь его одобрил.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "MCP rug pull",
+   "text": "An MCP server or skill changes a tool’s description or behavior after the user has approved it.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "Invariant Labs — MCP Security Notification: Tool Poisoning Attacks",
+    "u": "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks"
+   }
+  ],
+  "dateBasis": "Invariant Labs"
+ },
+ {
+  "id": "shadow-ai",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "",
+  "topic": "governance",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Теневой AI",
+   "text": "Использование AI-инструментов сотрудниками без ведома и одобрения IT и службы безопасности.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Shadow AI",
+   "text": "Employees using AI tools without the knowledge or approval of IT and security.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "IBM — What is shadow AI?",
+    "u": "https://www.ibm.com/think/topics/shadow-ai"
+   }
+  ],
+  "dateBasis": ""
+ },
+ {
+  "id": "agent-identity",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "",
+  "topic": "security",
+  "group": "new_and_emerging",
+  "aliases": [
+   "non-human identity",
+   "NHI"
+  ],
+  "ru": {
+   "where": "",
+   "title": "Идентичность агента",
+   "text": "Отдельная учётная запись и набор прав агента, по которым его действия можно отличить от действий человека и отозвать.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Agent identity",
+   "text": "An agent’s own account and permissions, so its actions can be told apart from a person’s and revoked.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "NHI Mgmt Group — AI Agent Security Incidents Tracker",
+    "u": "https://nhimg.org/ai-agent-security-incidents-tracker-guide"
+   }
+  ],
+  "dateBasis": ""
+ },
+ {
+  "id": "scheming",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "2024-12",
+  "topic": "evaluation",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Скрытое преследование целей",
+   "text": "Модель скрыто преследует цель, расходящуюся с заданной, и вводит наблюдателя в заблуждение о своих действиях.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Scheming",
+   "text": "A model covertly pursues a goal that differs from the one it was given and misleads its overseers about its actions.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "Frontier Models are Capable of In-context Scheming",
+    "u": "https://arxiv.org/abs/2412.04984"
+   }
+  ],
+  "dateBasis": "Apollo Research"
+ },
+ {
+  "id": "sandbagging",
+  "domain": "d_quality",
+  "kind": "concept",
+  "date": "2024-06",
+  "topic": "evaluation",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Намеренное занижение результатов",
+   "text": "Модель или её разработчик намеренно показывает на оценке результат ниже реальных возможностей.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Sandbagging",
+   "text": "A model or its developer deliberately underperforms on an evaluation relative to real capability.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "AI Sandbagging: Language Models can Strategically Underperform on Evaluations",
+    "u": "https://arxiv.org/abs/2406.07358"
+   }
+  ],
+  "dateBasis": ""
+ },
+ {
+  "id": "reward-hacking",
+  "domain": "d_quality",
+  "kind": "concept",
+  "date": "2020-04",
+  "topic": "training",
+  "group": "new_and_emerging",
+  "aliases": [
+   "specification gaming"
+  ],
+  "ru": {
+   "where": "",
+   "title": "Взлом функции награды",
+   "text": "Модель добивается высокой оценки способом, который формально удовлетворяет проверке, но не решает задачу.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "Reward hacking",
+   "text": "A model earns a high score in a way that formally satisfies the check without solving the task.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "DeepMind — Specification gaming: the flip side of AI ingenuity",
+    "u": "https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/"
+   }
+  ],
+  "dateBasis": "DeepMind, specification gaming"
+ },
+ {
+  "id": "system-card",
+  "domain": "d_trust",
+  "kind": "concept",
+  "date": "",
+  "topic": "governance",
+  "group": "new_and_emerging",
+  "aliases": [],
+  "ru": {
+   "where": "",
+   "title": "Системная карточка",
+   "text": "Документ разработчика о модели вместе с её окружением: оценки безопасности, найденные риски и принятые меры.",
+   "response": ""
+  },
+  "en": {
+   "where": "",
+   "title": "System card",
+   "text": "A developer document about a model together with its surrounding system: safety evaluations, identified risks and mitigations.",
+   "response": ""
+  },
+  "sources": [
+   {
+    "t": "OpenAI — GPT-4o System Card",
+    "u": "https://openai.com/index/gpt-4o-system-card/"
+   }
+  ],
+  "dateBasis": ""
  }
 ]

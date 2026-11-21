@@ -26,9 +26,10 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
   return (
     <>
       <div className={s.wrap} style={style}>
+        {!steps && <div className={s.cap}><b>{t('Путь запроса', 'Request path')}</b>{t('Наберите фразу, и карта по шагам покажет, что с ней происходит внутри AI-системы.', 'Type a phrase and the map shows, step by step, what happens to it inside an AI system.')}</div>}
         <div className={s.bar}>
-          <input className={s.input} value={v} onChange={e => setV(e.target.value)} onKeyDown={onKey} placeholder={t('наберите фразу', 'type a phrase')} aria-label={t('Запрос', 'Request')} />
-          <button type="button" className={s.go} onClick={() => submit()} aria-label="send">→</button>
+          <input className={s.input} value={v} onChange={e => setV(e.target.value)} onKeyDown={onKey} placeholder={t('например: агент вызывает инструмент', 'for example: an agent calls a tool')} aria-label={t('Фраза для показа пути запроса', 'Phrase to trace through the system')} />
+          <button type="button" className={s.go} onClick={() => submit()} aria-label={t('Показать путь запроса', 'Show the request path')}>→</button>
         </div>
         {steps && (
           <div className={`${s.row} ${s.stepper}`}>

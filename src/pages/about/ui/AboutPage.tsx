@@ -20,7 +20,7 @@ export function AboutPage() {
   useEffect(() => { document.title = t('О проекте · minders atlas', 'About · minders atlas'); }, [t]);
   const e = health.data?.entities ?? {};
   const counts = [
-    { to: '/atlas/glossary', label: t('Термины', 'Terms'), n: e.term ?? 340, color: '#3b5bfd' },
+    { to: '/atlas/glossary', label: t('Термины', 'Terms'), n: e.term ?? 358, color: '#3b5bfd' },
     { to: '/atlas/research', label: t('Исследования', 'Research'), n: e.research ?? 0, color: '#a855f7' },
     { to: '/atlas/incidents', label: t('Инциденты', 'Incidents'), n: e.incident ?? 0, color: '#ef4444' },
     { to: '/atlas/benchmarks', label: t('Рейтинги', 'Rankings'), n: e.benchmark ?? 0, color: '#f59e0b' }

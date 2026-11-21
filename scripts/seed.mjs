@@ -6,7 +6,7 @@ import { seedWorld } from './lib/seed-world.mjs';
 const db = createClient({ url: process.env.TURSO_DATABASE_URL ?? 'file:local.db', authToken: process.env.TURSO_AUTH_TOKEN });
 const read = async (f, d) => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return d; } };
 const files = ['atlas-pulse.json'];
-try { (await readdir('pulse-archive')).filter(f => f.endsWith('.json')).sort().forEach(f => files.push('pulse-archive/' + f)); } catch {}
+try { (await readdir('pulse-archive')).filter(f => /^\d{4}-\d{2}\.json$/.test(f)).sort().forEach(f => files.push('pulse-archive/' + f)); } catch {}
 const st = await seedWorld(db, {
   glossary: await read('data/glossary.json', []), research: await read('data/research.json', []), incidents: await read('data/incidents.json', []), scores: await read('data/scores.json', {}), relations: await read('data/relations.json', []),
   pulse: await Promise.all(files.map(f => read(f, null)))

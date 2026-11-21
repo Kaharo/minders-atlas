@@ -3,6 +3,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useLocale } from '@/shared/i18n';
 import { useLoad } from '@/shared/lib/useLoad';
 import { plural } from '@/shared/lib/format';
+import { setViewMode, useViewMode } from '@/shared/lib/viewMode';
 import { BLOCK_BY_ID, BLOCK_DEF, BLOCK_NAME, FIRST_YEAR, type BlockId } from '@/entities/term';
 import { atlasApi, entryColor, isSection, SECTION_LABEL, type Section } from '@/entities/atlas-entry';
 import { modelById, DEFAULT_MODEL, supportFor } from '@/entities/model';
@@ -33,6 +34,8 @@ export function AtlasPage() {
   const [hw, setHw] = useState<HwData | null>(null);
   const [picker, setPicker] = useState(false);
   const [sheet, setSheet] = useState<'none' | 'blocks' | 'points' | 'model'>('none');
+  const mode = useViewMode(), simple = mode === 'simple';
+  const [show, setShow] = useState({ list: false, model: false, time: false });
   const tr = useTraceRunner();
   const ok = isSection(section);
   const S = (ok ? section : 'glossary') as Section;
@@ -62,42 +65,63 @@ export function AtlasPage() {
     else { const r = buildHarnessTrace(text, entries, index, locale); tr.start(r.steps, r.hits); }
   }, [S, modelId, locale, entries, index, tr, go]);
 
+  const learn = S === 'glossary' && !!tr.steps;
+  useEffect(() => { if (f.zone || learn) setShow(v => (v.list ? v : { ...v, list: true })); }, [f.zone, learn]);
+
   if (!ok) return <Navigate to="/atlas/glossary" replace />;
-  const narrow = cw < 760, learn = S === 'glossary' && !!tr.steps;
+  const narrow = cw < 760;
+  const listOn = !narrow && (!simple || show.list), modelOn = !narrow && (!simple || show.model), timeOn = !narrow && (!simple || show.time);
   const cur = tr.steps && tr.step != null ? tr.steps[tr.step] : null;
-  const asideW = narrow ? 0 : cw < 1000 ? 216 : cw < 1240 ? 250 : 292, leftW = narrow ? 0 : cw < 1000 ? 236 : cw < 1240 ? 268 : 304;
+  const asideW = !listOn ? 0 : cw < 1000 ? 216 : cw < 1240 ? 250 : 292, leftW = !modelOn ? 0 : cw < 1000 ? 236 : cw < 1240 ? 268 : 304;
+  const nounN = (n: number) => `${n} ${plural(n, (S === 'glossary' ? (li ? ['term', 'terms', 'terms'] : ['термин', 'термина', 'терминов']) : li ? ['record', 'records', 'records'] : ['запись', 'записи', 'записей']) as [string, string, string], locale)}`;
   const block = f.zone ? BLOCK_BY_ID[f.zone as BlockId] : null;
   const lvl = f.zone ? support.level[f.zone] : 0;
   const lvlWord = lvl === -1 ? t('не зависит от модели', 'model-independent') : lvl === 2 ? t('зона активна', 'zone active') : lvl === 1 ? t('частичная активация', 'partly active') : t('зона не активирована', 'zone not active');
+  const blockEl = block && (
+    <div className={s.active} style={simple ? { marginTop: 0, marginBottom: 7 } : undefined}>
+      <div className={s.ah}><i style={{ background: block.color, boxShadow: `0 0 8px ${block.color}` }} /><b>{block.label[li]} · {BLOCK_NAME[block.id][li]}</b><button type="button" onClick={() => f.setZone(null)}>{t('сброс', 'reset')}</button></div>
+      <div className={s.ad}>{BLOCK_DEF[block.id][li]}</div>
+      <div className={s.as}>{lvlWord} · {counts[block.id] ?? 0} {S === 'glossary' ? t('терминов', 'terms') : t('ключ. точек', 'key points')}</div>
+    </div>
+  );
   const listEl = <AtlasList section={S} entries={byZone} shown={shown} zone={f.zone} onZone={f.setZone} kind={f.kind} onKind={f.setKind} selected={key ?? null} onPick={go} />;
   const modelEl = (compact?: boolean) => <ModelCard modelId={modelId} onOpenPicker={() => setPicker(true)} onBench={bid => goTo('benchmarks', bid)} hw={hw} benches={benches.data} compact={compact} />;
   return (
     <div className={s.stage}>
       <ArchMap modelId={modelId} focus={S === 'incidents' ? 'incidents' : S === 'glossary' ? 'learn' : 'glossary'} points={points} pointsKey={pointsKey} selected={key ?? null} hitsKey={tr.hits.map(h => h.id).join(',')} zone={f.zone || null} zoneCounts={zoneCounts} supportKey={support.key}
         stepKey={cur?.key ?? null} stepN={tr.runId * 1000 + (tr.step ?? -1)} stepTitle={cur?.title} stepDone={cur?.done} stepColor={cur?.color}
-        insetL={asideW ? asideW + 34 : 16} insetR={leftW ? leftW + 34 : 16} insetT={narrow ? 210 : 190} insetB={narrow ? 176 : 132} hwDock="bottom" hwHidden onPoint={go} onZone={onZone} onHw={setHw} />
+        insetL={asideW ? asideW + 34 : 16} insetR={leftW ? leftW + 34 : 16} insetT={narrow ? (tr.steps ? 150 : 124) : 190} insetB={narrow ? (learn ? 250 : 64) : timeOn ? 132 : 56} plain={simple} hwDock="bottom" hwHidden onPoint={go} onZone={onZone} onHw={setHw} />
       <PromptBar onSubmit={onSubmit} steps={tr.steps} step={tr.step} open={tr.open} hits={tr.hits} hitLabel={id => { const e = entries.find(x => x.key === id); return e ? { label: pick(e.title).length > 26 ? pick(e.title).slice(0, 25) + '…' : pick(e.title), color: entryColor(e) } : null; }} onHit={go} onJump={tr.jump} onClear={tr.clearHits}
-        showSamples={!narrow && cw >= 460} cardBottom={narrow ? 96 : 150} style={{ top: narrow ? 118 : 92, width: narrow ? 'calc(100% - 36px)' : `min(520px, calc(100% - ${2 * (Math.max(leftW, asideW) + 46)}px))` }} />
+        showSamples={!narrow && cw >= 460} cardBottom={narrow ? 60 : timeOn ? 150 : 60} style={{ top: narrow ? 12 : simple ? 58 : 92, width: narrow ? 'calc(100% - 36px)' : `min(520px, calc(100% - ${2 * (Math.max(leftW, asideW) + 46)}px))` }} />
       {list.loading && !list.data && <span className={s.status}>{t('Загружаю записи…', 'Loading entries…')}</span>}
       {list.error && <span className={s.status} style={{ color: '#b91c1c' }}>{list.error}</span>}
-      {!narrow && (
-        <div className={s.left} style={{ width: asideW }}>
+      {!narrow && simple && (
+        <div className={s.chips}>
+          <button type="button" className={`${s.chip} ${show.list ? s.chipOn : ''}`} aria-expanded={show.list} onClick={() => setShow(v => ({ ...v, list: !v.list }))}>{show.list ? t('Скрыть список', 'Hide list') : `${SECTION_LABEL[S][li]} · ${nounN(entries.length)}`}</button>
+          <span className={s.chipsGap} />
+          <button type="button" className={`${s.chip} ${show.model ? s.chipOn : ''}`} aria-expanded={show.model} onClick={() => setShow(v => ({ ...v, model: !v.model }))}>{show.model ? t('Скрыть модель', 'Hide model') : `${t('Модель', 'Model')}: ${modelById(modelId)?.name ?? modelId}`}</button>
+        </div>
+      )}
+      {listOn && (
+        <div className={`${s.left} ${simple ? s.under : ''}`} style={{ width: asideW }}>
+          {simple && block && !(learn && cur) && blockEl}
           {learn && cur ? <LearnPanel steps={tr.steps!} step={tr.step!} onClose={tr.stop} /> : listEl}
         </div>
       )}
-      {!narrow && (
-        <div className={s.right} style={{ width: leftW }}>
+      {modelOn && (
+        <div className={`${s.right} ${simple ? s.under : ''}`} style={{ width: leftW }}>
           {modelEl()}
-          {block && (
-            <div className={s.active}>
-              <div className={s.ah}><i style={{ background: block.color, boxShadow: `0 0 8px ${block.color}` }} /><b>{block.label[li]} · {BLOCK_NAME[block.id][li]}</b><button type="button" onClick={() => f.setZone(null)}>{t('сброс', 'reset')}</button></div>
-              <div className={s.ad}>{BLOCK_DEF[block.id][li]}</div>
-              <div className={s.as}>{lvlWord} · {counts[block.id] ?? 0} {S === 'glossary' ? t('терминов', 'terms') : t('ключ. точек', 'key points')}</div>
-            </div>
-          )}
+          {!simple && blockEl}
         </div>
       )}
-      {!narrow && <TimelineBand section={S} style={{ left: asideW + 40, right: leftW + 40 }} entries={byZone} shown={shown} year={f.year} onYear={f.setYear} zone={f.zone} onZone={f.setZone} selected={key ?? null} onPick={go} counts={counts} />}
+      {!narrow && simple && (
+        <button type="button" className={`${s.chip} ${s.timeChip} ${show.time ? s.chipOn : ''}`} aria-expanded={show.time} onClick={() => setShow(v => ({ ...v, time: !v.time }))}>{show.time ? t('Скрыть шкалу времени', 'Hide timeline') : t('Шкала времени', 'Timeline')}</button>
+      )}
+      {!(narrow && learn) && <div className={`${s.mode} ${narrow ? s.modeNarrow : ''}`} role="group" aria-label={t('Режим экрана', 'View mode')}>
+        <button type="button" className={`${s.modeBtn} ${simple ? s.modeOn : ''}`} aria-pressed={simple} onClick={() => setViewMode('simple')}>{t('Просто', 'Simple')}</button>
+        <button type="button" className={`${s.modeBtn} ${!simple ? s.modeOn : ''}`} aria-pressed={!simple} onClick={() => setViewMode('detail')}>{t('Подробно', 'Detailed')}</button>
+      </div>}
+      {timeOn && <TimelineBand section={S} style={{ left: simple ? Math.max(asideW + 40, 230) : asideW + 40, right: leftW + 40 + (simple && !modelOn ? 170 : 0) }} entries={byZone} shown={shown} year={f.year} onYear={f.setYear} zone={f.zone} onZone={f.setZone} selected={key ?? null} onPick={go} counts={counts} />}
       {narrow && !learn && (
         <div className={s.tabs}>
           {(['blocks', 'points', 'model'] as const).map(k => <button key={k} type="button" className={`${s.tab} ${sheet === k ? s.tabOn : ''}`} onClick={() => setSheet(sheet === k ? 'none' : k)}>{k === 'blocks' ? t('Блоки', 'Blocks') : k === 'points' ? t('Точки', 'Points') : t('Модель', 'Model')}</button>)}

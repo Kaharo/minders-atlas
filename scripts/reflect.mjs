@@ -1,6 +1,6 @@
 // Разборы персон: каждая персона читает свои новости и пишет дайджест + заметку к каждой новости.
 // Запуск после build-pulse.mjs. Без ANTHROPIC_API_KEY тихо пропускается.
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { KEY, askJSON } from './claude.mjs';
 
 if (!KEY) { console.log('reflect: ANTHROPIC_API_KEY не задан, пропускаю'); process.exit(0); }
@@ -40,5 +40,4 @@ for (const id of ['orbix', 'apex', 'meridian', 'lexicon', 'archive', 'gaya', 'pr
 }
 
 await writeFile('atlas-pulse.json', JSON.stringify(pulse, null, 1));
-await mkdir('pulse-archive', { recursive: true });
-await writeFile(`pulse-archive/${today}.json`, JSON.stringify({ date: today, personas: pulse.personas, items: pulse.items.filter(x => x.notes) }, null, 1));
+// архив пишет scripts/archive-pulse.mjs следующим шагом workflow

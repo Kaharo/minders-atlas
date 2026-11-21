@@ -10,6 +10,8 @@ export interface ArchProps {
   selected?: string | null; hitsKey?: string; zone?: string | null; zoneCounts?: string; supportKey?: string;
   stepKey?: string | null; stepN?: number; stepTitle?: string; stepDone?: string; stepColor?: string;
   insetL?: number; insetR?: number; insetT?: number; insetB?: number; hwDock?: string; hwHidden?: boolean; hwOpen?: boolean;
+  /** простой режим: подписи блоков без второй строки, внутренности модели подписаны только во время прохода запроса */
+  plain?: boolean;
   onPoint?: (id: string) => void; onZone?: (id: string) => void; onOpen?: (open: boolean) => void; onModel?: (id: string) => void;
 }
 
@@ -467,7 +469,7 @@ export class ArchScene {
   _leader(p, q, a) { if (a < 0.03) return; const c = this.ctx; c.globalAlpha = a * 0.55; c.strokeStyle = '#8a90a6'; c.lineWidth = 0.8; c.beginPath(); c.moveTo(p[0], p[1]); c.lineTo(q[0], q[1]); c.stroke(); c.globalAlpha = 1; }
   _labels(prj, ee, T, geo) {
     const A = this.A, n = (x) => Number(x).toLocaleString('ru-RU'), Hc = this.Hc, Hh = this.HUE, top = Hc / 2, P = this.P, sx = P.sx, sy = P.sy, c = this.ctx;
-    this._rects = []; const narrow = (this._AW || 999) < 480, learn = this.props.focus === 'learn', ai = ee * ee * (learn || this.props.focus === 'glossary' ? 1 : 0), closed = 1 - Math.min(1, ee * 2.5), m = this.M.byModel[this.mid], defer = [], pl = this._pl;
+    this._rects = []; const plain = !!this.props.plain, narrow = plain || (this._AW || 999) < 480, learn = this.props.focus === 'learn', ai = ee * ee * (learn || this.props.focus === 'glossary' ? 1 : 0) * (plain && !this.props.stepKey ? 0 : 1), closed = 1 - Math.min(1, ee * 2.5), m = this.M.byModel[this.mid], defer = [], pl = this._pl;
     
     if (false) {
       const hw = this._hw();

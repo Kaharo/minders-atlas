@@ -10,7 +10,7 @@ import { BlockTabs, YearStrip, useGlossaryFilter } from '@/features/glossary-fil
 import { TermCard } from '@/widgets/term-card';
 import s from './GlossaryPage.module.css';
 
-/** Счётчики фильтров считаются на клиенте из полного списка: 340 записей, один запрос. */
+/** Счётчики фильтров считаются на клиенте из полного списка: 358 записей, один запрос. */
 function computeFacets(all: TermSummary[]): Facets {
   const dom = new Map<string, number>(), top = new Map<string, { domain: string; n: number }>(), yr = new Map<string, number>();
   for (const x of all) {
@@ -54,7 +54,7 @@ export function GlossaryPage() {
     return [...m.entries()].map(([topic, items]) => ({ topic, items }));
   }, [shown, f.block, f.topic, f.q]);
 
-  const total = facets?.total ?? 340;
+  const total = facets?.total ?? 358;
   return (
     <div className={s.page}>
       <div className={s.head}>

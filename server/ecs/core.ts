@@ -86,7 +86,8 @@ export class World {
   }
 }
 
-export type AnyComponent = ComponentDef<Record<string, unknown>>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AnyComponent = ComponentDef<any>;
 export interface Query {
   tag: string;
   with: AnyComponent[];

@@ -4,6 +4,8 @@ import { ROUTES } from '@/shared/config/routes';
 import { Pill, PillGroup, PillLink } from '@/shared/ui';
 import { SECTIONS, SECTION_LABEL } from '@/entities/atlas-entry';
 import { UserMenu } from '@/features/auth';
+import { AtlasSearch } from '@/features/atlas-search';
+import { GuideButton } from '@/features/guide';
 import s from './Header.module.css';
 
 export function Header() {
@@ -21,10 +23,12 @@ export function Header() {
         {SECTIONS.map(x => <PillLink key={x} to={ROUTES.atlas(x)}>{SECTION_LABEL[x][li]}</PillLink>)}
       </PillGroup>
       <span className={s.spacer} />
+      <AtlasSearch />
       <nav className={s.nav}>
         <NavLink to={ROUTES.pulse} className={({ isActive }) => `${s.navLink} ${isActive ? s.navOn : ''}`}><span className={s.live} />{t('Пульс', 'Pulse')}</NavLink>
         <NavLink to={ROUTES.about} className={({ isActive }) => `${s.navLink} ${isActive ? s.navOn : ''}`}>{t('О проекте', 'About')}</NavLink>
       </nav>
+      <GuideButton />
       <UserMenu />
       <PillGroup>
         <Pill on={locale === 'ru'} onClick={() => setLocale('ru')}>RU</Pill>

@@ -1,4 +1,4 @@
-// Сверка рейтингов с Artificial Analysis → data/scores.json. Workflow открывает PR с таблицей изменений.
+// Сверка рейтингов с Artificial Analysis → data/scores.json. Workflow публикует изменения сам и присылает таблицу задачей в GitHub.
 // Ключ: секрет AA_API_KEY (бесплатный, artificialanalysis.ai → API). Arena и SWE-bench обновляются вручную.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 
@@ -37,9 +37,9 @@ const top = fresh.sort((a, b) => b[3] - a[3]).slice(0, 15);
 const md = [`Сверка с Artificial Analysis, ${db.checked}. Изменений: ${changes.length}.`, '',
   '| Бенчмарк | Модель | Было | Стало |', '|---|---|---|---|',
   ...changes.map(([b, m, o, n]) => `| ${b} | ${m} | ${o ?? '—'} | ${n} |`), '',
-  top.length ? '**Новые модели, которых нет в атласе** (не добавлены; чтобы добавить, заведите карточку в atlas-models-v2.js и впишите результат в data/scores.json):' : '',
+  top.length ? '**Новые модели, которых нет в атласе** (не добавлены: у них ещё нет карточки в src/entities/model/lib/registry.js; после карточки результат попадёт в data/scores.json при следующей сверке):' : '',
   ...top.map(([b, m, name, v]) => `- ${b}: ${name} (\`${m}\`) — ${v}`), '',
-  '**Вручную:** ' + Object.entries(MANUAL).map(([k, u]) => `[${k}](${u})`).join(', ') + '. Если там есть новые результаты, допишите их в эту ветку.'];
+  '**Вручную:** ' + Object.entries(MANUAL).map(([k, u]) => `[${k}](${u})`).join(', ') + '. Если там есть новые результаты, допишите их в data/scores.json.'];
 await mkdir('drafts', { recursive: true });
 await writeFile('drafts/SCORES.md', md.join('\n'));
 console.log('scores:', changes.length, 'изменений,', fresh.length, 'новых моделей вне атласа');

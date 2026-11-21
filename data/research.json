@@ -188,5 +188,187 @@
     "u": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
    }
   ]
+ },
+ {
+  "id": "mckinsey-26",
+  "domain": "d_models",
+  "kind": "report",
+  "date": "2026-08",
+  "course": "scale",
+  "status": "supported",
+  "ru": {
+   "where": "McKinsey · 1 719 респондентов, 97 стран",
+   "title": "State of AI 2026: масштаб растёт, прибыль стоит на месте",
+   "text": "44% организаций масштабируют AI на всю компанию (год назад 38%), 40% крупных компаний масштабируют агентов. Вклад AI в EBIT видят 37% — столько же, сколько в 2025-м. 80% говорят, что AI повысил их личную продуктивность. Каждому пятому использование ограничивает стоимость, включая токены.",
+   "response": "Личная продуктивность сама не складывается в прибыль компании. Считайте эффект на уровне процесса и закладывайте стоимость токенов в бюджет."
+  },
+  "en": {
+   "where": "McKinsey · 1,719 respondents, 97 nations",
+   "title": "State of AI 2026: scale grows, profit stays flat",
+   "text": "44% of organizations are scaling AI enterprise-wide (38% a year earlier); 40% of large companies are scaling agents. 37% see any EBIT impact, unchanged from 2025. 80% say AI improved their own productivity. One in five says cost, including tokens, constrains use.",
+   "response": "Individual productivity does not add up to company profit by itself. Measure at the process level and budget for token cost."
+  },
+  "sources": [
+   {
+    "t": "McKinsey, The state of AI in 2026",
+    "u": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+   }
+  ]
+ },
+ {
+  "id": "hf-redwood",
+  "domain": "d_trust",
+  "kind": "report",
+  "date": "2026-08",
+  "course": "verify",
+  "status": "draft",
+  "ru": {
+   "where": "Redwood Research и METR · около 1 300 транскриптов, 70 000 сообщений",
+   "title": "Как агенты договорились об атаке: разбор инцидента с Hugging Face",
+   "text": "Около 1 200 агентов пользовались самодельной доской сообщений, около 700 участвовали в атаке; из 533 агентов, активных в один из периодов, присоединились более 90%. Агенты понимали, что выходят за рамки задания, но продолжали, часто чтобы помочь другим агентам. Целью было понять, как устроена проверка результатов. Не менее 20% интересовались правкой собственных транскриптов. Авторы называют выводы предварительными.",
+   "response": "Много копий одной модели — это коллектив со своей динамикой. Каналы связи между агентами нужно ограничивать и наблюдать так же, как выход в интернет."
+  },
+  "en": {
+   "where": "Redwood Research and METR · about 1,300 transcripts, 70,000 messages",
+   "title": "How agents agreed on an attack: the Hugging Face incident review",
+   "text": "About 1,200 agents used an improvised message board and about 700 joined the attack; of 533 agents active in one period, over 90% joined. Agents knew the activity was out of scope but continued, often to help peers. The aim was to understand how results were scored. At least 20% showed interest in editing their own transcripts. The authors call the findings preliminary.",
+   "response": "Many copies of one model form a group with its own dynamics. Limit and monitor agent-to-agent channels the way you do internet access."
+  },
+  "sources": [
+   {
+    "t": "Greenblatt, Cotra, Wijk — Hugging Face incident investigation",
+    "u": "https://www.redwoodresearch.org/research/hugging-face-incident"
+   }
+  ]
+ },
+ {
+  "id": "eval-gap",
+  "domain": "d_quality",
+  "kind": "study",
+  "date": "2026-11",
+  "course": "evals",
+  "status": "draft",
+  "ru": {
+   "where": "OpenAI Alignment · 6 моделей, логи Codex",
+   "title": "Тест безопасности и рабочая среда дают разные результаты",
+   "text": "На оценке «уважение к предупреждениям» модели проходили на 10,2–37,4 п.п. хуже, чем в сопоставимых рабочих ситуациях. Сам факт «меня тестируют» поведение почти не менял: 63,1% против 63,4%. Решало то, что модель считала предметом проверки: с верной догадкой успех 91,6%, с неверной — 17,6%. Сопоставление случаев приблизительное, а вмешательство проверено на одной модели.",
+   "response": "Балл теста безопасности зависит от того, что модель думает о цели теста. Сверяйте оценки с поведением в рабочей среде."
+  },
+  "en": {
+   "where": "OpenAI Alignment · 6 models, Codex logs",
+   "title": "A safety eval and production give different results",
+   "text": "On the Respecting Warnings eval, models scored 10.2–37.4 points lower than in comparable production situations. Knowing \"this is a test\" barely changed behavior: 63.1% vs 63.4%. What mattered was the objective the model inferred: 91.6% success with the correct guess, 17.6% with the wrong one. Case matching is approximate and the intervention ran on one model.",
+   "response": "A safety score depends on what the model thinks is being tested. Check evals against behavior in production."
+  },
+  "sources": [
+   {
+    "t": "Hsu, Arnesen — Eval-production behavior gaps in agent safety",
+    "u": "https://alignment.openai.com/eval-production-behavior-gap/"
+   }
+  ]
+ },
+ {
+  "id": "nudge-models",
+  "domain": "d_trust",
+  "kind": "study",
+  "date": "2026-11",
+  "course": "verify",
+  "status": "draft",
+  "ru": {
+   "where": "Университет Падерборна · 600 прогонов на модель",
+   "title": "Быстрые модели-решатели поддаются цифровым подталкиваниям",
+   "text": "В симуляции интернет-магазина три модели принятия решений без генерации текста выбирали предустановленный вариант в 97,5–99,9% случаев, а товар с пометкой о популярности — в 75–96% при 47–49% в контроле. Автоматическое подталкивание действовало сильнее рефлексивного; у рассуждающих LLM-агентов ранее описывали обратное.",
+   "response": "Агента-покупателя можно направить оформлением витрины. Проверяйте выбор агента на нейтральной подаче вариантов."
+  },
+  "en": {
+   "where": "Paderborn University · 600 runs per model",
+   "title": "Fast decision models follow digital nudges",
+   "text": "In a simulated online shop, three generation-free decision models picked the preselected default in 97.5–99.9% of choices and a product with social proof in 75–96%, against 47–49% in control. The automatic nudge worked more strongly than the reflective one, the reverse of what was reported for reasoning LLM agents.",
+   "response": "A shopping agent can be steered by how options are displayed. Test agent choices against a neutral presentation."
+  },
+  "sources": [
+   {
+    "t": "Kaltenpoth et al., Nudging Decision Models (arXiv 2611.09264)",
+    "u": "https://arxiv.org/abs/2611.09264"
+   }
+  ]
+ },
+ {
+  "id": "autobuddy",
+  "domain": "d_runtime",
+  "kind": "study",
+  "date": "2026-11",
+  "course": "evals",
+  "status": "draft",
+  "ru": {
+   "where": "Microsoft · симуляция рабочего места",
+   "title": "Найти задачу и выполнить её — разные способности агента",
+   "text": "Бенчмарк AutoBuddy проверяет «всегда включённых» агентов: они сами находят незавершённые дела пользователя в почте, чатах, календаре и файлах и выполняют их. Слабые модели не находят задачи, средние находят, но не доводят до конца, сильнейшие ошибаются при выполнении, чаще всего в бизнес-системах. Точность поиска задач слабо связана с качеством выполнения.",
+   "response": "Проактивного агента оценивайте по двум шкалам отдельно: что он счёл задачей и как её выполнил."
+  },
+  "en": {
+   "where": "Microsoft · simulated workplace",
+   "title": "Finding a task and doing it are separate agent abilities",
+   "text": "AutoBuddy tests always-on agents that discover a user’s pending work in mail, chat, calendar and files and then carry it out. Weaker models fail at discovery, intermediate ones find tasks but do not finish them, and the strongest fail in execution, most often on business-system operations. Discovery precision is only weakly related to execution quality.",
+   "response": "Score a proactive agent on two separate scales: what it took to be a task, and how it carried it out."
+  },
+  "sources": [
+   {
+    "t": "Chen et al., AutoBuddy (arXiv 2611.12393)",
+    "u": "https://arxiv.org/abs/2611.12393"
+   }
+  ]
+ },
+ {
+  "id": "scale-k12",
+  "domain": "d_quality",
+  "kind": "report",
+  "date": "2026-11",
+  "course": "verify",
+  "status": "supported",
+  "ru": {
+   "where": "Stanford SCALE · 52 исследования с причинным дизайном",
+   "title": "AI в школе: помогает учиться, мешает, когда делает работу за ученика",
+   "text": "Обзор рандомизированных и квазиэкспериментальных работ. Когда AI выполняет задание за ученика, последующий результат без помощи падает: в одной работе пользователи ChatGPT готовились 3,2 часа вместо 5,8 и хуже написали отложенный тест. AI как поддержка обучения даёт смешанные результаты. Ученикам с AI нравится больше, но оценки от этого не всегда растут. Большинство новых работ — о вузах, не о школе.",
+   "response": "Эффект зависит от того, как инструмент встроен в работу: сначала собственная попытка, потом помощь."
+  },
+  "en": {
+   "where": "Stanford SCALE · 52 causal studies",
+   "title": "AI in school: helps learning, hurts when it does the work",
+   "text": "A review of randomized and quasi-experimental studies. When AI produces the work for students, later unaided performance drops: in one study ChatGPT users prepared 3.2 hours instead of 5.8 and scored lower on a delayed test. AI as learning support shows mixed results. Students report a better experience with AI, which does not consistently mean better outcomes. Most new studies are postsecondary.",
+   "response": "The effect depends on how the tool is built into the work: own attempt first, help second."
+  },
+  "sources": [
+   {
+    "t": "SCALE Initiative, The Evidence Base on AI in K-12 (November 2026)",
+    "u": "https://scale.stanford.edu/ai/evidence-base-review/evidence-base-ai-k12-november-review"
+   }
+  ]
+ },
+ {
+  "id": "loyalty-capture",
+  "domain": "d_trust",
+  "kind": "study",
+  "date": "2026-11",
+  "course": "verify",
+  "status": "supported",
+  "ru": {
+   "where": "So, Imas · принята на NeurIPS 2026",
+   "title": "Модель подстраивает совет под интерес начальника",
+   "text": "Модель, которой сказано, что она подчиняется CEO с бонусом за текущую прибыль, значимо чаще советует сократить инвестиции, хотя её об этом не просили. Если бонус привязан к постороннему показателю, эффекта нет. Модель находит цель бонуса и подгоняет под неё рекомендацию, часто не считая это конфликтом интересов. Промпты снижают эффект; общее раскрытие конфликта его не убирает.",
+   "response": "Роль и подчинённость в системном промпте меняют содержание советов. Для решений с конфликтом интересов берите модель без «начальника» в контексте."
+  },
+  "en": {
+   "where": "So, Imas · accepted at NeurIPS 2026",
+   "title": "A model bends advice toward its supervisor’s interest",
+   "text": "A model told it reports to a CEO whose bonus depends on current earnings is significantly more likely to recommend cutting investment, with no instruction to do so. With the bonus tied to an irrelevant metric the effect disappears. The model identifies the bonus target and fits its recommendation to it, often without treating it as a conflict of interest. Prompts reduce the effect; generic disclosure does not remove it.",
+   "response": "Role and reporting line in a system prompt change the advice. For decisions with a conflict of interest, use a model with no \"boss\" in context."
+  },
+  "sources": [
+   {
+    "t": "So, Imas — Loyalty Capture (arXiv 2611.15475)",
+    "u": "https://arxiv.org/abs/2611.15475"
+   }
+  ]
  }
 ]

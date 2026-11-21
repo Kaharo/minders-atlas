@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  issues: write
 concurrency: pulse
 jobs:
   build:
@@ -19,11 +20,29 @@ jobs:
         run: node scripts/reflect.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           ATLAS_MODEL: ${{ vars.ATLAS_MODEL }}
+      - name: Дописать архив
+        run: node scripts/archive-pulse.mjs
       - name: Сохранить
         run: |
           git config user.name "atlas-bot"
           git config user.email "atlas-bot@users.noreply.github.com"
           git add atlas-pulse.json pulse-archive
           git diff --cached --quiet || git commit -m "pulse: $(date -u +%F)"
+          git pull --rebase
           git push
+      - name: Сообщить о сбое
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Сбой автообновления: ${{ github.workflow }}'
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          open=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number --jq 'length')
+          if [ "$open" = "0" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "Автоматическое обновление не выполнено, сайт остался в прежнем состоянии. Журнал запуска: $RUN_URL"
+          else
+            echo "Задача о сбое уже открыта"
+          fi

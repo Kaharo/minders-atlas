@@ -69,6 +69,7 @@ export async function seedWorld(db, src) {
     for (const x of j.items ?? []) if (x.id && x.title) items.set(x.id, { ...items.get(x.id), ...x, notes: { ...(items.get(x.id)?.notes ?? {}), ...(x.notes ?? {}) } });
     if (j.updated && (!updated || j.updated > updated)) updated = j.updated;
     const day = (j.updated ?? '').slice(0, 10);
+    for (const d of j.digests ?? []) if (d && d.p && d.day) digests.push({ p: d.p, day: d.day, ru: d.ru ?? null, en: d.en ?? null });
     for (const [p, d] of Object.entries(j.personas ?? {})) if (d && day) digests.push({ p, day: d.date ?? day, ru: typeof d === 'string' ? d : d.ru, en: typeof d === 'string' ? null : d.en });
   }
   for (const x of items.values()) {

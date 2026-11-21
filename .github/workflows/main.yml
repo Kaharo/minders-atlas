@@ -1,0 +1,33 @@
+name: main
+# Проверка каждого ручного пуша в main: если сборка сломана, сайт не обновится, и об этом придёт задача.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['atlas-pulse.json', 'pulse-archive/**', 'drafts/**']
+permissions:
+  contents: read
+  issues: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: node scripts/validate-data.mjs
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Сообщить о сбое
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Сбой автообновления: ${{ github.workflow }}'
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          open=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number --jq 'length')
+          if [ "$open" = "0" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "Автоматическое обновление не выполнено, сайт остался в прежнем состоянии. Журнал запуска: $RUN_URL"
+          else
+            echo "Задача о сбое уже открыта"
+          fi

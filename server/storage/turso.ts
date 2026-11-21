@@ -12,6 +12,7 @@ import incidents from '../../data/incidents.json';
 import scores from '../../data/scores.json';
 import relations from '../../data/relations.json';
 import pulse from '../../atlas-pulse.json';
+import archive from 'virtual:pulse-archive';
 
 export type StorageMode = 'turso' | 'memory';
 let client: Client | null = null;
@@ -32,7 +33,7 @@ export async function world(): Promise<World> {
       ready = (async () => {
         await c.executeMultiple(schema);
         await c.executeMultiple(schema2);
-        await seedWorld(c, { glossary, research, incidents, scores, relations, pulse: [pulse] });
+        await seedWorld(c, { glossary, research, incidents, scores, relations, pulse: [...archive, pulse] });
       })();
     }
   }

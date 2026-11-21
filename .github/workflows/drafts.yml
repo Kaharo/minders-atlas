@@ -5,31 +5,57 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
+concurrency: atlas-data
 jobs:
   drafts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
-      - run: node scripts/draft-entries.mjs
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - name: Подготовить записи и сверить с источниками
+        run: node scripts/draft-entries.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           ATLAS_MODEL: ${{ vars.ATLAS_MODEL }}
-      - run: node scripts/validate-data.mjs
-      - id: body
-        run: test -f drafts/LATEST.md && echo "ok=1" >> $GITHUB_OUTPUT || true
-      - if: steps.body.outputs.ok == '1'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: drafts/${{ github.run_id }}
-          add-paths: |
-            data/*.json
-            atlas-db.js
-            drafts/20*.md
-          commit-message: 'drafts: Новые записи атласа (черновики)'
-          title: 'Новые записи атласа (черновики)'
-          body-path: drafts/LATEST.md
-          labels: drafts
-          delete-branch: true
+      - name: Проверить данные
+        run: node scripts/validate-data.mjs
+      - name: Проверить сборку сайта
+        run: npm run build
+      - name: Опубликовать
+        id: pub
+        run: |
+          git config user.name "atlas-bot"
+          git config user.email "atlas-bot@users.noreply.github.com"
+          git add data drafts
+          if git diff --cached --quiet; then
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "atlas: новые записи $(date -u +%F)"
+            git pull --rebase
+            git push
+            echo "changed=1" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Прислать список владельцу
+        if: steps.pub.outputs.changed == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "Новые записи на сайте: $(date -u +%F)" --body-file drafts/LATEST.md
+      - name: Сообщить о сбое
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Сбой автообновления: ${{ github.workflow }}'
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          open=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number --jq 'length')
+          if [ "$open" = "0" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "Автоматическое обновление не выполнено, сайт остался в прежнем состоянии. Журнал запуска: $RUN_URL"
+          else
+            echo "Задача о сбое уже открыта"
+          fi
