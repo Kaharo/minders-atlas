@@ -1,15 +1,48 @@
 {
- "updated": "2026-11-21T12:14:28.843Z",
+ "updated": "2026-11-22T12:20:18.454Z",
  "days": 14,
  "personas": {},
  "items": [
+  {
+   "id": "hn50597743",
+   "title": "Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing in Conflicts",
+   "url": "https://arxiv.org/abs/2606.14068",
+   "ts": 1795339116000,
+   "src": "Hacker News",
+   "score": 52,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50597612",
+   "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+   "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+   "ts": 1795337854000,
+   "src": "Hacker News",
+   "score": 191,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50593481",
+   "title": "Pandex – Official European Law for AI Agents, over MCP",
+   "url": "https://www.pandex.io",
+   "ts": 1795294061000,
+   "src": "Hacker News",
+   "score": 103,
+   "ps": [
+    "orbix"
+   ]
+  },
   {
    "id": "hn50586292",
    "title": "ClawDOS – An AI coding agent for DOS",
    "url": "http://ricapar.net/ClawDOS/",
    "ts": 1795239481000,
    "src": "Hacker News",
-   "score": 85,
+   "score": 166,
    "ps": [
     "orbix"
    ]
@@ -20,7 +53,7 @@
    "url": "https://news.ycombinator.com/item?id=50583761",
    "ts": 1795216712000,
    "src": "Hacker News",
-   "score": 250,
+   "score": 694,
    "ps": [
     "orbix"
    ]
@@ -31,7 +64,7 @@
    "url": "https://www.researchgate.net/publication/418143113_The_Hungry_Butler_Effect_Concealed_Commercial_Incentives_and_the_Erosion_of_Epistemic_Rigour_in_Large_Language_Models",
    "ts": 1795213100000,
    "src": "Hacker News",
-   "score": 44,
+   "score": 53,
    "ps": [
     "orbix"
    ]
@@ -42,7 +75,7 @@
    "url": "https://www.wsj.com/finance/stocks/anthropics-ipo-bust-punctuates-4-trillion-ai-wipeout-on-wall-street-f1f1ec90",
    "ts": 1795209526000,
    "src": "Hacker News",
-   "score": 58,
+   "score": 66,
    "ps": [
     "meridian"
    ]
@@ -53,7 +86,7 @@
    "url": "https://www.nbcnews.com/business/markets/anthropic-shares-markets-selloff-nasdaq-rcna610394",
    "ts": 1795196641000,
    "src": "Hacker News",
-   "score": 193,
+   "score": 198,
    "ps": [
     "meridian"
    ]
@@ -64,7 +97,7 @@
    "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
    "ts": 1795193967000,
    "src": "Hacker News",
-   "score": 277,
+   "score": 282,
    "ps": [
     "archive"
    ]
@@ -75,7 +108,7 @@
    "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
    "ts": 1795181399000,
    "src": "Hacker News",
-   "score": 341,
+   "score": 514,
    "ps": [
     "orbix"
    ]
@@ -86,7 +119,7 @@
    "url": "https://signal.org/blog/protecting-your-privacy/",
    "ts": 1795167736000,
    "src": "Hacker News",
-   "score": 556,
+   "score": 575,
    "ps": [
     "orbix"
    ]
@@ -97,7 +130,7 @@
    "url": "https://git-aarvin.github.io/mei/",
    "ts": 1795131335000,
    "src": "Hacker News",
-   "score": 370,
+   "score": 375,
    "ps": [
     "orbix"
    ]
@@ -119,7 +152,7 @@
    "url": "https://www.anthropic.com/research/claude-black-hole-physics",
    "ts": 1795109444000,
    "src": "Hacker News",
-   "score": 559,
+   "score": 572,
    "ps": [
     "lexicon",
     "orbix"
@@ -131,7 +164,7 @@
    "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
    "ts": 1795107760000,
    "src": "Hacker News",
-   "score": 1133,
+   "score": 1140,
    "ps": [
     "orbix"
    ]
@@ -142,7 +175,7 @@
    "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
    "ts": 1795106750000,
    "src": "Hacker News",
-   "score": 146,
+   "score": 148,
    "ps": [
     "orbix"
    ]
@@ -153,7 +186,7 @@
    "url": "https://github.com/onlook-dev/onlook/",
    "ts": 1795106044000,
    "src": "Hacker News",
-   "score": 124,
+   "score": 125,
    "ps": [
     "orbix"
    ]
@@ -164,7 +197,7 @@
    "url": "https://hippomaps.ch/?q=cafes+by+the+Limmat+100+m+from+the+lake+in+zurich#map=15.02/47.36708/8.54935",
    "ts": 1795101362000,
    "src": "Hacker News",
-   "score": 132,
+   "score": 136,
    "ps": [
     "archive"
    ]
@@ -186,7 +219,7 @@
    "url": "https://foolscap.works/",
    "ts": 1795094480000,
    "src": "Hacker News",
-   "score": 122,
+   "score": 129,
    "ps": [
     "archive"
    ]
@@ -197,7 +230,7 @@
    "url": "https://arxiv.org/abs/2607.29378",
    "ts": 1795051622000,
    "src": "Hacker News",
-   "score": 47,
+   "score": 48,
    "ps": [
     "orbix"
    ]
@@ -208,7 +241,7 @@
    "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
    "ts": 1795049840000,
    "src": "Hacker News",
-   "score": 118,
+   "score": 119,
    "ps": [
     "archive"
    ]
@@ -219,7 +252,7 @@
    "url": "https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/",
    "ts": 1795048185000,
    "src": "Hacker News",
-   "score": 255,
+   "score": 256,
    "ps": [
     "orbix"
    ]
@@ -230,7 +263,7 @@
    "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
    "ts": 1795044609000,
    "src": "Hacker News",
-   "score": 421,
+   "score": 422,
    "ps": [
     "meridian"
    ]
@@ -241,7 +274,7 @@
    "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
    "ts": 1795040953000,
    "src": "Hacker News",
-   "score": 315,
+   "score": 316,
    "ps": [
     "orbix"
    ]
@@ -252,7 +285,7 @@
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
    "ts": 1795037647000,
    "src": "Hacker News",
-   "score": 1056,
+   "score": 1060,
    "ps": [
     "orbix"
    ]
@@ -274,7 +307,7 @@
    "url": "https://huggingface.co/papers/2611.26232",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 1,
+   "score": 2,
    "ps": [
     "lexicon"
    ]
@@ -285,7 +318,7 @@
    "url": "https://huggingface.co/papers/2611.26239",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 7,
    "ps": [
     "lexicon",
     "archive",
@@ -311,7 +344,7 @@
    "url": "https://huggingface.co/papers/2611.26627",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 16,
+   "score": 19,
    "ps": [
     "lexicon",
     "orbix"
@@ -323,7 +356,7 @@
    "url": "https://huggingface.co/papers/2611.25567",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 10,
+   "score": 11,
    "ps": [
     "lexicon"
    ]
@@ -334,7 +367,7 @@
    "url": "https://huggingface.co/papers/2611.26540",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon"
    ]
@@ -345,7 +378,7 @@
    "url": "https://huggingface.co/papers/2611.26211",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 6,
    "ps": [
     "lexicon",
     "orbix"
@@ -369,7 +402,7 @@
    "url": "https://huggingface.co/papers/2611.26450",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 6,
    "ps": [
     "lexicon",
     "orbix"
@@ -393,7 +426,7 @@
    "url": "https://huggingface.co/papers/2611.26408",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 14,
+   "score": 15,
    "ps": [
     "lexicon",
     "orbix"
@@ -417,7 +450,7 @@
    "url": "https://huggingface.co/papers/2611.26073",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 22,
+   "score": 23,
    "ps": [
     "lexicon",
     "apex",
@@ -430,7 +463,7 @@
    "url": "https://huggingface.co/papers/2611.26617",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon",
     "orbix"
@@ -442,7 +475,7 @@
    "url": "https://huggingface.co/papers/2611.26590",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 41,
+   "score": 42,
    "ps": [
     "lexicon",
     "archive",
@@ -478,7 +511,7 @@
    "url": "https://huggingface.co/papers/2611.26268",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 17,
+   "score": 18,
    "ps": [
     "lexicon"
    ]
@@ -489,7 +522,7 @@
    "url": "https://huggingface.co/papers/2611.26444",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 48,
+   "score": 52,
    "ps": [
     "lexicon",
     "orbix"
@@ -501,7 +534,7 @@
    "url": "https://huggingface.co/papers/2611.25980",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 14,
+   "score": 15,
    "ps": [
     "lexicon",
     "orbix"
@@ -513,7 +546,7 @@
    "url": "https://huggingface.co/papers/2611.26414",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 21,
+   "score": 22,
    "ps": [
     "lexicon"
    ]
@@ -535,7 +568,7 @@
    "url": "https://huggingface.co/papers/2611.26629",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 35,
+   "score": 38,
    "ps": [
     "lexicon"
    ]
@@ -571,7 +604,7 @@
    "url": "https://huggingface.co/papers/2611.26624",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon",
     "orbix"
@@ -583,7 +616,7 @@
    "url": "https://huggingface.co/papers/2611.26603",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 28,
+   "score": 31,
    "ps": [
     "lexicon"
    ]
@@ -605,7 +638,7 @@
    "url": "https://huggingface.co/papers/2611.26409",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 40,
+   "score": 45,
    "ps": [
     "lexicon",
     "orbix"
@@ -617,7 +650,7 @@
    "url": "https://huggingface.co/papers/2611.26380",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 24,
+   "score": 25,
    "ps": [
     "lexicon"
    ]
@@ -628,7 +661,7 @@
    "url": "https://huggingface.co/papers/2611.26595",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 34,
+   "score": 35,
    "ps": [
     "lexicon"
    ]
@@ -639,7 +672,7 @@
    "url": "https://openai.com/index/advancing-chip-design-with-our-models/",
    "ts": 1795023947000,
    "src": "Hacker News",
-   "score": 224,
+   "score": 225,
    "ps": [
     "orbix"
    ]
@@ -661,7 +694,7 @@
    "url": "https://news.ycombinator.com/item?id=50548660",
    "ts": 1795020822000,
    "src": "Hacker News",
-   "score": 154,
+   "score": 157,
    "ps": [
     "orbix"
    ]
@@ -694,7 +727,7 @@
    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
    "ts": 1795016974000,
    "src": "Hacker News",
-   "score": 497,
+   "score": 499,
    "ps": [
     "orbix"
    ]
@@ -705,7 +738,18 @@
    "url": "https://www.ft.com/content/418ca885-fbcf-4b9f-a8b9-2bd60b543fc5",
    "ts": 1795014501000,
    "src": "Hacker News",
-   "score": 46,
+   "score": 47,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50546587",
+   "title": "LLMs can read and write executables byte by byte from a hex dump",
+   "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
+   "ts": 1795011358000,
+   "src": "Hacker News",
+   "score": 263,
    "ps": [
     "orbix"
    ]
@@ -716,7 +760,7 @@
    "url": "https://kernel.dev/blog/why-is-gemini-4-carbon-taking-so-long/",
    "ts": 1794975244000,
    "src": "Hacker News",
-   "score": 284,
+   "score": 286,
    "ps": [
     "gaya",
     "orbix"
@@ -728,7 +772,18 @@
    "url": "https://trynotched.com/find",
    "ts": 1794973201000,
    "src": "Hacker News",
-   "score": 185,
+   "score": 226,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50541047",
+   "title": "Show HN: An ASCII cell aquarium for your terminal",
+   "url": "https://github.com/kborer/cells/",
+   "ts": 1794968309000,
+   "src": "Hacker News",
+   "score": 61,
    "ps": [
     "orbix"
    ]
@@ -773,7 +828,7 @@
    "url": "https://huggingface.co/papers/2611.25200",
    "ts": 1794942000000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon"
    ]
@@ -784,7 +839,7 @@
    "url": "https://huggingface.co/papers/2611.23875",
    "ts": 1794942000000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon",
     "orbix"
@@ -868,7 +923,7 @@
    "url": "https://huggingface.co/papers/2611.23835",
    "ts": 1794942000000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "lexicon"
    ]
@@ -890,7 +945,7 @@
    "url": "https://newsletter.posthog.com/p/decision-models",
    "ts": 1794939378000,
    "src": "Hacker News",
-   "score": 187,
+   "score": 188,
    "ps": [
     "orbix"
    ]
@@ -901,7 +956,7 @@
    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
    "ts": 1794937603000,
    "src": "Hacker News",
-   "score": 1346,
+   "score": 1347,
    "ps": [
     "orbix"
    ]
@@ -923,7 +978,7 @@
    "url": "https://quebec.yarn.so",
    "ts": 1794928605000,
    "src": "Hacker News",
-   "score": 76,
+   "score": 81,
    "ps": [
     "orbix"
    ]
@@ -956,7 +1011,7 @@
    "url": "https://kobi.music/research/dettato",
    "ts": 1794877385000,
    "src": "Hacker News",
-   "score": 284,
+   "score": 306,
    "ps": [
     "orbix"
    ]
@@ -967,21 +1022,10 @@
    "url": "https://huggingface.co/papers/2611.22666",
    "ts": 1794855600000,
    "src": "HF Papers",
-   "score": 9,
+   "score": 10,
    "ps": [
     "lexicon",
     "archive",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50521083",
-   "title": "Adding Fortran Support to LLDB (GSoC 2026)",
-   "url": "https://blog.llvm.org/posts/2026-09-07-gsoc-add-fortran-support-to-lldb/",
-   "ts": 1794854077000,
-   "src": "Hacker News",
-   "score": 45,
-   "ps": [
     "orbix"
    ]
   },
@@ -1002,7 +1046,7 @@
    "url": "https://news.ycombinator.com/item?id=50520076",
    "ts": 1794849628000,
    "src": "Hacker News",
-   "score": 113,
+   "score": 117,
    "ps": [
     "orbix"
    ]
@@ -1068,7 +1112,7 @@
    "url": "https://huggingface.co/papers/2611.21885",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 10,
    "ps": [
     "lexicon",
     "archive",
@@ -1093,7 +1137,7 @@
    "url": "https://huggingface.co/papers/2611.20455",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 8,
+   "score": 9,
    "ps": [
     "lexicon"
    ]
@@ -1104,7 +1148,7 @@
    "url": "https://huggingface.co/papers/2611.21383",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 32,
+   "score": 33,
    "ps": [
     "lexicon"
    ]
@@ -1115,7 +1159,7 @@
    "url": "https://huggingface.co/papers/2611.21373",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 51,
+   "score": 54,
    "ps": [
     "lexicon",
     "orbix"
@@ -1139,17 +1183,6 @@
    "ts": 1794744846000,
    "src": "Hacker News",
    "score": 246,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50505905",
-   "title": "Jensen Huang allegedly manufactured the GPU shortage",
-   "url": "https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/",
-   "ts": 1794740030000,
-   "src": "Hacker News",
-   "score": 66,
    "ps": [
     "orbix"
    ]
@@ -1182,18 +1215,7 @@
    "url": "https://gitlab.com/snipedbywifi/terminactory",
    "ts": 1794665154000,
    "src": "Hacker News",
-   "score": 173,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50496787",
-   "title": "Show HN: Zigzag, a native Mac browser for people leaving Arc",
-   "url": "https://github.com/ZigaoWang/zigzag",
-   "ts": 1794662230000,
-   "src": "Hacker News",
-   "score": 123,
+   "score": 174,
    "ps": [
     "orbix"
    ]
@@ -1204,7 +1226,7 @@
    "url": "https://news.ycombinator.com/item?id=50494696",
    "ts": 1794639402000,
    "src": "Hacker News",
-   "score": 94,
+   "score": 95,
    "ps": [
     "orbix"
    ]
@@ -1215,7 +1237,7 @@
    "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
    "ts": 1794624779000,
    "src": "Hacker News",
-   "score": 1115,
+   "score": 1116,
    "ps": [
     "meridian",
     "orbix"
@@ -1251,7 +1273,7 @@
    "url": "https://huggingface.co/papers/2611.00911",
    "ts": 1794596400000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 4,
    "ps": [
     "lexicon",
     "orbix"
@@ -1318,7 +1340,7 @@
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
    "ts": 1794506508000,
    "src": "Hacker News",
-   "score": 575,
+   "score": 576,
    "ps": [
     "orbix"
    ]
@@ -1343,28 +1365,6 @@
    "score": 66,
    "ps": [
     "orbix"
-   ]
-  },
-  {
-   "id": "hn50468888",
-   "title": "I'm making LLMs work on small and old devices",
-   "url": "https://github.com/hyperionaidev/smolmaxxing/",
-   "ts": 1794496990000,
-   "src": "Hacker News",
-   "score": 486,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50465829",
-   "title": "Anthropic IPO",
-   "url": "https://ipo.anthropic.com/us/",
-   "ts": 1794484001000,
-   "src": "Hacker News",
-   "score": 1009,
-   "ps": [
-    "meridian"
    ]
   }
  ]
