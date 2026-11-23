@@ -1,14 +1,80 @@
 {
  "month": "2026-11",
- "updated": "2026-11-22T12:20:18.454Z",
+ "updated": "2026-11-23T14:08:19.814Z",
  "items": [
+  {
+   "id": "hn50610830",
+   "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
+   "ts": 1795437674000,
+   "src": "Hacker News",
+   "score": 46,
+   "ps": [
+    "meridian"
+   ]
+  },
+  {
+   "id": "hn50601525",
+   "title": "Perplexity and Intelligence",
+   "url": "https://openai.com/index/perplexity-and-intelligence/",
+   "ts": 1795367187000,
+   "src": "Hacker News",
+   "score": 633,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50600771",
+   "title": "Ask HN: Are the trades a safe career transition?",
+   "url": "https://news.ycombinator.com/item?id=50600771",
+   "ts": 1795362753000,
+   "src": "Hacker News",
+   "score": 45,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50599762",
+   "title": "Show HN: I built a game where you are an LLM's subagent",
+   "url": "https://github.com/gulivan/worker755",
+   "ts": 1795355818000,
+   "src": "Hacker News",
+   "score": 341,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50598961",
+   "title": "AI is becoming a disaster for the climate",
+   "url": "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
+   "ts": 1795349986000,
+   "src": "Hacker News",
+   "score": 130,
+   "ps": [
+    "gaya"
+   ]
+  },
+  {
+   "id": "hn50597959",
+   "title": "Muru – AI-assisted Rust server for Python apps by mod_WSGI's creator",
+   "url": "https://simonwillison.net/2026/Nov/21/muru/",
+   "ts": 1795341421000,
+   "src": "Hacker News",
+   "score": 77,
+   "ps": [
+    "orbix"
+   ]
+  },
   {
    "id": "hn50597743",
    "title": "Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing in Conflicts",
    "url": "https://arxiv.org/abs/2606.14068",
    "ts": 1795339116000,
    "src": "Hacker News",
-   "score": 52,
+   "score": 93,
    "ps": [
     "orbix"
    ]
@@ -19,7 +85,7 @@
    "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
    "ts": 1795337854000,
    "src": "Hacker News",
-   "score": 191,
+   "score": 992,
    "ps": [
     "orbix"
    ]
@@ -30,7 +96,7 @@
    "url": "https://www.pandex.io",
    "ts": 1795294061000,
    "src": "Hacker News",
-   "score": 103,
+   "score": 140,
    "ps": [
     "orbix"
    ]
@@ -41,7 +107,7 @@
    "url": "http://ricapar.net/ClawDOS/",
    "ts": 1795239481000,
    "src": "Hacker News",
-   "score": 166,
+   "score": 175,
    "ps": [
     "orbix"
    ]
@@ -52,7 +118,7 @@
    "url": "https://news.ycombinator.com/item?id=50583761",
    "ts": 1795216712000,
    "src": "Hacker News",
-   "score": 694,
+   "score": 737,
    "ps": [
     "orbix"
    ]
@@ -63,7 +129,7 @@
    "url": "https://www.researchgate.net/publication/418143113_The_Hungry_Butler_Effect_Concealed_Commercial_Incentives_and_the_Erosion_of_Epistemic_Rigour_in_Large_Language_Models",
    "ts": 1795213100000,
    "src": "Hacker News",
-   "score": 53,
+   "score": 56,
    "ps": [
     "orbix"
    ]
@@ -85,7 +151,7 @@
    "url": "https://www.nbcnews.com/business/markets/anthropic-shares-markets-selloff-nasdaq-rcna610394",
    "ts": 1795196641000,
    "src": "Hacker News",
-   "score": 198,
+   "score": 199,
    "ps": [
     "meridian"
    ]
@@ -96,9 +162,20 @@
    "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
    "ts": 1795193967000,
    "src": "Hacker News",
-   "score": 282,
+   "score": 284,
    "ps": [
     "archive"
+   ]
+  },
+  {
+   "id": "hn50574412",
+   "title": "Show HN: Drive around my village in 3D",
+   "url": "https://cherwellvalleymotorclub.app",
+   "ts": 1795181562000,
+   "src": "Hacker News",
+   "score": 53,
+   "ps": [
+    "orbix"
    ]
   },
   {
@@ -107,8 +184,21 @@
    "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
    "ts": 1795181399000,
    "src": "Hacker News",
-   "score": 514,
+   "score": 530,
    "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.27915",
+   "title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
+   "url": "https://huggingface.co/papers/2611.27915",
+   "ts": 1795179122000,
+   "src": "HF Papers",
+   "score": 6,
+   "ps": [
+    "lexicon",
+    "archive",
     "orbix"
    ]
   },
@@ -118,9 +208,20 @@
    "url": "https://signal.org/blog/protecting-your-privacy/",
    "ts": 1795167736000,
    "src": "Hacker News",
-   "score": 575,
+   "score": 581,
    "ps": [
     "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.27398",
+   "title": "Taking Apart and Putting Together: Tracking Objects Through Physical Transformations",
+   "url": "https://huggingface.co/papers/2611.27398",
+   "ts": 1795151009000,
+   "src": "HF Papers",
+   "score": 2,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -129,9 +230,67 @@
    "url": "https://git-aarvin.github.io/mei/",
    "ts": 1795131335000,
    "src": "Hacker News",
-   "score": 375,
+   "score": 376,
    "ps": [
     "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.27973",
+   "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
+   "url": "https://huggingface.co/papers/2611.27973",
+   "ts": 1795114800000,
+   "src": "HF Papers",
+   "score": 15,
+   "ps": [
+    "lexicon",
+    "archive",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.27963",
+   "title": "Non-penetrating World Models",
+   "url": "https://huggingface.co/papers/2611.27963",
+   "ts": 1795114800000,
+   "src": "HF Papers",
+   "score": 51,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.27193",
+   "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+   "url": "https://huggingface.co/papers/2611.27193",
+   "ts": 1795114800000,
+   "src": "HF Papers",
+   "score": 81,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.27211",
+   "title": "Explicit Style Extraction for Personalized Long-Form Text Generation",
+   "url": "https://huggingface.co/papers/2611.27211",
+   "ts": 1795114800000,
+   "src": "HF Papers",
+   "score": 2,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.27229",
+   "title": "Prune to Expand: Training Prompt Enhancers with Less to Imitate",
+   "url": "https://huggingface.co/papers/2611.27229",
+   "ts": 1795114800000,
+   "src": "HF Papers",
+   "score": 3,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -151,7 +310,7 @@
    "url": "https://www.anthropic.com/research/claude-black-hole-physics",
    "ts": 1795109444000,
    "src": "Hacker News",
-   "score": 572,
+   "score": 577,
    "ps": [
     "lexicon",
     "orbix"
@@ -163,7 +322,7 @@
    "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
    "ts": 1795107760000,
    "src": "Hacker News",
-   "score": 1140,
+   "score": 1143,
    "ps": [
     "orbix"
    ]
@@ -174,7 +333,7 @@
    "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
    "ts": 1795106750000,
    "src": "Hacker News",
-   "score": 148,
+   "score": 151,
    "ps": [
     "orbix"
    ]
@@ -196,7 +355,7 @@
    "url": "https://hippomaps.ch/?q=cafes+by+the+Limmat+100+m+from+the+lake+in+zurich#map=15.02/47.36708/8.54935",
    "ts": 1795101362000,
    "src": "Hacker News",
-   "score": 136,
+   "score": 141,
    "ps": [
     "archive"
    ]
@@ -218,9 +377,20 @@
    "url": "https://foolscap.works/",
    "ts": 1795094480000,
    "src": "Hacker News",
-   "score": 129,
+   "score": 132,
    "ps": [
     "archive"
+   ]
+  },
+  {
+   "id": "hn50555002",
+   "title": "Ask HN: Tips for transitioning from web development to embedded/firmware?",
+   "url": "https://news.ycombinator.com/item?id=50555002",
+   "ts": 1795052265000,
+   "src": "Hacker News",
+   "score": 145,
+   "ps": [
+    "orbix"
    ]
   },
   {
@@ -251,7 +421,7 @@
    "url": "https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/",
    "ts": 1795048185000,
    "src": "Hacker News",
-   "score": 256,
+   "score": 257,
    "ps": [
     "orbix"
    ]
@@ -262,7 +432,7 @@
    "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
    "ts": 1795044609000,
    "src": "Hacker News",
-   "score": 422,
+   "score": 423,
    "ps": [
     "meridian"
    ]
@@ -284,7 +454,7 @@
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
    "ts": 1795037647000,
    "src": "Hacker News",
-   "score": 1060,
+   "score": 1067,
    "ps": [
     "orbix"
    ]
@@ -318,7 +488,7 @@
    "url": "https://huggingface.co/papers/2611.26408",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 19,
    "ps": [
     "lexicon",
     "orbix"
@@ -355,7 +525,7 @@
    "url": "https://huggingface.co/papers/2611.26617",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 14,
    "ps": [
     "lexicon",
     "orbix"
@@ -367,7 +537,7 @@
    "url": "https://huggingface.co/papers/2611.26590",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 42,
+   "score": 36,
    "ps": [
     "lexicon",
     "archive",
@@ -380,7 +550,7 @@
    "url": "https://huggingface.co/papers/2611.26248",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -414,7 +584,7 @@
    "url": "https://huggingface.co/papers/2611.26444",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 52,
+   "score": 57,
    "ps": [
     "lexicon",
     "orbix"
@@ -426,7 +596,7 @@
    "url": "https://huggingface.co/papers/2611.25980",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 15,
+   "score": 17,
    "ps": [
     "lexicon",
     "orbix"
@@ -575,7 +745,7 @@
    "url": "https://huggingface.co/papers/2611.26239",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 7,
+   "score": 9,
    "ps": [
     "lexicon",
     "archive",
@@ -601,7 +771,7 @@
    "url": "https://huggingface.co/papers/2611.26627",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 19,
+   "score": 22,
    "ps": [
     "lexicon",
     "orbix"
@@ -613,7 +783,7 @@
    "url": "https://huggingface.co/papers/2611.25567",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 11,
+   "score": 12,
    "ps": [
     "lexicon"
    ]
@@ -624,7 +794,7 @@
    "url": "https://huggingface.co/papers/2611.26540",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon"
    ]
@@ -635,7 +805,7 @@
    "url": "https://huggingface.co/papers/2611.26211",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
@@ -647,7 +817,7 @@
    "url": "https://huggingface.co/papers/2611.26511",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 6,
    "ps": [
     "lexicon",
     "orbix"
@@ -659,10 +829,33 @@
    "url": "https://huggingface.co/papers/2611.26450",
    "ts": 1795028400000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.26613",
+   "title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
+   "url": "https://huggingface.co/papers/2611.26613",
+   "ts": 1795028400000,
+   "src": "HF Papers",
+   "score": 5,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.25773",
+   "title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
+   "url": "https://huggingface.co/papers/2611.25773",
+   "ts": 1795028400000,
+   "src": "HF Papers",
+   "score": 20,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -693,7 +886,7 @@
    "url": "https://news.ycombinator.com/item?id=50548660",
    "ts": 1795020822000,
    "src": "Hacker News",
-   "score": 157,
+   "score": 158,
    "ps": [
     "orbix"
    ]
@@ -704,7 +897,7 @@
    "url": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
    "ts": 1795020082000,
    "src": "Hacker News",
-   "score": 148,
+   "score": 149,
    "ps": [
     "orbix"
    ]
@@ -726,7 +919,7 @@
    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
    "ts": 1795016974000,
    "src": "Hacker News",
-   "score": 499,
+   "score": 502,
    "ps": [
     "orbix"
    ]
@@ -748,7 +941,7 @@
    "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
    "ts": 1795011358000,
    "src": "Hacker News",
-   "score": 263,
+   "score": 314,
    "ps": [
     "orbix"
    ]
@@ -770,7 +963,7 @@
    "url": "https://kernel.dev/blog/why-is-gemini-4-carbon-taking-so-long/",
    "ts": 1794975244000,
    "src": "Hacker News",
-   "score": 286,
+   "score": 287,
    "ps": [
     "gaya",
     "orbix"
@@ -782,7 +975,7 @@
    "url": "https://trynotched.com/find",
    "ts": 1794973201000,
    "src": "Hacker News",
-   "score": 226,
+   "score": 232,
    "ps": [
     "orbix"
    ]
@@ -804,7 +997,7 @@
    "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
    "ts": 1794950172000,
    "src": "Hacker News",
-   "score": 328,
+   "score": 331,
    "ps": [
     "lexicon",
     "orbix"
@@ -1090,7 +1283,7 @@
    "url": "https://huggingface.co/papers/2611.25279",
    "ts": 1794942000000,
    "src": "HF Papers",
-   "score": 9,
+   "score": 10,
    "ps": [
     "lexicon"
    ]
@@ -1239,6 +1432,53 @@
    ]
   },
   {
+   "id": "hf2611.25252",
+   "title": "Moving Generality from Model to Modeler: LLM Agents for PHM on a Deployment-Style Benchmark",
+   "url": "https://huggingface.co/papers/2611.25252",
+   "ts": 1794942000000,
+   "src": "HF Papers",
+   "score": 3,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.24025",
+   "title": "Intent Contracts: Taking Tools Away from Agents",
+   "url": "https://huggingface.co/papers/2611.24025",
+   "ts": 1794942000000,
+   "src": "HF Papers",
+   "score": 2,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.24636",
+   "title": "Clover-35B-A3B-Preview Technical Report",
+   "url": "https://huggingface.co/papers/2611.24636",
+   "ts": 1794942000000,
+   "src": "HF Papers",
+   "score": 34,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.24077",
+   "title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
+   "url": "https://huggingface.co/papers/2611.24077",
+   "ts": 1794942000000,
+   "src": "HF Papers",
+   "score": 4,
+   "ps": [
+    "lexicon",
+    "archive"
+   ]
+  },
+  {
    "id": "hn50535898",
    "title": "Advancing computer-use agents for healthcare teams",
    "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
@@ -1288,7 +1528,7 @@
    "url": "https://quebec.yarn.so",
    "ts": 1794928605000,
    "src": "Hacker News",
-   "score": 81,
+   "score": 82,
    "ps": [
     "orbix"
    ]
@@ -1332,7 +1572,7 @@
    "url": "https://kobi.music/research/dettato",
    "ts": 1794877385000,
    "src": "Hacker News",
-   "score": 306,
+   "score": 310,
    "ps": [
     "orbix"
    ]
@@ -1643,6 +1883,40 @@
    ]
   },
   {
+   "id": "hf2611.22479",
+   "title": "Exploited Before It Was Fixed? Vulnerability Timelines from Open, Machine-Readable Evidence",
+   "url": "https://huggingface.co/papers/2611.22479",
+   "ts": 1794855600000,
+   "src": "HF Papers",
+   "score": 2,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.22495",
+   "title": "Motion-Aware Reward Modeling for Instruction-Guided Video Editing",
+   "url": "https://huggingface.co/papers/2611.22495",
+   "ts": 1794855600000,
+   "src": "HF Papers",
+   "score": 1,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.22343",
+   "title": "PURE: A Diagnostic Benchmark for Multi-Granularity Multimodal Identity Matching",
+   "url": "https://huggingface.co/papers/2611.22343",
+   "ts": 1794855600000,
+   "src": "HF Papers",
+   "score": 6,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
    "id": "hn50521083",
    "title": "Adding Fortran Support to LLDB (GSoC 2026)",
    "url": "https://blog.llvm.org/posts/2026-09-07-gsoc-add-fortran-support-to-lldb/",
@@ -1659,7 +1933,7 @@
    "url": "https://openai.com/index/strengthening-online-child-safety/",
    "ts": 1794852768000,
    "src": "Hacker News",
-   "score": 125,
+   "score": 126,
    "ps": [
     "archive"
    ]
@@ -1681,7 +1955,7 @@
    "url": "https://openai.com/index/our-first-phase-of-embedded-assessments/",
    "ts": 1794845240000,
    "src": "Hacker News",
-   "score": 59,
+   "score": 60,
    "ps": [
     "orbix"
    ]
@@ -2033,7 +2307,7 @@
    "url": "https://huggingface.co/papers/2611.20455",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 9,
+   "score": 13,
    "ps": [
     "lexicon"
    ]
@@ -2079,7 +2353,7 @@
    "url": "https://huggingface.co/papers/2611.21885",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 10,
+   "score": 21,
    "ps": [
     "lexicon",
     "archive",
@@ -2092,10 +2366,21 @@
    "url": "https://huggingface.co/papers/2611.21053",
    "ts": 1794769200000,
    "src": "HF Papers",
-   "score": 6,
+   "score": 7,
    "ps": [
     "lexicon",
     "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.21485",
+   "title": "Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits",
+   "url": "https://huggingface.co/papers/2611.21485",
+   "ts": 1794769200000,
+   "src": "HF Papers",
+   "score": 7,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -2426,7 +2711,7 @@
    "url": "https://huggingface.co/papers/2611.19499",
    "ts": 1794596400000,
    "src": "HF Papers",
-   "score": 5,
+   "score": 6,
    "ps": [
     "lexicon",
     "archive",
@@ -2454,6 +2739,18 @@
    "score": 11,
    "ps": [
     "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.19247",
+   "title": "GameWM: Toward Next-Generation Video Games with Interaction-Centric World Models",
+   "url": "https://huggingface.co/papers/2611.19247",
+   "ts": 1794596400000,
+   "src": "HF Papers",
+   "score": 1,
+   "ps": [
+    "lexicon",
+    "orbix"
    ]
   },
   {
