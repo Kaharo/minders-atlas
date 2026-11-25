@@ -95,7 +95,7 @@ export function AtlasPage() {
     <div className={s.stage}>
       <ArchMap modelId={modelId} focus={S === 'incidents' ? 'incidents' : S === 'glossary' ? 'learn' : 'glossary'} points={points} pointsKey={pointsKey} selected={key ?? null} hitsKey={tr.hits.map(h => h.id).join(',')} zone={f.zone || null} zoneCounts={zoneCounts} supportKey={support.key}
         stepKey={cur?.key ?? null} stepN={tr.runId * 1000 + (tr.step ?? -1)} stepTitle={cur?.title} stepDone={cur?.done} stepColor={cur?.color}
-        insetL={dock ? sideW + 34 : asideW ? asideW + 34 : 16} insetR={leftW ? leftW + 34 : 16} insetT={narrow ? (tr.steps ? 150 : 124) : dock ? 46 : 190} insetB={narrow ? (learn ? 250 : 64) : timeOn ? 132 : dock ? (cw < 1320 ? 150 : 104) : 104} plain={simple} en={locale === 'en'} hwDock="bottom" hwHidden onPoint={go} onZone={onZone} onHw={setHw} />
+        insetL={dock ? sideW + 34 : asideW ? asideW + 34 : 16} insetR={leftW ? leftW + 34 : 16} insetT={narrow ? (tr.steps ? 150 : 124) : dock ? 46 : 190} insetB={narrow ? (learn ? 250 : 64) : timeOn ? 132 : dock ? (cw < 1320 ? 150 : 104) : 104} plain={simple} en={locale === 'en'} hwDock="bottom" hwHidden onPoint={go} onZone={onZone} onHw={setHw} onModelClick={() => (simple ? setShow(v => ({ ...v, model: !v.model })) : setPicker(true))} />
       {!dock && <PromptBar onSubmit={onSubmit} steps={tr.steps} step={tr.step} open={tr.open} hits={tr.hits} hitLabel={id => { const e = entries.find(x => x.key === id); return e ? { label: pick(e.title).length > 26 ? pick(e.title).slice(0, 25) + '…' : pick(e.title), color: entryColor(e) } : null; }} onHit={go} onJump={tr.jump} onClear={tr.clearHits}
         showSamples={!narrow && cw >= 460} cardBottom={narrow ? 60 : timeOn ? 150 : 60} style={{ top: narrow ? 12 : 92, width: narrow ? 'calc(100% - 36px)' : `min(520px, calc(100% - ${2 * (Math.max(leftW, asideW) + 46)}px))` }} />}
       {list.loading && !list.data && <span className={s.status}>{t('Загружаю записи…', 'Loading entries…')}</span>}
@@ -103,22 +103,15 @@ export function AtlasPage() {
       {dock && (
         <div className={s.side} style={{ width: sideW }}>
           <PromptBar onSubmit={onSubmit} steps={tr.steps} step={tr.step} open={tr.open} hits={tr.hits} hitLabel={id => { const e = entries.find(x => x.key === id); return e ? { label: pick(e.title).length > 26 ? pick(e.title).slice(0, 25) + '…' : pick(e.title), color: entryColor(e) } : null; }} onHit={go} onJump={tr.jump} onClear={tr.clearHits}
-        showSamples docked />
-          {learn && cur && <LearnPanel steps={tr.steps!} step={tr.step!} onClose={tr.stop} />}
-          {!(learn && cur) && <button type="button" className={`${s.chip} ${s.sideChip} ${show.list ? s.chipOn : ''}`} aria-expanded={show.list} onClick={() => setShow(v => ({ ...v, list: !v.list }))}>{show.list ? t('Скрыть список', 'Hide list') : `${SECTION_LABEL[S][li]} · ${nounN(entries.length)}`}</button>}
-          {show.list && !(learn && cur) && <div className={s.sideList}>{blockEl}{listEl}</div>}
+        showSamples docked paused={tr.paused} onToggle={tr.toggle} detail={learn && cur ? <LearnPanel steps={tr.steps!} step={tr.step!} onClose={tr.stop} bare /> : undefined} />
+          {<button type="button" className={`${s.chip} ${s.sideChip} ${show.list ? s.chipOn : ''}`} aria-expanded={show.list} onClick={() => setShow(v => ({ ...v, list: !v.list }))}>{show.list ? t('Скрыть список', 'Hide list') : `${SECTION_LABEL[S][li]} · ${nounN(entries.length)}`}</button>}
+          {show.list && <div className={s.sideList}>{blockEl}{listEl}</div>}
           {!show.list && (
             <div className={`${s.answer} ${tr.steps && tr.step === tr.steps.length - 1 ? s.answerOn : ''}`} aria-live="polite">
               <b>{t('Ответ', 'Answer')}</b>
               <span>{!tr.steps ? t('Сюда вернётся ответ, когда запрос пройдёт весь путь.', 'The answer returns here once the request has gone the whole way.') : tr.step === tr.steps.length - 1 ? t('Запрос прошёл весь путь: здесь пользователь получает ответ. Атлас показывает путь запроса, сам текст ответа он не генерирует.', 'The request has gone the whole way: this is where the user gets the answer. The atlas shows the path; it does not generate the answer text.') : t(`Запрос в пути: шаг ${(tr.step ?? 0) + 1} из ${tr.steps.length}.`, `Request in progress: step ${(tr.step ?? 0) + 1} of ${tr.steps.length}.`)}</span>
             </div>
           )}
-        </div>
-      )}
-      {dock && (
-        <div className={s.chips}>
-          <span className={s.chipsGap} />
-          <button type="button" className={`${s.chip} ${show.model ? s.chipOn : ''}`} aria-expanded={show.model} onClick={() => setShow(v => ({ ...v, model: !v.model }))}>{show.model ? t('Скрыть модель', 'Hide model') : `${t('Модель', 'Model')}: ${modelById(modelId)?.name ?? modelId}`}</button>
         </div>
       )}
       {listOn && (

@@ -37,3 +37,20 @@
 .dock .st { font-size: 12px; padding: 6px 11px; border-radius: 12px; gap: 8px; }
 .dock .st i { width: 7px; height: 7px; }
 .cardDock { position: static; transform: none; width: 100%; max-width: none; flex: none; }
+
+/* шаги в колонке: текущий раскрывается с описанием, остальные свёрнуты */
+.acc { display: flex; flex-direction: column; gap: 1px; padding: 5px; border-radius: 18px; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.75); pointer-events: auto; }
+.item { border-radius: 14px; }
+.itemCur { background: #fff; box-shadow: 0 6px 22px rgba(16, 24, 64, 0.12); animation: stepIn 0.7s ease-out; }
+.acc .st { width: 100%; font-size: 12px; padding: 6px 11px; border-radius: 12px; gap: 8px; text-align: left; }
+.acc .st i { width: 7px; height: 7px; flex: none; }
+.acc .st span { flex: 1; min-width: 0; }
+.acc .st em { font-style: normal; font-size: 10.5px; color: var(--muted-2); }
+.acc .st:hover em { color: var(--accent-ink); }
+.acc .stCur { background: transparent; box-shadow: none; font-weight: 600; }
+.body { display: flex; flex-direction: column; gap: 7px; padding: 2px 13px 13px 26px; animation: bodyIn 0.45s ease-out; }
+.body .ct { font-size: 16px; line-height: 1.25; }
+.body .cx { font-size: 13px; line-height: 1.5; color: var(--ink-3); }
+@keyframes stepIn { 0% { box-shadow: 0 0 0 3px rgba(59, 91, 253, 0.45), 0 6px 22px rgba(16, 24, 64, 0.12); transform: scale(1.015); } 100% { box-shadow: 0 0 0 0 rgba(59, 91, 253, 0), 0 6px 22px rgba(16, 24, 64, 0.12); transform: none; } }
+@keyframes bodyIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .itemCur, .body { animation: none; } }

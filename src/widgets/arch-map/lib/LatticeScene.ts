@@ -12,7 +12,7 @@ export interface ArchProps {
   stepKey?: string | null; stepN?: number; stepTitle?: string; stepDone?: string; stepColor?: string;
   insetL?: number; insetR?: number; insetT?: number; insetB?: number; hwDock?: string; hwHidden?: boolean; hwOpen?: boolean;
   plain?: boolean; en?: boolean;
-  onPoint?: (id: string) => void; onZone?: (id: string) => void; onOpen?: (open: boolean) => void; onModel?: (id: string) => void;
+  onPoint?: (id: string) => void; onZone?: (id: string) => void; onOpen?: (open: boolean) => void; onModel?: (id: string) => void; onModelClick?: () => void;
 }
 
 const COL = { trust: [16, 185, 129], context: [6, 182, 212], core: [99, 102, 241], edge: [129, 140, 248], runtime: [168, 85, 247], memory: [245, 158, 11], quality: [217, 70, 239] };
@@ -68,6 +68,7 @@ export class ArchScene {
     this._ptrs.delete(e.pointerId); if (this._ptrs.size < 2) this._pinch = null;
     const d = this._drag; this._drag = null; if (!d || d.moved) return;
     const h = this._pick(e); if (!h) return;
+    if (h.type === 'm') { if (this.props.onModelClick) this.props.onModelClick(); return; }
     if (h.type === 'p' && this.props.onPoint) this.props.onPoint(h.id);
     else if (h.type === 'z' && this.props.onZone) this.props.onZone(h.id);
   };
@@ -147,13 +148,13 @@ export class ArchScene {
       }
     });
   }
-  _newCast() { return { ribs: [], t: performance.now(), done: false }; }
+  _newCast() { return { ribs: [], spine: [], t: performance.now(), done: false }; }
   _sweep(id, dur, from, to) { const b = this.blocks[id]; if (!b) return; let ids = b.ids; if (from != null) ids = ids.slice(from, to); this.sweeps.push({ ids, t0: performance.now(), dur: dur || (ids.length > 6 ? 1700 : 650), main: id === 'gi' || id === 'ctx' || id === 'model' || id === 'go', done: 0, rib: null }); }
   /** Шаг прохода: какие пластины зажечь и что отпечатать в слепке. */
   _step(key) {
     const run = this.run;
     if (key === 'in') {
-      if (this.casts[0].ribs.length) { this.casts[0].done = true; this.casts.unshift(this._newCast()); if (this.casts.length > 4) this.casts.length = 4; }
+      if (this.casts[0].ribs.length || this.casts[0].spine.length) { this.casts[0].done = true; this.casts.unshift(this._newCast()); if (this.casts.length > 4) this.casts.length = 4; }
       run.core = false; run.seed = (run.seed * 31 + 17) >>> 0; this._roll(run.seed); this.panes.forEach(p => { p.heat = 0; p.glow = 0; }); this.sweeps = []; this.at = 'in'; return;
     }
     this.sweeps = []; this.at = key;
@@ -188,6 +189,7 @@ export class ArchScene {
     let best = null, bd = 11;
     (this.pts || []).forEach(p => { const d = Math.hypot(p.sx - x, p.sy - y); if (d < bd) { bd = d; best = { type: 'p', id: p.id }; } });
     if (best) return best;
+    { const r = this._mlab; if (r && x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) return { type: 'm', id: 'model' }; }
     let zb = null, zd = 1e9;
     Object.values(this.blocks).forEach(bl => { const q = this._prj((bl.x0 + bl.x1) / 2, bl.y0, 0), rad = Math.max(26, (bl.smax * 0.8 + (bl.x1 - bl.x0) * 0.3) * this._U), d = Math.hypot(q[0] - x, q[1] - y); if (d < rad && d / rad < zd) { zd = d / rad; zb = { type: 'z', id: ZONE[bl.id] }; } });
     if (!zb) { const q = this._prj(0, this.YI, 0); if (Math.abs(q[1] - y) < 0.22 * this._U && Math.abs(q[0] - x) < this.Xh * this._U) zb = { type: 'z', id: 'd_quality' }; }
@@ -211,7 +213,11 @@ export class ArchScene {
     this.sweeps.forEach(sw => {
       const n = sw.ids.length, win = n <= 4 ? n : Math.max(4, n * 0.13), h = Math.min(n - 1, -1 + (now - sw.t0) / sw.dur * (n + 1));
       for (let j = 0; j < n; j++) { const p = P[sw.ids[j]], d = h - j, v = d >= 0 ? Math.max(0, 1 - d / win) : Math.max(0, 1 + d); if (v > p.heat) p.heat = v; if (d >= 0 && p.glow < 0.62) p.glow = 0.62;
-        if (d >= 0 && j >= sw.done) { sw.done = j + 1; const ribs = this.casts[0].ribs, last = ribs[ribs.length - 1], lp = last && last.pts[last.pts.length - 1]; if (!sw.rib) { sw.rib = sw.main && last && last.main && lp.x < p.x ? last : { main: sw.main, pts: [] }; if (sw.rib !== last) ribs.push(sw.rib); } sw.rib.pts.push({ x: p.x, zc: p.zc, zh: p.zh }); } }
+        if (d >= 0 && j >= sw.done) {
+          sw.done = j + 1; const cast = this.casts[0];
+          if (sw.main) { const sp = cast.spine; let a = 0; while (a < sp.length && sp[a].x < p.x - 1e-6) a++; if (a < sp.length && Math.abs(sp[a].x - p.x) < 1e-6) sp[a].n++; else sp.splice(a, 0, { x: p.x, zc: p.zc, zh: p.zh, n: 1 }); }
+          else { if (!sw.rib) { sw.rib = { pts: [] }; cast.ribs.push(sw.rib); } sw.rib.pts.push({ x: p.x, zc: p.zc, zh: p.zh }); }
+        } }
     });
 
     c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(this.bgC, 0, 0); c.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -256,18 +262,20 @@ export class ArchScene {
       c.beginPath(); c.moveTo(q[0][0], q[0][1]); for (let n = 1; n < 4; n++) c.lineTo(q[n][0], q[n][1]); c.closePath();
       c.fillStyle = 'rgba(255,255,255,' + 0.34 * al + ')'; c.fill(); c.strokeStyle = 'rgba(217,70,239,' + (0.22 + 0.5 * fl) * al + ')'; c.lineWidth = 0.7 + fl; c.stroke();
       const rgb = i ? '84,96,160' : REQ;
-      k.ribs.forEach(r => {
-        const P = r.pts, n = P.length; if (!n) return;
-        const edge = (w) => { c.beginPath(); for (let a = 0; a < n; a++) { const t = prj(P[a].x - (a === 0 ? 0.05 : 0), y, P[a].zc + P[a].zh * w); a ? c.lineTo(t[0], t[1]) : c.moveTo(t[0], t[1]); } { const t = prj(P[n - 1].x + 0.05, y, P[n - 1].zc + P[n - 1].zh * w); c.lineTo(t[0], t[1]); const u = prj(P[n - 1].x + 0.05, y, P[n - 1].zc - P[n - 1].zh * w); c.lineTo(u[0], u[1]); } for (let a = n - 1; a >= 0; a--) { const t = prj(P[a].x - (a === 0 ? 0.05 : 0), y, P[a].zc - P[a].zh * w); c.lineTo(t[0], t[1]); } c.closePath(); };
+      const trail = (P, e0, e1, strong) => {
+        const n = P.length; if (!n) return;
+        const edge = (w) => { c.beginPath(); let t = prj(P[0].x - e0, y, P[0].zc + P[0].zh * w); c.moveTo(t[0], t[1]); for (let a = 0; a < n; a++) { t = prj(P[a].x, y, P[a].zc + P[a].zh * w); c.lineTo(t[0], t[1]); } t = prj(P[n - 1].x + e1, y, P[n - 1].zc + P[n - 1].zh * w); c.lineTo(t[0], t[1]); t = prj(P[n - 1].x + e1, y, P[n - 1].zc - P[n - 1].zh * w); c.lineTo(t[0], t[1]); for (let a = n - 1; a >= 0; a--) { t = prj(P[a].x, y, P[a].zc - P[a].zh * w); c.lineTo(t[0], t[1]); } t = prj(P[0].x - e0, y, P[0].zc - P[0].zh * w); c.lineTo(t[0], t[1]); c.closePath(); };
         // мягкая тень: три слоя разной ширины
         edge(1.25); c.fillStyle = 'rgba(' + rgb + ',' + 0.07 * al + ')'; c.fill();
         edge(0.9); c.fillStyle = 'rgba(' + rgb + ',' + (0.12 + 0.1 * fl) * al + ')'; c.fill();
         edge(0.45); c.fillStyle = 'rgba(' + rgb + ',' + (0.2 + 0.15 * fl) * al + ')'; c.fill();
-        // ось пути
-        c.beginPath(); for (let a = 0; a < n; a++) { const t = prj(P[a].x, y, P[a].zc); a ? c.lineTo(t[0], t[1]) : c.moveTo(t[0], t[1]); }
-        if (n === 1) { const t = prj(P[0].x + 0.05, y, P[0].zc); c.lineTo(t[0], t[1]); }
+        if (!strong) return;
+        // ось пути: одна сплошная линия от входа до места, где сейчас запрос
+        c.beginPath(); let t = prj(P[0].x - e0, y, P[0].zc); c.moveTo(t[0], t[1]); for (let a = 0; a < n; a++) { t = prj(P[a].x, y, P[a].zc); c.lineTo(t[0], t[1]); } t = prj(P[n - 1].x + e1, y, P[n - 1].zc); c.lineTo(t[0], t[1]);
         c.strokeStyle = 'rgba(' + rgb + ',' + (i ? 0.45 : 0.85) * al + ')'; c.lineWidth = i ? 0.9 : 1.3; c.lineJoin = 'round'; c.stroke();
-      });
+      };
+      k.ribs.forEach(r => trail(r.pts, 0.05, 0.05, false));
+      trail(k.spine, 0.26, k.done ? 0.26 : 0.04, true);
     }
   }
 
@@ -292,12 +300,14 @@ export class ArchScene {
     const L = (id, w, dx, dy, al, size) => put(prj(w[0], w[1], w[2]), dx, dy, id, INK[B[id].g], al, size, dimOf(id) * (act[id] ? 1 : 0.86), act[id]);
     const g = B.gi, x = B.ctx, m = B.model, o = B.go, me = B.mem, pe = B.perm, tl = B.tools, mc = (b) => (b.x0 + b.x1) / 2;
     L('gi', [mc(g), -g.s, -g.s], 0, 20, 'center'); L('go', [mc(o), -o.s, -o.s], 0, 20, 'center');
-    L('ctx', [mc(x), x.s, x.s], 0, -16, 'center'); L('model', [mc(m), m.smax, m.smax], 0, -38, 'center', 17);
+    L('ctx', [mc(x), x.s, x.s], 0, -16, 'center'); 
     L('mem', [me.x0, me.y0, -me.s], -14, 0, 'right'); L('perm', [pe.x0, pe.y0, -pe.s], -12, 0, 'right'); L('tools', [tl.x1, tl.y0, tl.s], 16, 6, 'left');
     { const q = prj(mc(m), m.smax, m.smax), A = this.A, nf = (v) => Number(v).toLocaleString(li ? 'en-US' : 'ru-RU'), u = this.unit;
+      { const mm = this.M.byModel[this.mid], nm = (mm ? (String(mm.ver).toLowerCase().indexOf(String(mm.famName).toLowerCase()) === 0 ? mm.ver : mm.name) : TXT.model[li]) + '  ▾', on = act.model || this.state.hover === 'm:model'; c.font = (on ? '700 ' : '600 ') + '17px Geist, system-ui, sans-serif'; const w = c.measureText(nm).width; this._mlab = { x: q[0] - w / 2 - 8, y: q[1] - 66, w: w + 16, h: 46 };
+        c.textAlign = 'center'; c.textBaseline = 'middle'; c.globalAlpha = dimOf('model') * (on ? 1 : 0.9); c.lineWidth = 4; c.strokeStyle = 'rgba(246,247,251,0.9)'; c.strokeText(nm, q[0], q[1] - 52); c.fillStyle = INK.core; c.fillText(nm, q[0], q[1] - 52); c.globalAlpha = 1; }
       const t1 = u ? (li ? '1 dot = ' + u + 'M parameters' : '1 точка = ' + u + ' млн параметров') : (li ? 'size not disclosed, shape is nominal' : 'размер не раскрыт, форма условная');
       const t2 = u ? ' · ' + nf(A.L) + (li ? ' layers' : ' сл.') + (this.capped ? (li ? ' (drawn: ' : ' (показано ') + MAXP + ')' : '') + (A.E && this.share < 1 ? ' · ' + (li ? 'active per token ' : 'на токен работает ') + (this.share * 100 < 10 ? (this.share * 100).toFixed(1) : Math.round(this.share * 100)) + '%' : '') : '';
-      c.font = '400 11px Geist, system-ui, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.globalAlpha = dimOf('model') * 0.9; c.lineWidth = 3; c.strokeStyle = 'rgba(246,247,251,0.85)'; c.strokeText(t1 + t2, q[0], q[1] - 19); c.fillStyle = '#6b7186'; c.fillText(t1 + t2, q[0], q[1] - 19); c.globalAlpha = 1; }
+      c.font = '400 11px Geist, system-ui, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.globalAlpha = dimOf('model') * 0.9; c.lineWidth = 3; c.strokeStyle = 'rgba(246,247,251,0.85)'; c.strokeText(t1 + t2, q[0], q[1] - 30); c.fillStyle = '#6b7186'; c.fillText(t1 + t2, q[0], q[1] - 30); c.globalAlpha = 1; }
     put(prj(-this.Xh, this.YI, -Math.max(0.6, this.sM * 0.95)), -2, 17, 'obs', INK.quality, 'left', 13.5, zone && zone !== 'd_quality' ? 0.4 : this.at === 'd_quality' && at ? 1 : 0.86, this.at === 'd_quality' && !!at);
     put(prj(g.x0, 0.1, -g.s), -16, 0, 'req', INK.req, 'right', 13.5, at === 'in' ? 1 : 0.86, at === 'in');
     put(prj(o.x1, 0, o.s), 16, 0, 'ans', INK.req, 'left', 13.5, at === 'out' ? 1 : 0.86, at === 'out');

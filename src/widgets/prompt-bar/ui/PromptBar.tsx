@@ -1,4 +1,4 @@
-import { useState, type CSSProperties, type KeyboardEvent } from 'react';
+import { useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
 import { useLocale } from '@/shared/i18n';
 import { SAMPLES, SAMPLES_EN, type Hit, type Step } from '@/features/trace';
 import s from './PromptBar.module.css';
@@ -16,10 +16,12 @@ interface Props {
   showSamples: boolean; style?: CSSProperties; cardBottom?: number;
   /** встроена в левую колонку: шаги идут списком сверху вниз, карточка шага — под ними */
   docked?: boolean;
+  /** в колонке: проход на паузе, переключатель паузы и готовое содержимое раскрытого шага (если не задано — заголовок, текст и слова) */
+  paused?: boolean; onToggle?: () => void; detail?: ReactNode;
 }
 
 /** Строка запроса над картой: ввод, образцы, степпер шагов, активированные записи и карточка текущего шага. */
-export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, onJump, onClear, showSamples, style, cardBottom = 150, docked }: Props) {
+export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, onJump, onClear, showSamples, style, cardBottom = 150, docked, paused, onToggle, detail }: Props) {
   const { t, locale } = useLocale();
   const [v, setV] = useState('');
   const submit = (text?: string) => { const x = (text ?? v).trim(); if (!x) return; if (text) setV(text); onSubmit(x); };
@@ -33,10 +35,31 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
           <input className={s.input} value={v} onChange={e => setV(e.target.value)} onKeyDown={onKey} placeholder={t('например: агент вызывает инструмент', 'for example: an agent calls a tool')} aria-label={t('Фраза для показа пути запроса', 'Phrase to trace through the system')} />
           <button type="button" className={s.go} onClick={() => submit()} aria-label={t('Показать путь запроса', 'Show the request path')}>→</button>
         </div>
-        {steps && (
+        {steps && !docked && (
           <div className={`${s.row} ${s.stepper}`}>
             {steps.map((x, i) => { const c = step === i, d = step != null && i < step; return (
               <button key={i} type="button" className={`${s.st} ${c ? s.stCur : d ? s.stDone : ''}`} onClick={() => onJump(i)}><i style={{ background: x.color, opacity: c || d ? 1 : 0.35 }} />{i + 1} {x.short}</button>
+            ); })}
+          </div>
+        )}
+        {steps && docked && (
+          <div className={s.acc}>
+            {steps.map((x, i) => { const c = step === i, d = step != null && i < step; return (
+              <div key={i} className={`${s.item} ${c ? s.itemCur : ''}`}>
+                <button type="button" className={`${s.st} ${c ? s.stCur : d ? s.stDone : ''}`} aria-expanded={c} onClick={() => (c && onToggle ? onToggle() : onJump(i))}>
+                  <i style={{ background: x.color, opacity: c || d ? 1 : 0.35 }} /><span>{i + 1} {x.short}</span>
+                  {c && onToggle && <em>{paused ? t('дальше ▸', 'continue ▸') : t('пауза', 'pause')}</em>}
+                </button>
+                {c && (
+                  <div key={'b' + i} className={s.body}>
+                    {detail ?? (<>
+                      <div className={s.ct}>{x.title}</div>
+                      <div className={s.cx}>{x.text}</div>
+                      {x.chips.length > 0 && <div className={s.chips}>{x.chips.map((q, k) => { const cc = CH[q.st] ?? CH.ok; return <span key={k} className={s.chip} style={{ background: cc[0], color: cc[1], textDecoration: cc[2], borderColor: cc[3] }}>{(q.st === 'added' ? '+ ' : '') + q.w}</span>; })}</div>}
+                    </>)}
+                  </div>
+                )}
+              </div>
             ); })}
           </div>
         )}
@@ -53,8 +76,8 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
           </div>
         )}
       </div>
-      {cur && open && (
-        <div className={`${s.card} ${docked ? s.cardDock : ''}`} style={docked ? undefined : { bottom: cardBottom }}>
+      {cur && open && !docked && (
+        <div className={s.card} style={{ bottom: cardBottom }}>
           <div className={s.ck}><i style={{ background: cur.color, boxShadow: `0 0 8px ${cur.color}` }} /><span>{(step! + 1) + '/' + steps!.length + ' · ' + cur.where}</span></div>
           <div className={s.ct}>{cur.title}</div>
           <div className={s.cx}>{cur.text}</div>
