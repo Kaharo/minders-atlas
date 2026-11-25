@@ -18,10 +18,12 @@ interface Props {
   docked?: boolean;
   /** в колонке: проход на паузе, переключатель паузы и готовое содержимое раскрытого шага (если не задано — заголовок, текст и слова) */
   paused?: boolean; onToggle?: () => void; detail?: ReactNode;
+  /** шаги, которые видны до запуска (свёрнутые); нажатие на шаг запускает пример с этого места */
+  preview?: Step[] | null; onPreview?: (i: number) => void;
 }
 
 /** Строка запроса над картой: ввод, образцы, степпер шагов, активированные записи и карточка текущего шага. */
-export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, onJump, onClear, showSamples, style, cardBottom = 150, docked, paused, onToggle, detail }: Props) {
+export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, onJump, onClear, showSamples, style, cardBottom = 150, docked, paused, onToggle, detail, preview, onPreview }: Props) {
   const { t, locale } = useLocale();
   const [v, setV] = useState('');
   const submit = (text?: string) => { const x = (text ?? v).trim(); if (!x) return; if (text) setV(text); onSubmit(x); };
@@ -35,6 +37,11 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
           <input className={s.input} value={v} onChange={e => setV(e.target.value)} onKeyDown={onKey} placeholder={t('например: агент вызывает инструмент', 'for example: an agent calls a tool')} aria-label={t('Фраза для показа пути запроса', 'Phrase to trace through the system')} />
           <button type="button" className={s.go} onClick={() => submit()} aria-label={t('Показать путь запроса', 'Show the request path')}>→</button>
         </div>
+        {showSamples && !steps && (
+          <div className={s.row} style={{ flexWrap: 'wrap' }}>
+            {(locale === 'en' ? SAMPLES_EN : SAMPLES).map(x => <button key={x} type="button" className={s.sample} onClick={() => submit(x)}>{x}</button>)}
+          </div>
+        )}
         {steps && !docked && (
           <div className={`${s.row} ${s.stepper}`}>
             {steps.map((x, i) => { const c = step === i, d = step != null && i < step; return (
@@ -63,16 +70,16 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
             ); })}
           </div>
         )}
+        {!steps && docked && preview && (
+          <div className={s.acc}>
+            {preview.map((x, i) => <div key={i} className={s.item}><button type="button" className={`${s.st} ${s.stDone}`} onClick={() => onPreview?.(i)}><i style={{ background: x.color, opacity: 0.6 }} /><span>{i + 1} {x.short}</span></button></div>)}
+          </div>
+        )}
         {hits.length > 0 && (
           <div className={s.row}>
             <span className={s.lbl}>{t('Активированы', 'Activated')}</span>
             {hits.map(h => { const l = hitLabel(h.id); return l ? <button key={h.id} type="button" className={s.hit} onClick={() => onHit(h.id)}><i style={{ background: l.color }} />{l.label}<b>{h.s.toFixed(2)}</b></button> : null; })}
             <button type="button" className={s.x} onClick={onClear}>×</button>
-          </div>
-        )}
-        {showSamples && !steps && (
-          <div className={s.row} style={{ flexWrap: 'wrap' }}>
-            {(locale === 'en' ? SAMPLES_EN : SAMPLES).map(x => <button key={x} type="button" className={s.sample} onClick={() => submit(x)}>{x}</button>)}
           </div>
         )}
       </div>

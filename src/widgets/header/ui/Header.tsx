@@ -20,7 +20,7 @@ export function Header() {
       </NavLink>
       <span className={s.div} />
       <PillGroup>
-        <PillLink to={ROUTES.request}>{t('Запрос', 'Request')}</PillLink>
+        <PillLink to={ROUTES.request}>{t('Пример', 'Example')}</PillLink>
         {SECTIONS.map(x => <PillLink key={x} to={ROUTES.atlas(x)}>{SECTION_LABEL[x][li]}</PillLink>)}
       </PillGroup>
       <span className={s.spacer} />
