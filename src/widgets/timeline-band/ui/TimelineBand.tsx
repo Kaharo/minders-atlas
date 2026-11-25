@@ -15,13 +15,13 @@ interface Props {
   zone: string; onZone: (z: string | null) => void;
   selected: string | null; onPick: (key: string) => void;
   counts: Record<string, number>;
-  style?: CSSProperties;
+  style?: CSSProperties; className?: string;
 }
 
 const OLD_W = 0.11;   // доля ширины под сегмент «до 2017»
 
 /** Шкала времени: сжатый сегмент до 2017 и линейные годы до текущего; точка — запись, столбик — записи одного месяца. */
-export function TimelineBand({ section, entries, shown, year, onYear, zone, onZone, selected, onPick, counts, style }: Props) {
+export function TimelineBand({ section, entries, shown, year, onYear, zone, onZone, selected, onPick, counts, style, className }: Props) {
   const { t, locale } = useLocale();
   const li = locale === 'en' ? 1 : 0;
   const now = new Date().getFullYear();
@@ -42,7 +42,7 @@ export function TimelineBand({ section, entries, shown, year, onYear, zone, onZo
     });
   }, [entries, shown, selected]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <div className={s.band} style={style}>
+    <div className={`${s.band} ${className ?? ''}`} style={style}>
       <div className={s.head}>
         <span className={s.title}>{t('Шкала времени', 'Timeline')}</span>
         <span className={s.count}>{(() => { const dated = entries.filter(e => e.date), sh = shown.filter(e => e.date).length, ys = dated.map(e => e.date!.year), undated = entries.length - dated.length; return (sh === dated.length ? dated.length : sh + ' / ' + dated.length) + ' ' + plural(dated.length, NOUN[section][li], locale) + (ys.length ? ' · ' + Math.max(...ys) + '–' + Math.min(...ys) : '') + (undated ? t(' · ещё ' + undated + ' без даты, на шкале не показаны', ' · ' + undated + ' undated, not on the timeline') : ''); })()}</span>

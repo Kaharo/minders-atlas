@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: '/', element: <Navigate to={ROUTES.atlas('glossary')} replace /> },
+      { path: '/', element: <Navigate to={ROUTES.request} replace /> },
       { path: '/atlas/:section', element: <AtlasPage /> },
       { path: '/atlas/:section/:key', element: <AtlasPage /> },
       { path: ROUTES.pulse, element: <PulsePage /> },

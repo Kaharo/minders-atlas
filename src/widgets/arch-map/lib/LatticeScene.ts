@@ -12,6 +12,8 @@ export interface ArchProps {
   stepKey?: string | null; stepN?: number; stepTitle?: string; stepDone?: string; stepColor?: string;
   insetL?: number; insetR?: number; insetT?: number; insetB?: number; hwDock?: string; hwHidden?: boolean; hwOpen?: boolean;
   plain?: boolean; en?: boolean;
+  /** просмотр раздела: структура уходит в лёгкое облако без подписей, на первом плане точки записей */
+  browse?: boolean;
   onPoint?: (id: string) => void; onZone?: (id: string) => void; onOpen?: (open: boolean) => void; onModel?: (id: string) => void; onModelClick?: () => void;
 }
 
@@ -221,10 +223,10 @@ export class ArchScene {
     });
 
     c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(this.bgC, 0, 0); c.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const zone = pr.zone, dimOf = (id) => (zone && ZONE[id] !== zone ? 0.32 : 1);
+    const zone = pr.zone, br = !!pr.browse, soft = br ? 0.42 : 1, dimOf = (id) => (zone && ZONE[id] !== zone ? 0.32 : 1) * (br && !(zone && ZONE[id] === zone) ? soft : 1);
     { const q = prj((B.model.x0 + B.model.x1) / 2, 0, 0), r = U * (this.sM * 1.5 + 0.5), g = c.createRadialGradient(q[0], q[1], 0, q[0], q[1], r); g.addColorStop(0, 'rgba(99,102,241,0.13)'); g.addColorStop(1, 'rgba(246,247,251,0)'); c.fillStyle = g; c.fillRect(q[0] - r, q[1] - r, 2 * r, 2 * r); }
 
-    this._casts(prj, U, now, zone && zone !== 'd_quality' ? 0.4 : 1);
+    this._casts(prj, U, now, (zone && zone !== 'd_quality' ? 0.4 : 1) * (br ? 0.6 : 1), br);
 
     // пластины: дальние раньше ближних
     const ord = this._ord || (this._ord = []); ord.length = P.length; for (let i = 0; i < P.length; i++) { P[i]._d = prj(P[i].x, P[i].y0, 0)[3]; ord[i] = i; }
@@ -250,14 +252,14 @@ export class ArchScene {
       }
     }
     this._drawPoints(prj);
-    this._labels(prj, U, dimOf);
+    this._labels(prj, U, br ? (id) => (zone && ZONE[id] !== zone ? 0.32 : 1) : dimOf);
   }
 
   /** Наблюдаемость: слепок прохода. На подложке остаётся тень только того пути, которым прошёл запрос; прошлые слепки уходят вниз. */
-  _casts(prj, U, now, dim) {
+  _casts(prj, U, now, dim, plateOnly) {
     const c = this.ctx, zs = Math.max(0.6, this.sM * 0.95), x0 = -this.Xh, x1 = this.Xh;
-    for (let i = this.casts.length - 1; i >= 0; i--) {
-      const k = this.casts[i], y = this.YI - i * 0.17, al = dim * (i ? Math.max(0.3, 0.8 - i * 0.2) : 1), fl = i === 0 && this._flash ? Math.max(0, 1 - (now - this._flash) / 900) : 0;
+    for (let i = plateOnly ? 0 : this.casts.length - 1; i >= 0; i--) {
+      const k = plateOnly ? { ribs: [], spine: [] } : this.casts[i], y = this.YI - i * 0.17, al = dim * (i ? Math.max(0.3, 0.8 - i * 0.2) : 1), fl = i === 0 && this._flash ? Math.max(0, 1 - (now - this._flash) / 900) : 0;
       const q = [prj(x0, y, -zs), prj(x1, y, -zs), prj(x1, y, zs), prj(x0, y, zs)];
       c.beginPath(); c.moveTo(q[0][0], q[0][1]); for (let n = 1; n < 4; n++) c.lineTo(q[n][0], q[n][1]); c.closePath();
       c.fillStyle = 'rgba(255,255,255,' + 0.34 * al + ')'; c.fill(); c.strokeStyle = 'rgba(217,70,239,' + (0.22 + 0.5 * fl) * al + ')'; c.lineWidth = 0.7 + fl; c.stroke();
@@ -296,12 +298,15 @@ export class ArchScene {
   _labels(prj, U, dimOf) {
     const c = this.ctx, B = this.blocks, li = this.props.en ? 1 : 0, at = this.at && this.props.stepKey ? this.at : null, zone = this.props.zone;
     const put = (p, dx, dy, key, ink, al, size, alpha, on) => { c.font = (on ? '700 ' : '600 ') + (size || 13.5) + 'px Geist, system-ui, sans-serif'; c.textAlign = al || 'center'; c.textBaseline = 'middle'; c.globalAlpha = alpha; c.lineWidth = 3.5; c.strokeStyle = 'rgba(246,247,251,0.85)'; c.strokeText(TXT[key][li], p[0] + dx, p[1] + dy); c.fillStyle = ink; c.fillText(TXT[key][li], p[0] + dx, p[1] + dy); c.globalAlpha = 1; };
+    // в просмотре раздела подписи скрыты: название блока появляется только под указателем или у выбранной области
+    const br = !!this.props.browse, hz = this.state.hover && this.state.hover.indexOf('z:') === 0 ? this.state.hover.slice(2) : null, vis = (id) => !br || ZONE[id] === hz || ZONE[id] === zone;
     const act = { gi: at === 'd_trust', ctx: at === 'd_context', model: at === 'core' || at === 'tok' || at === 'emb' || at === 'kv', go: at === 'd_trust_out', mem: at === 'd_context' || at === 'd_quality', perm: at === 'perm', tools: at === 'd_runtime' };
-    const L = (id, w, dx, dy, al, size) => put(prj(w[0], w[1], w[2]), dx, dy, id, INK[B[id].g], al, size, dimOf(id) * (act[id] ? 1 : 0.86), act[id]);
+    const L = (id, w, dx, dy, al, size) => vis(id) && put(prj(w[0], w[1], w[2]), dx, dy, id, INK[B[id].g], al, size, dimOf(id) * (act[id] ? 1 : 0.86), act[id]);
     const g = B.gi, x = B.ctx, m = B.model, o = B.go, me = B.mem, pe = B.perm, tl = B.tools, mc = (b) => (b.x0 + b.x1) / 2;
     L('gi', [mc(g), -g.s, -g.s], 0, 20, 'center'); L('go', [mc(o), -o.s, -o.s], 0, 20, 'center');
     L('ctx', [mc(x), x.s, x.s], 0, -16, 'center'); 
     L('mem', [me.x0, me.y0, -me.s], -14, 0, 'right'); L('perm', [pe.x0, pe.y0, -pe.s], -12, 0, 'right'); L('tools', [tl.x1, tl.y0, tl.s], 16, 6, 'left');
+    if (br) { this._mlab = null; if (hz === 'd_quality' || zone === 'd_quality') put(prj(-this.Xh, this.YI, -Math.max(0.6, this.sM * 0.95)), -2, 17, 'obs', INK.quality, 'left', 13.5, 1, false); return; }
     { const q = prj(mc(m), m.smax, m.smax), A = this.A, nf = (v) => Number(v).toLocaleString(li ? 'en-US' : 'ru-RU'), u = this.unit;
       { const mm = this.M.byModel[this.mid], nm = (mm ? (String(mm.ver).toLowerCase().indexOf(String(mm.famName).toLowerCase()) === 0 ? mm.ver : mm.name) : TXT.model[li]) + '  ▾', on = act.model || this.state.hover === 'm:model'; c.font = (on ? '700 ' : '600 ') + '17px Geist, system-ui, sans-serif'; const w = c.measureText(nm).width; this._mlab = { x: q[0] - w / 2 - 8, y: q[1] - 66, w: w + 16, h: 46 };
         c.textAlign = 'center'; c.textBaseline = 'middle'; c.globalAlpha = dimOf('model') * (on ? 1 : 0.9); c.lineWidth = 4; c.strokeStyle = 'rgba(246,247,251,0.9)'; c.strokeText(nm, q[0], q[1] - 52); c.fillStyle = INK.core; c.fillText(nm, q[0], q[1] - 52); c.globalAlpha = 1; }

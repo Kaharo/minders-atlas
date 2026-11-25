@@ -13,13 +13,14 @@ export function Header() {
   const li = locale === 'en' ? 1 : 0;
   return (
     <header className={s.header}>
-      <NavLink to={ROUTES.atlas('glossary')} className={s.brand}>
+      <NavLink to={ROUTES.request} className={s.brand}>
         <span className={s.logo} />
         <span className={s.name}>minders</span>
         <span className={s.sub}>atlas</span>
       </NavLink>
       <span className={s.div} />
       <PillGroup>
+        <PillLink to={ROUTES.request}>{t('Запрос', 'Request')}</PillLink>
         {SECTIONS.map(x => <PillLink key={x} to={ROUTES.atlas(x)}>{SECTION_LABEL[x][li]}</PillLink>)}
       </PillGroup>
       <span className={s.spacer} />
