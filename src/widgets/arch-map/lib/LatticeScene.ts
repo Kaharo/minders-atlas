@@ -104,7 +104,7 @@ export class ArchScene {
     // масштаб: одна точка — 1, 10 или 100 млн параметров, чтобы модель любого размера помещалась на экран и оставалась сравнимой
     const pB = A.pB || 0, unit = !pB ? 0 : pB < 20 ? 1 : pB < 200 ? 10 : 100, gM = unit ? Math.max(5, Math.min(24, Math.round(Math.sqrt(pB * 1000 / unit / NL)))) : 16;
     this.unit = unit; this.share = A.E && A.aB && pB ? Math.min(1, A.aB / pB) : 1;
-    const sM = unit ? Math.max(0.36, gM * 0.061) : 0.78 + 0.3 * w, len = Math.min(2.7, 0.5 + L * 0.03), GAP = 0.62, SP = 0.2;
+    const sM = unit ? Math.max(0.36, gM * 0.061) : 0.78 + 0.3 * w, len = Math.min(2.7, 0.5 + L * 0.03), GAP = 0.4, SP = 0.2;
     this.hid = A.src === 'hidden'; this.capped = L > MAXP;
     this.YS = -(Math.max(1.02, sM) + 0.68); this.YI = this.YS - 0.92;
     const panes = [], blocks = {};
@@ -119,8 +119,8 @@ export class ArchScene {
     };
     let x = 0;
     stack('gi', 'trust', x, 3, SP, 0.58, 13, 0); x = blocks.gi.x1 + GAP;
-    stack('ctx', 'context', x, 3, SP, 0.72, 15, 0); x = blocks.ctx.x1 + GAP + 0.1;
-    stack('model', 'core', x, NL, len / Math.max(1, NL - 1), sM, gM, 0, (k) => sM * (0.92 + 0.08 * Math.sin(Math.PI * k / Math.max(1, NL - 1)))); x = blocks.model.x1 + GAP + 0.1;
+    stack('ctx', 'context', x, 3, SP, 0.72, 15, 0); x = blocks.ctx.x1 + GAP + 0.06;
+    stack('model', 'core', x, NL, len / Math.max(1, NL - 1), sM, gM, 0, (k) => sM * (0.92 + 0.08 * Math.sin(Math.PI * k / Math.max(1, NL - 1)))); x = blocks.model.x1 + GAP + 0.06;
     stack('go', 'trust', x, 3, SP, 0.58, 13, 0);
     const cx = blocks.ctx, md = blocks.model;
     stack('mem', 'memory', (cx.x0 + cx.x1) / 2 - 0.24, 4, 0.16, 0.36, 10, this.YS);
@@ -133,32 +133,33 @@ export class ArchScene {
   }
   /** Какая часть каждого слоя отзывается на запрос. Плотная модель — слой целиком, смесь экспертов — полосы. */
   _roll(seed) {
-    const rnd = this._rng(seed), A = this.A, moe = !!A.E, nb = 2, pb = Math.min(0.92, Math.max(0.1, (this.share || 1) * NB / nb / 0.88)); let cy = 0.62, cz = 0.46;
-    this.bandSum = new Float32Array(NB);
+    const rnd = this._rng(seed), A = this.A, moe = !!A.E, nb = 2, pb = Math.min(0.92, Math.max(0.1, (this.share || 1) * NB / nb / 0.88)); let cy = 0.62, cz = 0.46, wz = 0.5; const hw = moe ? 0.2 : 0.44, pbz = Math.min(0.92, Math.max(0.12, (this.share || 1) * NB / nb / (2 * hw)));
     this.panes.forEach(p => {
       const N = p.N; let on = null;
-      if (p.b === 'model' && !p.edge && moe) { on = new Uint8Array(NB); let k = 0; while (k < nb) { const i = Math.floor(rnd() * NB); if (!on[i]) { on[i] = 1; k++; this.bandSum[i]++; } } }
+      if (p.b === 'model') { wz = moe ? Math.max(0.24, Math.min(0.76, wz + (rnd() - 0.5) * 0.11)) : 0.5; p.zc = ((moe ? wz : 0.5) * 2 - 1) * p.s; p.zh = hw * 2 * p.s; }
+      if (p.b === 'model' && !p.edge && moe) { on = new Uint8Array(NB); let k = 0; while (k < nb) { const i = Math.floor(rnd() * NB); if (!on[i]) { on[i] = 1; k++; } } }
       cy = Math.max(0.3, Math.min(0.75, cy + (rnd() - 0.6) * 0.08)); cz = Math.max(0.3, Math.min(0.7, cz + (rnd() - 0.5) * 0.08));
+      if (p.b !== 'model') { p.zc = (cz * 2 - 1) * p.s; p.zh = 0.34 * p.s; }
       for (let q = 0; q < N; q++) {
         if (p.r[q] < 0) { p.lit[q] = 0; continue; }
-        if (p.b === 'model') p.lit[q] = p.edge ? (rnd() < 0.7 ? 1 : 0) : on ? (on[Math.min(NB - 1, Math.floor(p.u[q] * NB))] && Math.abs(p.v[q] - 0.5) < 0.44 && rnd() < pb ? 1 : 0) : rnd() < 0.9 ? 1 : 0;
+        if (p.b === 'model') p.lit[q] = p.edge ? (rnd() < 0.7 ? 1 : 0) : on ? (on[Math.min(NB - 1, Math.floor(p.u[q] * NB))] && Math.abs(p.v[q] - wz) < hw && rnd() < pbz ? 1 : 0) : rnd() < 0.9 ? 1 : 0;
         else { const d = Math.hypot(p.u[q] - cy, p.v[q] - cz) / 0.2; p.lit[q] = d < 1 && rnd() < 1.15 - d ? 1 : 0; }
       }
     });
   }
-  _newCast() { return { seg: { gi: 0, ctx: 0, model: 0, go: 0, mem: 0, perm: 0, tools: 0 }, tgt: {}, pass: 1, t: performance.now(), done: false }; }
-  _sweep(id, dur, from, to) { const b = this.blocks[id]; if (!b) return; let ids = b.ids; if (from != null) ids = ids.slice(from, to); this.sweeps.push({ ids, t0: performance.now(), dur: dur || (ids.length > 6 ? 1700 : 650) }); const c = this.casts[0]; c.tgt[id] = 1; }
+  _newCast() { return { ribs: [], t: performance.now(), done: false }; }
+  _sweep(id, dur, from, to) { const b = this.blocks[id]; if (!b) return; let ids = b.ids; if (from != null) ids = ids.slice(from, to); this.sweeps.push({ ids, t0: performance.now(), dur: dur || (ids.length > 6 ? 1700 : 650), main: id === 'gi' || id === 'ctx' || id === 'model' || id === 'go', done: 0, rib: null }); }
   /** Шаг прохода: какие пластины зажечь и что отпечатать в слепке. */
   _step(key) {
     const run = this.run;
     if (key === 'in') {
-      if (Object.keys(this.casts[0].tgt).length) { this.casts[0].done = true; this.casts.unshift(this._newCast()); if (this.casts.length > 4) this.casts.length = 4; }
+      if (this.casts[0].ribs.length) { this.casts[0].done = true; this.casts.unshift(this._newCast()); if (this.casts.length > 4) this.casts.length = 4; }
       run.core = false; run.seed = (run.seed * 31 + 17) >>> 0; this._roll(run.seed); this.panes.forEach(p => { p.heat = 0; p.glow = 0; }); this.sweeps = []; this.at = 'in'; return;
     }
     this.sweeps = []; this.at = key;
     const nM = this.blocks.model.ids.length;
     if (key === 'd_trust') { if (run.core) { this._sweep('perm'); this.at = 'perm'; } else this._sweep('gi'); }
-    else if (key === 'd_context') { this._sweep('ctx'); this._sweep('mem'); if (run.core) this.casts[0].pass = 2; }
+    else if (key === 'd_context') { this._sweep('ctx'); this._sweep('mem'); }
     else if (key === 'tok') this._sweep('model', 400, 0, 1);
     else if (key === 'emb') this._sweep('model', 500, 0, 2);
     else if (key === 'core') { this._sweep('model', run.core ? 1300 : 1900); run.core = true; }
@@ -209,9 +210,9 @@ export class ArchScene {
     P.forEach(p => { p.heat *= dk; p.glow *= gk; });
     this.sweeps.forEach(sw => {
       const n = sw.ids.length, win = n <= 4 ? n : Math.max(4, n * 0.13), h = Math.min(n - 1, -1 + (now - sw.t0) / sw.dur * (n + 1));
-      for (let j = 0; j < n; j++) { const p = P[sw.ids[j]], d = h - j, v = d >= 0 ? Math.max(0, 1 - d / win) : Math.max(0, 1 + d); if (v > p.heat) p.heat = v; if (d >= 0 && p.glow < 0.62) p.glow = 0.62; }
+      for (let j = 0; j < n; j++) { const p = P[sw.ids[j]], d = h - j, v = d >= 0 ? Math.max(0, 1 - d / win) : Math.max(0, 1 + d); if (v > p.heat) p.heat = v; if (d >= 0 && p.glow < 0.62) p.glow = 0.62;
+        if (d >= 0 && j >= sw.done) { sw.done = j + 1; const ribs = this.casts[0].ribs, last = ribs[ribs.length - 1], lp = last && last.pts[last.pts.length - 1]; if (!sw.rib) { sw.rib = sw.main && last && last.main && lp.x < p.x ? last : { main: sw.main, pts: [] }; if (sw.rib !== last) ribs.push(sw.rib); } sw.rib.pts.push({ x: p.x, zc: p.zc, zh: p.zh }); } }
     });
-    const cast = this.casts[0]; Object.keys(cast.tgt).forEach(k => { cast.seg[k] += (cast.tgt[k] - cast.seg[k]) * (1 - Math.exp(-dt * (k === 'model' ? 1.6 : 4))); });
 
     c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(this.bgC, 0, 0); c.setTransform(dpr, 0, 0, dpr, 0, 0);
     const zone = pr.zone, dimOf = (id) => (zone && ZONE[id] !== zone ? 0.32 : 1);
@@ -246,23 +247,27 @@ export class ArchScene {
     this._labels(prj, U, dimOf);
   }
 
-  /** Наблюдаемость: каждый проход оставляет слепок — плоский отпечаток того, какие блоки и какую их часть задействовал запрос. */
+  /** Наблюдаемость: слепок прохода. На подложке остаётся тень только того пути, которым прошёл запрос; прошлые слепки уходят вниз. */
   _casts(prj, U, now, dim) {
-    const c = this.ctx, B = this.blocks, zs = 0.5, x0 = -this.Xh, x1 = this.Xh, moe = !!this.A.E;
-    const quad = (xa, xb, y, za, zb) => { const p = [prj(xa, y, za), prj(xb, y, za), prj(xb, y, zb), prj(xa, y, zb)]; c.beginPath(); c.moveTo(p[0][0], p[0][1]); for (let i = 1; i < 4; i++) c.lineTo(p[i][0], p[i][1]); c.closePath(); return p; };
+    const c = this.ctx, zs = Math.max(0.6, this.sM * 0.95), x0 = -this.Xh, x1 = this.Xh;
     for (let i = this.casts.length - 1; i >= 0; i--) {
-      const k = this.casts[i], y = this.YI - i * 0.17, al = dim * (i ? Math.max(0.25, 0.75 - i * 0.2) : 1), fl = i === 0 && this._flash ? Math.max(0, 1 - (now - this._flash) / 900) : 0;
-      const p = quad(x0, x1, y, -zs, zs); c.fillStyle = 'rgba(255,255,255,' + 0.5 * al + ')'; c.fill(); c.strokeStyle = 'rgba(217,70,239,' + (0.34 + 0.5 * fl) * al + ')'; c.lineWidth = 0.8 + fl; c.stroke();
-      c.strokeStyle = 'rgba(255,255,255,' + al + ')'; c.lineWidth = 1; c.beginPath(); c.moveTo(p[0][0], p[0][1]); c.lineTo(p[1][0], p[1][1]); c.stroke();
-      ['gi', 'ctx', 'model', 'go'].forEach(id => {
-        const b = B[id], xa = b.x0 - 0.07, xb = b.x1 + 0.07, f = k.seg[id], zh = Math.min(zs * 0.9, b.smax * 0.56);
-        quad(xa, xb, y, -zh, zh); c.fillStyle = 'rgba(217,70,239,' + 0.1 * al + ')'; c.fill();
-        if (f < 0.01) return; const xe = xa + (xb - xa) * f;
-        if (id === 'model' && moe && this.bandSum) { const mx = Math.max(1, ...this.bandSum); for (let n = 0; n < NB; n++) { const w = this.bandSum[n] / mx; if (w < 0.05) continue; const z0 = -zh + 2 * zh * n / NB, z1 = z0 + 2 * zh / NB * 0.72; quad(xa, xe, y, z0, z1); c.fillStyle = 'rgba(' + REQ + ',' + (0.2 + 0.45 * w) * al + ')'; c.fill(); } }
-        else { quad(xa, xe, y, -zh * 0.62, zh * 0.62); c.fillStyle = 'rgba(' + REQ + ',' + 0.55 * al + ')'; c.fill(); }
+      const k = this.casts[i], y = this.YI - i * 0.17, al = dim * (i ? Math.max(0.3, 0.8 - i * 0.2) : 1), fl = i === 0 && this._flash ? Math.max(0, 1 - (now - this._flash) / 900) : 0;
+      const q = [prj(x0, y, -zs), prj(x1, y, -zs), prj(x1, y, zs), prj(x0, y, zs)];
+      c.beginPath(); c.moveTo(q[0][0], q[0][1]); for (let n = 1; n < 4; n++) c.lineTo(q[n][0], q[n][1]); c.closePath();
+      c.fillStyle = 'rgba(255,255,255,' + 0.34 * al + ')'; c.fill(); c.strokeStyle = 'rgba(217,70,239,' + (0.22 + 0.5 * fl) * al + ')'; c.lineWidth = 0.7 + fl; c.stroke();
+      const rgb = i ? '84,96,160' : REQ;
+      k.ribs.forEach(r => {
+        const P = r.pts, n = P.length; if (!n) return;
+        const edge = (w) => { c.beginPath(); for (let a = 0; a < n; a++) { const t = prj(P[a].x - (a === 0 ? 0.05 : 0), y, P[a].zc + P[a].zh * w); a ? c.lineTo(t[0], t[1]) : c.moveTo(t[0], t[1]); } { const t = prj(P[n - 1].x + 0.05, y, P[n - 1].zc + P[n - 1].zh * w); c.lineTo(t[0], t[1]); const u = prj(P[n - 1].x + 0.05, y, P[n - 1].zc - P[n - 1].zh * w); c.lineTo(u[0], u[1]); } for (let a = n - 1; a >= 0; a--) { const t = prj(P[a].x - (a === 0 ? 0.05 : 0), y, P[a].zc - P[a].zh * w); c.lineTo(t[0], t[1]); } c.closePath(); };
+        // мягкая тень: три слоя разной ширины
+        edge(1.25); c.fillStyle = 'rgba(' + rgb + ',' + 0.07 * al + ')'; c.fill();
+        edge(0.9); c.fillStyle = 'rgba(' + rgb + ',' + (0.12 + 0.1 * fl) * al + ')'; c.fill();
+        edge(0.45); c.fillStyle = 'rgba(' + rgb + ',' + (0.2 + 0.15 * fl) * al + ')'; c.fill();
+        // ось пути
+        c.beginPath(); for (let a = 0; a < n; a++) { const t = prj(P[a].x, y, P[a].zc); a ? c.lineTo(t[0], t[1]) : c.moveTo(t[0], t[1]); }
+        if (n === 1) { const t = prj(P[0].x + 0.05, y, P[0].zc); c.lineTo(t[0], t[1]); }
+        c.strokeStyle = 'rgba(' + rgb + ',' + (i ? 0.45 : 0.85) * al + ')'; c.lineWidth = i ? 0.9 : 1.3; c.lineJoin = 'round'; c.stroke();
       });
-      // память, разрешение и инструменты — узкая дорожка у переднего края слепка
-      ['mem', 'perm', 'tools'].forEach(id => { const b = B[id], f = k.seg[id], xa = b.x0 - 0.06, xb = b.x1 + 0.06; quad(xa, xb, y, -zs * 0.96, -zs * 0.74); c.fillStyle = f > 0.01 ? 'rgba(' + REQ + ',' + 0.55 * f * al + ')' : 'rgba(217,70,239,' + 0.1 * al + ')'; c.fill(); });
     }
   }
 
@@ -293,7 +298,7 @@ export class ArchScene {
       const t1 = u ? (li ? '1 dot = ' + u + 'M parameters' : '1 точка = ' + u + ' млн параметров') : (li ? 'size not disclosed, shape is nominal' : 'размер не раскрыт, форма условная');
       const t2 = u ? ' · ' + nf(A.L) + (li ? ' layers' : ' сл.') + (this.capped ? (li ? ' (drawn: ' : ' (показано ') + MAXP + ')' : '') + (A.E && this.share < 1 ? ' · ' + (li ? 'active per token ' : 'на токен работает ') + (this.share * 100 < 10 ? (this.share * 100).toFixed(1) : Math.round(this.share * 100)) + '%' : '') : '';
       c.font = '400 11px Geist, system-ui, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.globalAlpha = dimOf('model') * 0.9; c.lineWidth = 3; c.strokeStyle = 'rgba(246,247,251,0.85)'; c.strokeText(t1 + t2, q[0], q[1] - 19); c.fillStyle = '#6b7186'; c.fillText(t1 + t2, q[0], q[1] - 19); c.globalAlpha = 1; }
-    put(prj(this.Xh, this.YI, -0.5), -6, 18, 'obs', INK.quality, 'right', 13.5, zone && zone !== 'd_quality' ? 0.4 : this.at === 'd_quality' && at ? 1 : 0.86, this.at === 'd_quality' && !!at);
+    put(prj(-this.Xh, this.YI, -Math.max(0.6, this.sM * 0.95)), -2, 17, 'obs', INK.quality, 'left', 13.5, zone && zone !== 'd_quality' ? 0.4 : this.at === 'd_quality' && at ? 1 : 0.86, this.at === 'd_quality' && !!at);
     put(prj(g.x0, 0.1, -g.s), -16, 0, 'req', INK.req, 'right', 13.5, at === 'in' ? 1 : 0.86, at === 'in');
     put(prj(o.x1, 0, o.s), 16, 0, 'ans', INK.req, 'left', 13.5, at === 'out' ? 1 : 0.86, at === 'out');
   }
