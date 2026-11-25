@@ -62,6 +62,8 @@ export const ATLAS_ARCH = (function () {
       else { c = { L: 80, d: 8192, H: 64, KV: 8, hd: 128, V: 200000, att: '—' }; if (moe) { c.E = 64; c.k = 8; } src = 'hidden'; }
     }
     var o = {}; for (var k in c) o[k] = c[k];
+    // число экспертов, если разработчик его назвал (в поле arch: «8 of 256 experts»)
+    var ex = /(\d+) of (\d+) experts/i.exec(m.arch || ''); if (ex && src !== 'cfg') { o.k = +ex[1]; o.E = +ex[2]; }
     o.src = src; o.pB = pB; o.aB = aB || pB; o.moe = !!o.E;
     o.q = o.q || 2; o.qn = o.qn || 'BF16';
     o.kvBytesTok = 2 * o.L * o.KV * o.hd * 2;

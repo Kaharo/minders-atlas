@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArchScene, type ArchProps } from '../lib/ArchScene';
+import { ArchScene, type ArchProps } from '../lib/LatticeScene';
 import { hwInfo } from '../lib/hwInfo';
 import s from './ArchMap.module.css';
 

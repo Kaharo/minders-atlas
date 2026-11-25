@@ -14,10 +14,12 @@ interface Props {
   hits: Hit[]; hitLabel: (id: string) => { label: string; color: string } | null; onHit: (id: string) => void;
   onJump: (i: number) => void; onClear: () => void;
   showSamples: boolean; style?: CSSProperties; cardBottom?: number;
+  /** встроена в левую колонку: шаги идут списком сверху вниз, карточка шага — под ними */
+  docked?: boolean;
 }
 
 /** Строка запроса над картой: ввод, образцы, степпер шагов, активированные записи и карточка текущего шага. */
-export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, onJump, onClear, showSamples, style, cardBottom = 150 }: Props) {
+export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, onJump, onClear, showSamples, style, cardBottom = 150, docked }: Props) {
   const { t, locale } = useLocale();
   const [v, setV] = useState('');
   const submit = (text?: string) => { const x = (text ?? v).trim(); if (!x) return; if (text) setV(text); onSubmit(x); };
@@ -25,7 +27,7 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
   const cur = steps && step != null ? steps[step] : null;
   return (
     <>
-      <div className={s.wrap} style={style}>
+      <div className={`${s.wrap} ${docked ? s.dock : ''}`} style={style}>
         {!steps && <div className={s.cap}><b>{t('Путь запроса', 'Request path')}</b>{t('Наберите фразу, и карта по шагам покажет, что с ней происходит внутри AI-системы.', 'Type a phrase and the map shows, step by step, what happens to it inside an AI system.')}</div>}
         <div className={s.bar}>
           <input className={s.input} value={v} onChange={e => setV(e.target.value)} onKeyDown={onKey} placeholder={t('например: агент вызывает инструмент', 'for example: an agent calls a tool')} aria-label={t('Фраза для показа пути запроса', 'Phrase to trace through the system')} />
@@ -52,7 +54,7 @@ export function PromptBar({ onSubmit, steps, step, open, hits, hitLabel, onHit, 
         )}
       </div>
       {cur && open && (
-        <div className={s.card} style={{ bottom: cardBottom }}>
+        <div className={`${s.card} ${docked ? s.cardDock : ''}`} style={docked ? undefined : { bottom: cardBottom }}>
           <div className={s.ck}><i style={{ background: cur.color, boxShadow: `0 0 8px ${cur.color}` }} /><span>{(step! + 1) + '/' + steps!.length + ' · ' + cur.where}</span></div>
           <div className={s.ct}>{cur.title}</div>
           <div className={s.cx}>{cur.text}</div>

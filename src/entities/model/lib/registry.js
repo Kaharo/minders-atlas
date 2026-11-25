@@ -64,6 +64,9 @@ export const ATLAS_MODELS = (function () {
   // ---- Organizations ----
   // key: [name, country EN, country RU, cc, flag, region]
   var O = {
+    reflection: ['Reflection AI', 'United States', 'США', 'US', '🇺🇸', 'na'],
+    speakleash: ['SpeakLeash · ACK Cyfronet AGH', 'Poland', 'Польша', 'PL', '🇵🇱', 'eu'],
+    sensetime: ['SenseTime', 'China', 'Китай', 'CN', '🇨🇳', 'cn'],
     thinkingmachines: ['Thinking Machines', 'United States', 'США', 'US', '🇺🇸', 'na'],
     inclusionai: ['inclusionAI (Ant Group)', 'China', 'Китай', 'CN', '🇨🇳', 'cn'],
     openai: ['OpenAI', 'United States', 'США', 'US', '🇺🇸', 'na'],
@@ -417,22 +420,22 @@ export const ATLAS_MODELS = (function () {
       { id: 'qwen3-5-122b', gen: 'Qwen 3.5', ver: '3.5 122B-A10B', st: 'released', rel: '2026', arch: 'MoE', par: '122B', act: '10B', ctx: '—', lang: 'Multilingual', lic: 'Apache-2.0', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openMid), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
     ],
     deepseek: [
-      { id: 'deepseek-v4-1-flash', gen: 'V-series', ver: 'V4.1 Flash', st: 'released', rel: '2026', arch: 'MoE, hybrid attention', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
-      { id: 'deepseek-v4-pro', gen: 'V-series', ver: 'V4 Pro', st: 'released', rel: '2026', arch: 'MoE, hybrid attention', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
-      { id: 'deepseek-v4-flash', gen: 'V-series', ver: 'V4 Flash', st: 'released', rel: '2026', arch: 'MoE, hybrid attention', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
+      { id: 'deepseek-v4-1-flash', gen: 'V-series', ver: 'V4.1 Flash', st: 'released', rel: '2026', arch: 'MoE, hybrid attention', par: '552B', act: '16B', ctx: '1M', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
+      { id: 'deepseek-v4-pro', gen: 'V-series', ver: 'V4 Pro', st: 'released', rel: '2026', arch: 'MoE, hybrid attention', par: '1.6T', act: '49B', ctx: '1M', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
+      { id: 'deepseek-v4-flash', gen: 'V-series', ver: 'V4 Flash', st: 'released', rel: '2026', arch: 'MoE, hybrid attention', par: '284B', act: '13B', ctx: '1M', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
     ],
     kimi: [
-      { id: 'kimi-k3', gen: 'Kimi K3', ver: 'K3', st: 'released', rel: '2026', arch: 'MoE', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Modified MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
+      { id: 'kimi-k3', gen: 'Kimi K3', ver: 'K3', st: 'released', rel: '2026', arch: 'MoE', par: '2.8T', act: '104B', ctx: '1M', lang: 'Multilingual', lic: 'Kimi K3 License', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
       { id: 'kimi-k2-6', gen: 'Kimi K2', ver: 'K2.6', st: 'released', rel: '2026', arch: 'MoE', par: '1T', act: '32B', ctx: '—', lang: 'Multilingual', lic: 'Modified MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
     ],
     glm: [
-      { id: 'glm-5-3', gen: 'GLM-5', ver: '5.3', st: 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 1, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] },
-      { id: 'glm-5-3-flash', gen: 'GLM-5', ver: '5.3 Flash', st: 'released', rel: '2026', arch: 'MoE', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openMid), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
-      { id: 'glm-5-2', gen: 'GLM-5', ver: '5.2', st: 'released', rel: '2026', arch: 'MoE', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
+      { id: 'glm-5-3', gen: 'GLM-5', ver: '5.3', st: 'released', rel: '2026', arch: 'MoE', par: '753B', act: '—', ctx: '1M', lang: 'Multilingual', lic: 'GLM-5.3 License', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'coding', 'agentic'], l: [], u: ['selfhost', 'coding'] },
+      { id: 'glm-5-3-flash', gen: 'GLM-5', ver: '5.3 Flash', st: 'released', rel: '2026', arch: 'MoE', par: '320B', act: '18B', ctx: '1M', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openMid), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
+      { id: 'glm-5-2', gen: 'GLM-5', ver: '5.2', st: 'released', rel: '2026', arch: 'MoE', par: '753B', act: '—', ctx: '1M', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
     ],
     minimax: [
       { id: 'minimax-h3-max', gen: 'MiniMax H3', ver: 'H3 Max', st: 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 2, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] },
-      { id: 'minimax-m3', gen: 'MiniMax M3', ver: 'M3', st: 'released', rel: '2026', arch: 'MoE', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'MIT', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
+      { id: 'minimax-m3', gen: 'MiniMax M3', ver: 'M3', st: 'released', rel: '2026', arch: 'MoE', par: '428B', act: '23B', ctx: '1M', lang: 'Multilingual', lic: 'MiniMax Community License', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
     ],
     mimo: [
       { id: 'mimo-v2-6-pro', gen: 'MiMo V2', ver: 'V2.6 Pro', st: 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 1, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] },
@@ -442,11 +445,11 @@ export const ATLAS_MODELS = (function () {
       { id: 'seed-2-1-turbo', gen: 'Seed 2', ver: '2.1 Turbo', st: 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 1, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] }
     ],
     hunyuan: [
-      { id: 'hy4-preview', gen: 'Hunyuan', ver: 'Hy4 Preview', st: 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 1, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] },
+      { id: 'hy4-preview', gen: 'Hunyuan', ver: 'Hy4 Preview', st: 'deprecated', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 1, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] },
       { id: 'hy3', gen: 'Hunyuan', ver: 'Hy3', st: 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: 1, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] }
     ],
     nemotron: [
-      { id: 'nemotron-3-ultra', gen: 'Nemotron 3', ver: '3 Ultra 550B', st: 'released', rel: '2026', arch: 'Hybrid Mamba-Transformer MoE', par: '550B', act: '—', ctx: '—', lang: 'Multilingual', lic: 'NVIDIA Open Model', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
+      { id: 'nemotron-3-ultra', gen: 'Nemotron 3', ver: '3 Ultra 550B', st: 'released', rel: '2026', arch: 'Hybrid Mamba-Transformer MoE', par: '550B', act: '55B', ctx: '256K', lang: 'Multilingual', lic: 'NVIDIA Open Model', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openFrontier), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] },
       { id: 'nemotron-3-5-lightning', gen: 'Nemotron 3', ver: '3.5 Lightning', st: 'released', rel: '2026', arch: 'Hybrid MoE', par: 'undisclosed', act: '—', ctx: '—', lang: 'Multilingual', lic: 'NVIDIA Open Model', dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL.openMid), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }
     ],
     mistral: [
@@ -480,6 +483,37 @@ export const ATLAS_MODELS = (function () {
   };
   F.forEach(function (f) { var a = ADD26[f[0]]; if (!a) return; var have = {}; f[6].forEach(function (m) { have[m.id] = 1; }); f[6] = a.filter(function (m) { return !have[m.id]; }).concat(f[6]); });
 
+  // ---- Releases 28.09–24.11.2026 (sources: llmgateway.io/timeline/2026, nocode.mba/ai-release-tracker/2026/11, morphllm.com/best-open-source-llm; checked 24.11.2026). ----
+  // Sizes of open-weight models are as reported by those trackers; closed models stay undisclosed.
+  F.push(['beam', 'reflection', 'Beam', 'Beam', ['openw', 'oss'], ['frontier', 'open', 'selfhost', 'coding', 'agentic', 'recent'], []]);
+  F.push(['mai', 'microsoft', 'MAI', 'MAI', ['api', 'enterprise'], ['coding', 'agentic', 'enterprise', 'recent'], []]);
+  F.push(['bielik', 'speakleash', 'Bielik', 'Bielik', ['oss', 'national', 'regional'], ['sovereign', 'open', 'multiling', 'selfhost', 'recent'], []]);
+  F.push(['sensenova', 'sensetime', 'SenseNova', 'SenseNova', ['openw', 'api'], ['open', 'multimodal', 'recent'], []]);
+  var CL = function (id, gen, ver, cost, ctx, st) { return { id: id, gen: gen, ver: ver, st: st || 'released', rel: '2026', arch: 'Undisclosed', par: 'undisclosed', act: '—', ctx: ctx || '—', lang: 'Multilingual', lic: 'Proprietary', dep: ['api', 'cloud'], cost: cost, c: caps(TPL.frontier), s: ['coding', 'agentic', 'reasoning'], l: ['noweights'], u: ['coding', 'agentic'] }; };
+  var OW = function (id, gen, ver, arch, par, act, ctx, lic, tpl, st) { return { id: id, gen: gen, ver: ver, st: st || 'released', rel: '2026', arch: arch, par: par, act: act || '—', ctx: ctx || '—', lang: 'Multilingual', lic: lic, dep: ['weights', 'selfhost', 'api', 'finetune'], cost: 1, c: caps(TPL[tpl || 'openMid']), s: ['open', 'lowcost'], l: [], u: ['selfhost', 'coding'] }; };
+  var ADD26B = {
+    claude: [CL('claude-fable-5-2', 'Claude 5', 'Fable 5.2', 3, '1M'), CL('claude-sonnet-5-5', 'Claude 5', 'Sonnet 5.5', 2), CL('claude-haiku-5-5', 'Claude 5', 'Haiku 5.5', 1, '1M')],
+    gpt: [CL('gpt-6-2-astra', 'GPT-6', '6.2 Astra', 3), CL('gpt-6-2-sol', 'GPT-6', '6.2 Sol', 2), CL('gpt-6-1-terra', 'GPT-6', '6.1 Terra', 2, '1.05M'), CL('gpt-6-1-sol', 'GPT-6', '6.1 Sol', 2)],
+    gemini: [CL('gemini-4-neon', 'Gemini 4', '4 Neon', 3, '1M'), CL('gemini-4-argon', 'Gemini 4', '4 Argon', 3), CL('gemini-4-carbon', 'Gemini 4', '4 Carbon', 2), CL('gemini-4-hydrogen', 'Gemini 4', '4 Hydrogen', 1, '1M')],
+    muse: [OW('muse-spark-open', 'Muse', 'Spark Open', 'MoE, 8 of 256 experts', '816B', '42B', '1M', 'Muse Model License', 'openFrontier'), CL('muse-ember-1', 'Muse', 'Ember 1.0', 1, '1M')],
+    mistral: [OW('mistral-large-4', 'Mistral 4', 'Large 4', 'MoE', '1T', '49B', '—', 'Mistral license (MIT-based)', 'openFrontier')],
+    kimi: [OW('kimi-k3-1-pro', 'Kimi K3', 'K3.1 Pro', 'MoE, 16 of 896 experts', '2.8T', '104B', '1M', 'Kimi K3.1 Pro License', 'openFrontier')],
+    qwen: [CL('qwen4-max', 'Qwen 4', '4 Max', 2, '1M')],
+    hunyuan: [CL('hy4', 'Hunyuan', 'Hy4', 2), CL('hy4-flash', 'Hunyuan', 'Hy4 Flash', 1, '1M')],
+    ernie: [OW('ernie-5-5-flash', 'ERNIE 5', '5.5 Flash Preview', 'MoE', '280B', '14B', '1M', '—', 'openMid', 'preview')],
+    minimax: [CL('minimax-m3-1-flash', 'MiniMax M3', 'M3.1 Flash', 1)],
+    glm: [CL('glm-5-4', 'GLM-5', '5.4', 2, '—', 'soon')],
+    ling: [CL('ling-3-2-flash', 'Ling 3', '3.2 Flash', 1, '1M')],
+    step: [CL('step-5-preview', 'Step 5', '5 Preview', 2, '—', 'preview')],
+    inkling: [OW('inkling-2-small', 'Inkling 2', '2 Small', 'Undisclosed', 'undisclosed', '—', '—', '—'), OW('inkling-2-mini', 'Inkling 2', '2 Mini', 'Looped transformer', 'undisclosed', '—', '—', '—', 'openSmall')],
+    sarvam: [OW('sarvam-105b', 'Sarvam', '105B', 'Undisclosed', '105B', '—', '—', '—')],
+    holo: [OW('holo4-27b', 'Holo 4', '4 27B', 'Dense, computer use', '27B', '—', '—', '—'), OW('holo4-35b-a3b', 'Holo 4', '4 35B-A3B', 'MoE, computer use', '35B', '3B', '—', '—')],
+    beam: [OW('beam-1-501b', 'Beam 1', '1.0 501B-A23B', 'MoE, 8 of 256 experts', '501B', '23B', '1M', 'Apache-2.0', 'openFrontier')],
+    mai: [CL('mai-code-2', 'MAI', 'Code 2', 2), CL('mai-code-2-flash', 'MAI', 'Code 2 Flash', 1)],
+    bielik: [OW('bielik-11b-v3-1', 'Bielik 3', '11B v3.1 Instruct', 'Dense transformer', '11B', '—', '—', '—', 'sovereign')],
+    sensenova: [OW('sensenova-loop-9b', 'SenseNova', 'Loop 9B', 'Looped transformer (shared layers)', '9B', '—', '512K', '—', 'openSmall')]
+  };
+  F.forEach(function (f) { var a = ADD26B[f[0]]; if (!a) return; var have = {}; f[6].forEach(function (m) { have[m.id] = 1; }); f[6] = a.filter(function (m) { return !have[m.id]; }).concat(f[6]); });
   // ---- Build indexes ----
   var axes = AXES.map(function (a) { return { key: a[0], en: a[1], ru: a[2], nodes: a[3] }; });
   var families = [], models = [], byModel = {}, byFamily = {};

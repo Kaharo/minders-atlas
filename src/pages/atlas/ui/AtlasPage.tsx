@@ -18,6 +18,7 @@ import { TimelineBand } from '@/widgets/timeline-band';
 import { RecordCard } from '@/widgets/record-card';
 import { PromptBar } from '@/widgets/prompt-bar';
 import { LearnPanel } from '@/widgets/learn-panel';
+import { GpuStrip } from '@/widgets/gpu-strip';
 import s from './AtlasPage.module.css';
 
 const ZONE_G: Record<string, string> = { d_trust: 'trust', d_context: 'context', d_runtime: 'runtime', d_quality: 'quality' };
@@ -48,7 +49,10 @@ export function AtlasPage() {
   const byZone = useMemo(() => entries.filter(e => !f.zone || e.domain.domain === f.zone), [entries, f.zone]);
   const shown = useMemo(() => byZone.filter(e => (!f.kind || e.kind.kind === f.kind) && (!f.year || (f.year === 'old' ? !!e.date && e.date.year < FIRST_YEAR : e.date?.year === Number(f.year)))), [byZone, f.kind, f.year]);
   const counts = useMemo(() => { const c: Record<string, number> = {}; entries.forEach(e => { c[e.domain.domain] = (c[e.domain.domain] ?? 0) + 1; }); return c; }, [entries]);
-  const points: ArchPoint[] = useMemo(() => entries.map((e, i) => ({ id: e.key, n: i + 1, title: pick(e.title), color: entryColor(e), dom: e.domain.domain })), [entries, pick]);
+  const narrowNow = cw < 760;
+  // простой режим: точки записей появляются, когда человек открыл список, выбрал область или запись
+  const ptsOn = !simple || (narrowNow ? sheet === 'points' : show.list) || !!f.zone || !!key || tr.hits.length > 0;
+  const points: ArchPoint[] = useMemo(() => (ptsOn ? entries.map((e, i) => ({ id: e.key, n: i + 1, title: pick(e.title), color: entryColor(e), dom: e.domain.domain })) : []), [entries, pick, ptsOn]);
   const pointsKey = useMemo(() => S + ':' + locale + ':' + points.length, [S, locale, points.length]);
   const noun = S === 'glossary' ? (li ? ['term', 'terms', 'terms'] : ['термин', 'термина', 'терминов']) : li ? ['incident', 'incidents', 'incidents'] : ['инцидент', 'инцидента', 'инцидентов'];
   const zoneCounts = useMemo(() => Object.keys(ZONE_G).map(k => `${ZONE_G[k]}=${counts[k] ?? 0} ${plural(counts[k] ?? 0, noun as [string, string, string], locale)}`).join(';'), [counts, noun, locale]);
@@ -66,11 +70,12 @@ export function AtlasPage() {
   }, [S, modelId, locale, entries, index, tr, go]);
 
   const learn = S === 'glossary' && !!tr.steps;
-  useEffect(() => { if (f.zone || learn) setShow(v => (v.list ? v : { ...v, list: true })); }, [f.zone, learn]);
+  useEffect(() => { if (f.zone) setShow(v => (v.list ? v : { ...v, list: true })); }, [f.zone]);
 
   if (!ok) return <Navigate to="/atlas/glossary" replace />;
   const narrow = cw < 760;
-  const listOn = !narrow && (!simple || show.list), modelOn = !narrow && (!simple || show.model), timeOn = !narrow && (!simple || show.time);
+  const dock = simple && !narrow, sideW = cw < 1000 ? 272 : cw < 1240 ? 300 : 328;
+  const listOn = !narrow && !simple, modelOn = !narrow && (!simple || show.model), timeOn = !narrow && (!simple || show.time);
   const cur = tr.steps && tr.step != null ? tr.steps[tr.step] : null;
   const asideW = !listOn ? 0 : cw < 1000 ? 216 : cw < 1240 ? 250 : 292, leftW = !modelOn ? 0 : cw < 1000 ? 236 : cw < 1240 ? 268 : 304;
   const nounN = (n: number) => `${n} ${plural(n, (S === 'glossary' ? (li ? ['term', 'terms', 'terms'] : ['термин', 'термина', 'терминов']) : li ? ['record', 'records', 'records'] : ['запись', 'записи', 'записей']) as [string, string, string], locale)}`;
@@ -90,21 +95,34 @@ export function AtlasPage() {
     <div className={s.stage}>
       <ArchMap modelId={modelId} focus={S === 'incidents' ? 'incidents' : S === 'glossary' ? 'learn' : 'glossary'} points={points} pointsKey={pointsKey} selected={key ?? null} hitsKey={tr.hits.map(h => h.id).join(',')} zone={f.zone || null} zoneCounts={zoneCounts} supportKey={support.key}
         stepKey={cur?.key ?? null} stepN={tr.runId * 1000 + (tr.step ?? -1)} stepTitle={cur?.title} stepDone={cur?.done} stepColor={cur?.color}
-        insetL={asideW ? asideW + 34 : 16} insetR={leftW ? leftW + 34 : 16} insetT={narrow ? (tr.steps ? 150 : 124) : 190} insetB={narrow ? (learn ? 250 : 64) : timeOn ? 132 : 56} plain={simple} hwDock="bottom" hwHidden onPoint={go} onZone={onZone} onHw={setHw} />
-      <PromptBar onSubmit={onSubmit} steps={tr.steps} step={tr.step} open={tr.open} hits={tr.hits} hitLabel={id => { const e = entries.find(x => x.key === id); return e ? { label: pick(e.title).length > 26 ? pick(e.title).slice(0, 25) + '…' : pick(e.title), color: entryColor(e) } : null; }} onHit={go} onJump={tr.jump} onClear={tr.clearHits}
-        showSamples={!narrow && cw >= 460} cardBottom={narrow ? 60 : timeOn ? 150 : 60} style={{ top: narrow ? 12 : simple ? 58 : 92, width: narrow ? 'calc(100% - 36px)' : `min(520px, calc(100% - ${2 * (Math.max(leftW, asideW) + 46)}px))` }} />
+        insetL={dock ? sideW + 34 : asideW ? asideW + 34 : 16} insetR={leftW ? leftW + 34 : 16} insetT={narrow ? (tr.steps ? 150 : 124) : dock ? 46 : 190} insetB={narrow ? (learn ? 250 : 64) : timeOn ? 132 : dock ? (cw < 1320 ? 150 : 104) : 104} plain={simple} en={locale === 'en'} hwDock="bottom" hwHidden onPoint={go} onZone={onZone} onHw={setHw} />
+      {!dock && <PromptBar onSubmit={onSubmit} steps={tr.steps} step={tr.step} open={tr.open} hits={tr.hits} hitLabel={id => { const e = entries.find(x => x.key === id); return e ? { label: pick(e.title).length > 26 ? pick(e.title).slice(0, 25) + '…' : pick(e.title), color: entryColor(e) } : null; }} onHit={go} onJump={tr.jump} onClear={tr.clearHits}
+        showSamples={!narrow && cw >= 460} cardBottom={narrow ? 60 : timeOn ? 150 : 60} style={{ top: narrow ? 12 : 92, width: narrow ? 'calc(100% - 36px)' : `min(520px, calc(100% - ${2 * (Math.max(leftW, asideW) + 46)}px))` }} />}
       {list.loading && !list.data && <span className={s.status}>{t('Загружаю записи…', 'Loading entries…')}</span>}
       {list.error && <span className={s.status} style={{ color: '#b91c1c' }}>{list.error}</span>}
-      {!narrow && simple && (
+      {dock && (
+        <div className={s.side} style={{ width: sideW }}>
+          <PromptBar onSubmit={onSubmit} steps={tr.steps} step={tr.step} open={tr.open} hits={tr.hits} hitLabel={id => { const e = entries.find(x => x.key === id); return e ? { label: pick(e.title).length > 26 ? pick(e.title).slice(0, 25) + '…' : pick(e.title), color: entryColor(e) } : null; }} onHit={go} onJump={tr.jump} onClear={tr.clearHits}
+        showSamples docked />
+          {learn && cur && <LearnPanel steps={tr.steps!} step={tr.step!} onClose={tr.stop} />}
+          {!(learn && cur) && <button type="button" className={`${s.chip} ${s.sideChip} ${show.list ? s.chipOn : ''}`} aria-expanded={show.list} onClick={() => setShow(v => ({ ...v, list: !v.list }))}>{show.list ? t('Скрыть список', 'Hide list') : `${SECTION_LABEL[S][li]} · ${nounN(entries.length)}`}</button>}
+          {show.list && !(learn && cur) && <div className={s.sideList}>{blockEl}{listEl}</div>}
+          {!show.list && (
+            <div className={`${s.answer} ${tr.steps && tr.step === tr.steps.length - 1 ? s.answerOn : ''}`} aria-live="polite">
+              <b>{t('Ответ', 'Answer')}</b>
+              <span>{!tr.steps ? t('Сюда вернётся ответ, когда запрос пройдёт весь путь.', 'The answer returns here once the request has gone the whole way.') : tr.step === tr.steps.length - 1 ? t('Запрос прошёл весь путь: здесь пользователь получает ответ. Атлас показывает путь запроса, сам текст ответа он не генерирует.', 'The request has gone the whole way: this is where the user gets the answer. The atlas shows the path; it does not generate the answer text.') : t(`Запрос в пути: шаг ${(tr.step ?? 0) + 1} из ${tr.steps.length}.`, `Request in progress: step ${(tr.step ?? 0) + 1} of ${tr.steps.length}.`)}</span>
+            </div>
+          )}
+        </div>
+      )}
+      {dock && (
         <div className={s.chips}>
-          <button type="button" className={`${s.chip} ${show.list ? s.chipOn : ''}`} aria-expanded={show.list} onClick={() => setShow(v => ({ ...v, list: !v.list }))}>{show.list ? t('Скрыть список', 'Hide list') : `${SECTION_LABEL[S][li]} · ${nounN(entries.length)}`}</button>
           <span className={s.chipsGap} />
           <button type="button" className={`${s.chip} ${show.model ? s.chipOn : ''}`} aria-expanded={show.model} onClick={() => setShow(v => ({ ...v, model: !v.model }))}>{show.model ? t('Скрыть модель', 'Hide model') : `${t('Модель', 'Model')}: ${modelById(modelId)?.name ?? modelId}`}</button>
         </div>
       )}
       {listOn && (
-        <div className={`${s.left} ${simple ? s.under : ''}`} style={{ width: asideW }}>
-          {simple && block && !(learn && cur) && blockEl}
+        <div className={s.left} style={{ width: asideW }}>
           {learn && cur ? <LearnPanel steps={tr.steps!} step={tr.step!} onClose={tr.stop} /> : listEl}
         </div>
       )}
@@ -115,13 +133,14 @@ export function AtlasPage() {
         </div>
       )}
       {!narrow && simple && (
-        <button type="button" className={`${s.chip} ${s.timeChip} ${show.time ? s.chipOn : ''}`} aria-expanded={show.time} onClick={() => setShow(v => ({ ...v, time: !v.time }))}>{show.time ? t('Скрыть шкалу времени', 'Hide timeline') : t('Шкала времени', 'Timeline')}</button>
+        <button type="button" className={`${s.chip} ${s.timeChip} ${show.time ? s.chipOn : ''}`} style={{ left: sideW + 34 }} aria-expanded={show.time} onClick={() => setShow(v => ({ ...v, time: !v.time }))}>{show.time ? t('Скрыть шкалу времени', 'Hide timeline') : t('Шкала времени', 'Timeline')}</button>
       )}
       {!(narrow && learn) && <div className={`${s.mode} ${narrow ? s.modeNarrow : ''}`} role="group" aria-label={t('Режим экрана', 'View mode')}>
         <button type="button" className={`${s.modeBtn} ${simple ? s.modeOn : ''}`} aria-pressed={simple} onClick={() => setViewMode('simple')}>{t('Просто', 'Simple')}</button>
         <button type="button" className={`${s.modeBtn} ${!simple ? s.modeOn : ''}`} aria-pressed={!simple} onClick={() => setViewMode('detail')}>{t('Подробно', 'Detailed')}</button>
       </div>}
-      {timeOn && <TimelineBand section={S} style={{ left: simple ? Math.max(asideW + 40, 230) : asideW + 40, right: leftW + 40 + (simple && !modelOn ? 170 : 0) }} entries={byZone} shown={shown} year={f.year} onYear={f.setYear} zone={f.zone} onZone={f.setZone} selected={key ?? null} onPick={go} counts={counts} />}
+      {!narrow && !timeOn && hw && <GpuStrip gb={hw.gb} hiddenNote={hw.hid ? hw.head : undefined} style={cw < 1320 ? { left: dock ? sideW + 34 : asideW + 40, right: leftW ? leftW + 40 : 16, bottom: 56 } : { left: dock ? sideW + 190 : asideW + 40, right: leftW ? leftW + 40 : 196 }} />}
+      {timeOn && <TimelineBand section={S} style={{ left: dock ? sideW + 230 : asideW + 40, right: leftW + 40 + (simple && !modelOn ? 170 : 0) }} entries={byZone} shown={shown} year={f.year} onYear={f.setYear} zone={f.zone} onZone={f.setZone} selected={key ?? null} onPick={go} counts={counts} />}
       {narrow && !learn && (
         <div className={s.tabs}>
           {(['blocks', 'points', 'model'] as const).map(k => <button key={k} type="button" className={`${s.tab} ${sheet === k ? s.tabOn : ''}`} onClick={() => setSheet(sheet === k ? 'none' : k)}>{k === 'blocks' ? t('Блоки', 'Blocks') : k === 'points' ? t('Точки', 'Points') : t('Модель', 'Model')}</button>)}

@@ -10,20 +10,28 @@ on:
 concurrency: db
 jobs:
   sync:
-    if: ${{ secrets.TURSO_DATABASE_URL != '' }}
     runs-on: ubuntu-latest
     env:
       TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
       TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
     steps:
+      - name: База не подключена
+        if: env.TURSO_DATABASE_URL == ''
+        run: echo "TURSO_DATABASE_URL не задан — синхронизация пропущена"
       - uses: actions/checkout@v4
+        if: env.TURSO_DATABASE_URL != ''
         with: { ref: main }
       - uses: actions/setup-node@v4
+        if: env.TURSO_DATABASE_URL != ''
         with: { node-version: 20, cache: npm }
       - run: npm ci
+        if: env.TURSO_DATABASE_URL != ''
       - name: Проверить данные
+        if: env.TURSO_DATABASE_URL != ''
         run: node scripts/validate-data.mjs
       - name: Миграции
+        if: env.TURSO_DATABASE_URL != ''
         run: node scripts/migrate.mjs
       - name: Посев мира
+        if: env.TURSO_DATABASE_URL != ''
         run: node scripts/seed.mjs
