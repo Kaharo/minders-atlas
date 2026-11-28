@@ -1,15 +1,37 @@
 {
- "updated": "2026-11-27T13:33:03.921Z",
+ "updated": "2026-11-28T12:46:22.883Z",
  "days": 14,
  "personas": {},
  "items": [
+  {
+   "id": "hn50671651",
+   "title": "SessionGraph: Visualize all your coding agent sessions in one interactive graph",
+   "url": "https://sessiongraph.ai/",
+   "ts": 1795813654000,
+   "src": "Hacker News",
+   "score": 68,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50667726",
+   "title": "Show HN: bouncemarket – a live prediction market game for a bouncing ball",
+   "url": "https://bouncemarket.minhanhday.com/",
+   "ts": 1795791710000,
+   "src": "Hacker News",
+   "score": 387,
+   "ps": [
+    "meridian"
+   ]
+  },
   {
    "id": "hn50661218",
    "title": "AI agents now control part of DeepMind's compute for Gemini experiments",
    "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/",
    "ts": 1795737798000,
    "src": "Hacker News",
-   "score": 55,
+   "score": 56,
    "ps": [
     "orbix"
    ]
@@ -20,7 +42,7 @@
    "url": "https://news.ycombinator.com/item?id=50657957",
    "ts": 1795716893000,
    "src": "Hacker News",
-   "score": 63,
+   "score": 70,
    "ps": [
     "orbix"
    ]
@@ -31,7 +53,7 @@
    "url": "https://devnull.land/amd-specific-llama-cpp",
    "ts": 1795713089000,
    "src": "Hacker News",
-   "score": 392,
+   "score": 444,
    "ps": [
     "orbix"
    ]
@@ -42,7 +64,7 @@
    "url": "https://twitter.com/ElliotC1/status/2125689373337489419",
    "ts": 1795712115000,
    "src": "Hacker News",
-   "score": 60,
+   "score": 61,
    "ps": [
     "orbix"
    ]
@@ -53,7 +75,7 @@
    "url": "http://themouseless.dev/vim/",
    "ts": 1795704262000,
    "src": "Hacker News",
-   "score": 227,
+   "score": 308,
    "ps": [
     "orbix"
    ]
@@ -64,7 +86,7 @@
    "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
    "ts": 1795686263000,
    "src": "Hacker News",
-   "score": 359,
+   "score": 421,
    "ps": [
     "orbix"
    ]
@@ -75,7 +97,7 @@
    "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
    "ts": 1795678392000,
    "src": "Hacker News",
-   "score": 340,
+   "score": 356,
    "ps": [
     "meridian"
    ]
@@ -86,7 +108,7 @@
    "url": "https://twitter.com/thsottiaux/status/2125784147889393806",
    "ts": 1795664218000,
    "src": "Hacker News",
-   "score": 494,
+   "score": 511,
    "ps": [
     "orbix"
    ]
@@ -97,7 +119,7 @@
    "url": "https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os",
    "ts": 1795644934000,
    "src": "Hacker News",
-   "score": 233,
+   "score": 235,
    "ps": [
     "orbix"
    ]
@@ -108,7 +130,7 @@
    "url": "https://github.com/lsernau/grh-lean",
    "ts": 1795643290000,
    "src": "Hacker News",
-   "score": 558,
+   "score": 565,
    "ps": [
     "orbix"
    ]
@@ -130,7 +152,18 @@
    "url": "https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/",
    "ts": 1795619324000,
    "src": "Hacker News",
-   "score": 510,
+   "score": 513,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hn50642977",
+   "title": "Limiting Charging to 80 Percent",
+   "url": "https://www.jefftk.com/p/limiting-charging-to-80",
+   "ts": 1795618805000,
+   "src": "Hacker News",
+   "score": 74,
    "ps": [
     "orbix"
    ]
@@ -141,7 +174,7 @@
    "url": "https://www.comentr.com/technology/01M88DWQ0R4NCMYR17AFEWRG1F",
    "ts": 1795579413000,
    "src": "Hacker News",
-   "score": 222,
+   "score": 224,
    "ps": [
     "orbix"
    ]
@@ -152,7 +185,7 @@
    "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
    "ts": 1795575877000,
    "src": "Hacker News",
-   "score": 466,
+   "score": 467,
    "ps": [
     "orbix"
    ]
@@ -175,7 +208,7 @@
    "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
    "ts": 1795569566000,
    "src": "Hacker News",
-   "score": 1067,
+   "score": 1069,
    "ps": [
     "orbix"
    ]
@@ -189,6 +222,17 @@
    "score": 52,
    "ps": [
     "meridian"
+   ]
+  },
+  {
+   "id": "hn50634734",
+   "title": "Working with AI",
+   "url": "https://www.anthropic.com/research/working-with-ai",
+   "ts": 1795554458000,
+   "src": "Hacker News",
+   "score": 91,
+   "ps": [
+    "orbix"
    ]
   },
   {
@@ -209,9 +253,31 @@
    "url": "https://news.ycombinator.com/item?id=50634426",
    "ts": 1795553055000,
    "src": "Hacker News",
-   "score": 109,
+   "score": 112,
    "ps": [
     "orbix"
+   ]
+  },
+  {
+   "id": "hn50633531",
+   "title": "Show HN: Analysis of Hacker News predictions since 2008",
+   "url": "https://hnpredictions.com/",
+   "ts": 1795549614000,
+   "src": "Hacker News",
+   "score": 104,
+   "ps": [
+    "orbix"
+   ]
+  },
+  {
+   "id": "hf2611.33885",
+   "title": "LayoutRecall: Preserving Appearance in Multi-Round 3D Layout-Controlled Image Editing",
+   "url": "https://huggingface.co/papers/2611.33885",
+   "ts": 1795546800000,
+   "src": "HF Papers",
+   "score": 4,
+   "ps": [
+    "lexicon"
    ]
   },
   {
@@ -242,7 +308,7 @@
    "url": "https://huggingface.co/papers/2611.34232",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 97,
+   "score": 111,
    "ps": [
     "lexicon",
     "orbix"
@@ -254,7 +320,7 @@
    "url": "https://huggingface.co/papers/2611.34852",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 23,
+   "score": 25,
    "ps": [
     "lexicon",
     "orbix"
@@ -266,7 +332,7 @@
    "url": "https://huggingface.co/papers/2611.34290",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 23,
+   "score": 27,
    "ps": [
     "lexicon",
     "orbix"
@@ -278,7 +344,7 @@
    "url": "https://huggingface.co/papers/2611.34813",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 12,
+   "score": 61,
    "ps": [
     "lexicon",
     "orbix"
@@ -290,7 +356,7 @@
    "url": "https://huggingface.co/papers/2611.34693",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 19,
+   "score": 22,
    "ps": [
     "lexicon",
     "orbix"
@@ -302,7 +368,7 @@
    "url": "https://huggingface.co/papers/2611.34457",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 35,
+   "score": 36,
    "ps": [
     "lexicon"
    ]
@@ -313,7 +379,7 @@
    "url": "https://huggingface.co/papers/2611.34051",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 111,
+   "score": 134,
    "ps": [
     "lexicon"
    ]
@@ -335,7 +401,7 @@
    "url": "https://huggingface.co/papers/2611.28732",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 28,
+   "score": 34,
    "ps": [
     "lexicon",
     "orbix"
@@ -358,7 +424,7 @@
    "url": "https://huggingface.co/papers/2611.34147",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 10,
+   "score": 12,
    "ps": [
     "lexicon",
     "orbix"
@@ -406,7 +472,7 @@
    "url": "https://huggingface.co/papers/2611.33579",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 19,
+   "score": 20,
    "ps": [
     "lexicon",
     "orbix"
@@ -418,7 +484,7 @@
    "url": "https://huggingface.co/papers/2611.34671",
    "ts": 1795546800000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 3,
    "ps": [
     "lexicon",
     "orbix"
@@ -434,52 +500,6 @@
    "ps": [
     "lexicon",
     "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.34420",
-   "title": "DocSEAM: Bidirectional Cross-Page Encoding for Multi-Page Document Understanding",
-   "url": "https://huggingface.co/papers/2611.34420",
-   "ts": 1795546800000,
-   "src": "HF Papers",
-   "score": 28,
-   "ps": [
-    "lexicon"
-   ]
-  },
-  {
-   "id": "hf2611.34923",
-   "title": "Mixture-of-Loops Transformer",
-   "url": "https://huggingface.co/papers/2611.34923",
-   "ts": 1795546800000,
-   "src": "HF Papers",
-   "score": 72,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.33925",
-   "title": "Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures",
-   "url": "https://huggingface.co/papers/2611.33925",
-   "ts": 1795546800000,
-   "src": "HF Papers",
-   "score": 13,
-   "ps": [
-    "lexicon",
-    "orbix"
-   ]
-  },
-  {
-   "id": "hf2611.34064",
-   "title": "SPARC: Geometry-Guided Attention Pruning for Long-Horizon Camera-Controlled Video Generation",
-   "url": "https://huggingface.co/papers/2611.34064",
-   "ts": 1795546800000,
-   "src": "HF Papers",
-   "score": 2,
-   "ps": [
-    "lexicon"
    ]
   },
   {
@@ -499,7 +519,7 @@
    "url": "https://novaramedia.com/2026/11/24/anthropic-staff-openly-talk-about-taking-over-the-world-claims-top-mit-physicist/",
    "ts": 1795540245000,
    "src": "Hacker News",
-   "score": 225,
+   "score": 228,
    "ps": [
     "orbix"
    ]
@@ -510,7 +530,7 @@
    "url": "https://news.ycombinator.com/item?id=50630809",
    "ts": 1795538744000,
    "src": "Hacker News",
-   "score": 469,
+   "score": 477,
    "ps": [
     "orbix"
    ]
@@ -532,7 +552,7 @@
    "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading",
    "ts": 1795526627000,
    "src": "Hacker News",
-   "score": 433,
+   "score": 434,
    "ps": [
     "meridian"
    ]
@@ -543,7 +563,7 @@
    "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
    "ts": 1795524015000,
    "src": "Hacker News",
-   "score": 1032,
+   "score": 1033,
    "ps": [
     "orbix"
    ]
@@ -554,7 +574,7 @@
    "url": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html",
    "ts": 1795501356000,
    "src": "Hacker News",
-   "score": 285,
+   "score": 298,
    "ps": [
     "meridian",
     "orbix"
@@ -624,7 +644,7 @@
    "url": "https://huggingface.co/papers/2611.33093",
    "ts": 1795460400000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon",
     "orbix"
@@ -670,7 +690,7 @@
    "url": "https://huggingface.co/papers/2611.33307",
    "ts": 1795460400000,
    "src": "HF Papers",
-   "score": 4,
+   "score": 5,
    "ps": [
     "lexicon",
     "orbix"
@@ -693,7 +713,7 @@
    "url": "https://huggingface.co/papers/2611.33457",
    "ts": 1795460400000,
    "src": "HF Papers",
-   "score": 21,
+   "score": 22,
    "ps": [
     "lexicon",
     "orbix"
@@ -716,7 +736,7 @@
    "url": "https://chszlab.github.io/AgenticAlgorithmEngineering/",
    "ts": 1795442535000,
    "src": "Hacker News",
-   "score": 134,
+   "score": 136,
    "ps": [
     "orbix"
    ]
@@ -733,12 +753,36 @@
    ]
   },
   {
+   "id": "hf2611.30025",
+   "title": "Damped Atomic Wave Integration Neurons (DAWIN): A Universal Primitive for Continuous-Time Spatiotemporal Learning",
+   "url": "https://huggingface.co/papers/2611.30025",
+   "ts": 1795374000000,
+   "src": "HF Papers",
+   "score": 2,
+   "ps": [
+    "lexicon"
+   ]
+  },
+  {
+   "id": "hf2611.30723",
+   "title": "BiSAT: Bidirectionally Aligned Semantic-Acoustic Tokenization for Speech Language Models",
+   "url": "https://huggingface.co/papers/2611.30723",
+   "ts": 1795374000000,
+   "src": "HF Papers",
+   "score": 2,
+   "ps": [
+    "lexicon",
+    "archive",
+    "orbix"
+   ]
+  },
+  {
    "id": "hf2611.30494",
    "title": "Revisiting LLMs as Context Engineers",
    "url": "https://huggingface.co/papers/2611.30494",
    "ts": 1795374000000,
    "src": "HF Papers",
-   "score": 2,
+   "score": 5,
    "ps": [
     "lexicon",
     "orbix"
@@ -783,7 +827,7 @@
    "url": "https://huggingface.co/papers/2611.31619",
    "ts": 1795374000000,
    "src": "HF Papers",
-   "score": 41,
+   "score": 58,
    "ps": [
     "lexicon",
     "orbix"
@@ -866,18 +910,7 @@
    "url": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard",
    "ts": 1795365888000,
    "src": "Hacker News",
-   "score": 467,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50600771",
-   "title": "Ask HN: Are the trades a safe career transition?",
-   "url": "https://news.ycombinator.com/item?id=50600771",
-   "ts": 1795362753000,
-   "src": "Hacker News",
-   "score": 88,
+   "score": 468,
    "ps": [
     "orbix"
    ]
@@ -943,7 +976,7 @@
    "url": "https://huggingface.co/papers/2611.29829",
    "ts": 1795287600000,
    "src": "HF Papers",
-   "score": 0,
+   "score": 1,
    "ps": [
     "lexicon",
     "orbix"
@@ -1055,7 +1088,7 @@
    "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
    "ts": 1795181399000,
    "src": "Hacker News",
-   "score": 531,
+   "score": 532,
    "ps": [
     "orbix"
    ]
@@ -1083,12 +1116,24 @@
    ]
   },
   {
+   "id": "hf2611.27112",
+   "title": "Markdown Is Not a Firewall: four coding agents, one rules file, four boundaries",
+   "url": "https://huggingface.co/papers/2611.27112",
+   "ts": 1795114800000,
+   "src": "HF Papers",
+   "score": 0,
+   "ps": [
+    "lexicon",
+    "orbix"
+   ]
+  },
+  {
    "id": "hf2611.28231",
    "title": "Evaluating Memanto on DolphinBench for AI Agents",
    "url": "https://huggingface.co/papers/2611.28231",
    "ts": 1795114800000,
    "src": "HF Papers",
-   "score": 3,
+   "score": 4,
    "ps": [
     "lexicon",
     "orbix"
@@ -1245,7 +1290,7 @@
    "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
    "ts": 1795040953000,
    "src": "Hacker News",
-   "score": 317,
+   "score": 318,
    "ps": [
     "orbix"
    ]
@@ -1312,50 +1357,6 @@
    "ts": 1795020082000,
    "src": "Hacker News",
    "score": 149,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50547901",
-   "title": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
-   "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
-   "ts": 1795017544000,
-   "src": "Hacker News",
-   "score": 53,
-   "ps": [
-    "meridian"
-   ]
-  },
-  {
-   "id": "hn50547777",
-   "title": "AI agents ask better questions than KPMG accountants in audit trial",
-   "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-   "ts": 1795016974000,
-   "src": "Hacker News",
-   "score": 503,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50547223",
-   "title": "Jensen Huang's fall hits 'open' models in boost to Anthropic and OpenAI",
-   "url": "https://www.ft.com/content/418ca885-fbcf-4b9f-a8b9-2bd60b543fc5",
-   "ts": 1795014501000,
-   "src": "Hacker News",
-   "score": 47,
-   "ps": [
-    "orbix"
-   ]
-  },
-  {
-   "id": "hn50546587",
-   "title": "LLMs can read and write executables byte by byte from a hex dump",
-   "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
-   "ts": 1795011358000,
-   "src": "Hacker News",
-   "score": 317,
    "ps": [
     "orbix"
    ]
